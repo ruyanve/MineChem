@@ -16,6 +16,7 @@ import ljdp.minechem.common.utils.ConstantValue;
 import ljdp.minechem.common.utils.MinechemHelper;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
 
 import org.lwjgl.opengl.GL11;
 
@@ -78,7 +79,7 @@ public class GuiMicroscope extends GuiContainerTabbed {
     @Override
     protected void drawGuiContainerBackgroundLayer(float var1, int var2, int var3) {
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-        mc.renderEngine.bindTexture(ConstantValue.MICROSCOPE_GUI);
+        this.mc.renderEngine.func_110577_a(new ResourceLocation("genericmod:textures/" + ConstantValue.MICROSCOPE_GUI));
         int x = (width - guiWidth) / 2;
         int y = (height - guiHeight) / 2;
         zLevel = 0;
@@ -92,7 +93,7 @@ public class GuiMicroscope extends GuiContainerTabbed {
         GL11.glPopMatrix();
 
         recipeSwitch.setPos(x + 153, y + 26);
-        recipeSwitch.draw(mc.renderEngine);
+        recipeSwitch.draw(this.mc.renderEngine);
 
         ItemStack itemstack = microscope.getStackInSlot(0);
         clearRecipeMatrix();

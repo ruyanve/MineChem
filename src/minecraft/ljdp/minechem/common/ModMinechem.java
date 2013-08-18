@@ -1,7 +1,5 @@
 package ljdp.minechem.common;
 
-import java.util.logging.Logger;
-
 import ljdp.minechem.client.gui.tabs.TabEnergy;
 import ljdp.minechem.client.gui.tabs.TabHelp;
 import ljdp.minechem.client.gui.tabs.TabJournel;
@@ -17,19 +15,19 @@ import ljdp.minechem.common.utils.Localization;
 import ljdp.minechem.computercraft.ICCMain;
 import ljdp.minechem.common.ToxoExport;
 import net.minecraft.client.Minecraft;
-import net.minecraftforge.common.MinecraftForge;
+import net.minecraft.client.renderer.texture.TextureMap;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.WeightedRandomChestContent;
 import net.minecraftforge.client.event.TextureStitchEvent;
 import net.minecraftforge.common.Configuration;
-import net.minecraftforge.common.ChestGenHooks;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.ForgeSubscribe;
 
 import org.modstats.ModstatInfo;
 import org.modstats.Modstats;
 
-import cpw.mods.fml.common.FMLLog;
+// import basiccomponents.common.BasicComponents;
+
+import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.Mod.Instance;
@@ -47,17 +45,12 @@ import cpw.mods.fml.common.registry.VillagerRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-// Some help from DrZed
-
 @Mod(modid = "minechem", name = "MineChem", version = "@VERSION@")
 @ModstatInfo(prefix="minechem")
 @NetworkMod(clientSideRequired = true, serverSideRequired = false, channels = { PacketHandler.MINECHEM_PACKET_CHANNEL }, packetHandler = PacketHandler.class)
-
 public class ModMinechem {
     @Instance("minechem")
     public static ModMinechem instance;
-    
-    public static Logger logger;
 
     @SidedProxy(clientSide = "ljdp.minechem.client.ClientProxy", serverSide = "ljdp.minechem.common.CommonProxy")
     public static CommonProxy proxy;
@@ -67,9 +60,7 @@ public class ModMinechem {
     public static String GUITABLEID = "2";
     @PreInit
     public void preInit(FMLPreInitializationEvent event) {
-        logger = Logger.getLogger("minechem");
-		 
-        logger.setParent(FMLLog.getLogger());
+
 
         Localization.loadLanguages(CommonProxy.LANG_DIR, LANGUAGES_SUPPORTED);
 
@@ -90,54 +81,45 @@ public class ModMinechem {
         
         
 
-        logger.info("PREINT PASSED");
+        System.out.println("[MineChem] PREINT PASSED");
 
+        for (int i = 0; i < 5; i++)
+            VillagerRegistry.instance().registerVillageTradeHandler(i, new VillageTradeHandler());
     }
+
     @Init
     public void init(FMLInitializationEvent event) {
         NetworkRegistry.instance().registerGuiHandler(this, new GuiHandler());
         TickRegistry.registerScheduledTickHandler(new ScheduledTickHandler(), Side.SERVER);
         proxy.registerRenderers();
-        logger.info("INIT PASSED");
+        System.out.println("[MineChem] INIT PASSED");
         LanguageRegistry.instance().addStringLocalization("itemGroup.MineChem", "en_US", "MineChem");
         Modstats.instance().getReporter().registerMod(this);
+        // BasicComponents.requestAll();
+        //  BasicComponents.registerTileEntities();
     }
 
     @PostInit
     public void postInit(FMLPostInitializationEvent event) {
-    initComputerCraftAddon(event);
-	initBOP(event);
-	DoDungeon();
-    logger.info("POSTINIT PASSED");
+        initComputerCraftAddon(event);
+		initBOP(event);
+        System.out.println("[MineChem] POSTINIT PASSED");
     }
 
-    private void DoDungeon() {
-    ChestGenHooks info = ChestGenHooks.getInfo(ChestGenHooks.DUNGEON_CHEST);
-    ItemStack A = new ItemStack(MinechemItems.blueprint,1,0);
-    // ItemStack B = new ItemStack(MinechemItems.blueprint,1,1);
-    ItemStack C = new ItemStack(MinechemItems.blueprint,1,2);
-    info.addItem(new WeightedRandomChestContent(A, 1, 8, 1 ));
-    // info.addItem(new WeightedRandomChestContent(B, 1, 8, 1 ));
-    info.addItem(new WeightedRandomChestContent(C, 1, 8, 1 ));
-	}
-	private void initComputerCraftAddon(FMLPostInitializationEvent event) {
+      private void initComputerCraftAddon(FMLPostInitializationEvent event) {
         Object ccMain = event.buildSoftDependProxy("CCTurtle", "ljdp.minechem.computercraft.CCMain");
         if (ccMain != null) {
             ICCMain iCCMain = (ICCMain) ccMain;
             iCCMain.loadConfig(config);
             iCCMain.init();
-            logger.info("Computercraft interface layer loaded");
+            System.out.println("[MineChem] Computercraft interface layer loaded");
         }
 		}
 		
-	private void initBOP (FMLPostInitializationEvent event){
-	Object BindBOP = event.buildSoftDependProxy("BiomesOPlenty", "ljdp.minechem.common.ToxoExport");
-        if (BindBOP != null) {
-        ToxoExport.DoBopExport(); 
-        logger.info("BOP support loaded");
-        }
-         
-         }
+		private void initBOP (FMLPostInitializationEvent event){
+		Object BindBOP = event.buildSoftDependProxy("BiomesOPlenty", "ljdp.minechem.common.ToxoExport");
+        if (BindBOP != null) {ToxoExport.DoBopExport(); System.out.println("Minechem: BOP support loaded");}
+		}
 
     private void loadConfig(FMLPreInitializationEvent event) {
         Configuration config = new Configuration(event.getSuggestedConfigurationFile());
@@ -150,7 +132,6 @@ public class ModMinechem {
     @ForgeSubscribe
     @SideOnly(Side.CLIENT)
     public void textureHook(TextureStitchEvent.Pre event){
-            if (event.map == Minecraft.getMinecraft().renderEngine.textureMapItems) {
                 TabStateControl.unpoweredIcon = event.map.registerIcon(ConstantValue.UNPOWERED_ICON);
                 MinechemTriggers.outputJammed.icon = event.map.registerIcon(ConstantValue.JAMMED_ICON);
                 MinechemTriggers.noTestTubes.icon = event.map.registerIcon(ConstantValue.NO_BOTTLES_ICON);
@@ -160,7 +141,6 @@ public class ModMinechem {
                 TabTable.helpIcon = event.map.registerIcon(ConstantValue.HELP_ICON);
                 TabJournel.helpIcon = event.map.registerIcon(ConstantValue.POWER_ICON);
                 MinechemTriggers.fullEnergy.icon = event.map.registerIcon(ConstantValue.FULL_ENERGY_ICON);
-            }
-
+            
     }
 }

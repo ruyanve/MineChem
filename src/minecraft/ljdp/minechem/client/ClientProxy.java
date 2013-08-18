@@ -41,21 +41,6 @@ public class ClientProxy extends CommonProxy {
 
     @Override
     public void registerRenderers() {
-        MinecraftForgeClient.preloadTexture(DECOMPOSER_GUI);
-        MinecraftForgeClient.preloadTexture(MICROSCOPE_GUI);
-        MinecraftForgeClient.preloadTexture(SYNTHESIS_GUI);
-        MinecraftForgeClient.preloadTexture(MICROSCOPE_MODEL);
-        MinecraftForgeClient.preloadTexture(DECOMPOSER_MODEL_ON);
-        MinecraftForgeClient.preloadTexture(DECOMPOSER_MODEL_OFF);
-        MinecraftForgeClient.preloadTexture(SYNTHESIS_MODEL);
-        MinecraftForgeClient.preloadTexture(PRINTER_MODEL);
-        MinecraftForgeClient.preloadTexture(PROJECTOR_MODEL_OFF);
-        MinecraftForgeClient.preloadTexture(PROJECTOR_MODEL_ON);
-        MinecraftForgeClient.preloadTexture(FUSION_GUI);
-        MinecraftForgeClient.preloadTexture(PROJECTOR_GUI);
-        MinecraftForgeClient.preloadTexture(JOURNAL_GUI);
-        MinecraftForgeClient.preloadTexture(HAZMAT_TEX);
-        MinecraftForgeClient.preloadTexture(CHEMICAL_STORAGE_MODEL);
         CUSTOM_RENDER_ID = RenderingRegistry.getNextAvailableRenderId();
 
         MinecraftForgeClient.registerItemRenderer(MinechemItems.element.itemID, new ItemElementRenderer());

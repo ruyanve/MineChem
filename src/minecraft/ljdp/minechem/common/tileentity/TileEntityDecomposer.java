@@ -3,8 +3,6 @@ package ljdp.minechem.common.tileentity;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
-import universalelectricity.core.electricity.ElectricityPack;
-
 import ljdp.minechem.api.core.Chemical;
 import ljdp.minechem.api.recipe.DecomposerRecipe;
 import ljdp.minechem.api.util.Constants;
@@ -22,12 +20,12 @@ import ljdp.minechem.common.recipe.DecomposerRecipeHandler;
 import ljdp.minechem.common.utils.MinechemHelper;
 import ljdp.minechem.computercraft.IMinechemMachinePeripheral;
 import net.minecraft.block.Block;
-import net.minecraftforge.common.ISidedInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.ForgeDirection;
+import universalelectricity.core.electricity.ElectricityPack;
 import buildcraft.api.gates.ActionManager;
 import buildcraft.api.gates.ITrigger;
 import buildcraft.api.gates.ITriggerProvider;
@@ -36,7 +34,7 @@ import buildcraft.api.power.IPowerProvider;
 import buildcraft.api.power.IPowerReceptor;
 import buildcraft.api.transport.IPipe;
 
-public class TileEntityDecomposer extends MinechemTileEntity implements ISidedInventory, IPowerReceptor, ITriggerProvider, IMinechemTriggerProvider,
+public class TileEntityDecomposer extends MinechemTileEntity implements IPowerReceptor, ITriggerProvider, IMinechemTriggerProvider,
         ISpecialInventory, IMinechemMachinePeripheral {
 
     public static final int[] kInput = { 0 };
@@ -125,7 +123,7 @@ public class TileEntityDecomposer extends MinechemTileEntity implements ISidedIn
         if (worldObj.isRemote)
             return;
         PacketDecomposerUpdate packetDecomposerUpdate = new PacketDecomposerUpdate(this);
-        int dimensionID = worldObj.getWorldInfo().getDimension();
+        int dimensionID = worldObj.provider.dimensionId;
         PacketHandler.getInstance().decomposerUpdateHandler.sendToAllPlayersInDimension(packetDecomposerUpdate, dimensionID);
     }
 
@@ -420,7 +418,7 @@ public class TileEntityDecomposer extends MinechemTileEntity implements ISidedIn
     }
 
     @Override
-    public boolean isStackValidForSlot(int i, ItemStack itemstack) {
+    public boolean isItemValidForSlot(int i, ItemStack itemstack) {
         if (i == kInput[0])
             return true;
         if (itemstack.itemID == MinechemItems.testTube.itemID)
@@ -449,8 +447,8 @@ public class TileEntityDecomposer extends MinechemTileEntity implements ISidedIn
 
     @Override
     public ElectricityPack getRequest() {
-        return new ElectricityPack(Math.min((powerProvider.getMaxEnergyStored() - powerProvider.getEnergyStored()), powerProvider.getMaxEnergyReceived())
-                * 437.5D / this.getVoltage(), this.getVoltage());
+        return new ElectricityPack((float) (Math.min((powerProvider.getMaxEnergyStored() - powerProvider.getEnergyStored()), powerProvider.getMaxEnergyReceived())
+                * 437.5D / this.getVoltage()), this.getVoltage());
     }
 
     @Override
@@ -463,16 +461,22 @@ public class TileEntityDecomposer extends MinechemTileEntity implements ISidedIn
     }
 
 
+
+
 	@Override
-	
-	public int getStartInventorySide(ForgeDirection side) {
+	public float getRequest(ForgeDirection direction) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	
-	public int getSizeInventorySide(ForgeDirection side) {
+	public float getProvide(ForgeDirection direction) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public float getMaxEnergyStored() {
 		// TODO Auto-generated method stub
 		return 0;
 	}

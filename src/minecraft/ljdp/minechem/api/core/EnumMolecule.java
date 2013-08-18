@@ -11,14 +11,14 @@ import java.util.Random;
 
 // MOLECULE IDS MUST BE CONTINIOUS OTHERWISE THE ARRAY WILL BE MISALIGNED.
 public enum EnumMolecule {
-    cellulose(0, "Cellulose", 0, 1, 0, 0, 0.25F, 0, new Element(C, 6), new Element(H, 10), new Element(O, 5)),
-    water(1, "Water", 0, 0, 1, 0, 0, 1, new Element(H, 2), new Element(O)),
-    carbonDioxide(2, "Carbon Dioxide", 0.5F, 0.5F, 0.5F, 0.25F, 0.25F, 0.25F, new Element(C), new Element(O, 2)),
-    nitrogenDioxide(3, "Nitrogen Dioxide", 1, 0.65F, 0, 0.5F, 0.1412F, 0.1843F, new Element(N), new Element(O, 2)),
-    toluene(4, "Toluene", 1, 1, 1, 0.8F, 0.8F, 0.8F, new Element(C, 7), new Element(H, 8)),
-    potassiumNitrate(5, "Potassium Nitrate", 0.9F, 0.9F, 0.9F, 0.8F, 0.8F, 0.8F, new Element(K), new Element(N), new Element(O, 3)),
-    tnt(6, "Trinitrotoluene", 1, 1, 0, 1, 0.65F, 0, new Element(C, 6), new Element(H, 2), new Molecule(nitrogenDioxide, 3), new Molecule(toluene)),
-    siliconDioxide(7, "Silicon Dioxide", 1, 1, 1, 1, 1, 1, new Element(Si), new Element(O, 2)),
+    cellulose(0, "Cellulose", new Element(C, 6), new Element(H, 10), new Element(O, 5)),
+    water(1, "Water", new Element(H, 2), new Element(O)),
+    carbonDioxide(2, "Carbon Dioxide", new Element(C), new Element(O, 2)),
+    nitrogenDioxide(3, "Nitrogen Dioxide", new Element(N), new Element(O, 2)),
+    toluene(4, "Toluene", new Element(C, 7), new Element(H, 8)),
+    potassiumNitrate(5, "Potassium Nitrate", new Element(K), new Element(N), new Element(O, 3)),
+    tnt(6, "Trinitrotoluene", new Element(C, 6), new Element(H, 2), new Molecule(nitrogenDioxide, 3), new Molecule(toluene)),
+    siliconDioxide(7, "Silicon Dioxide", new Element(Si), new Element(O, 2)),
     calcite(8, "Calcite", new Element(Ca), new Element(C), new Element(O, 3)),
     pyrite(9, "Pyrite", new Element(Fe), new Element(S, 2)),
     nepheline(10, "Nepheline", new Element(Al), new Element(Si), new Element(O, 4)),
@@ -80,7 +80,7 @@ public enum EnumMolecule {
     sucrose(66, "Sucrose", new Element(C, 12), new Element(H, 22), new Element(O, 11)),
     pantherine(67, "Pantherine", new Element(C, 4), new Element(H, 6), new Element(N, 2), new Element(O, 2)), //LJDP you fail! There is not enought muscarine in a shroom to cause harm! The main active chemical is Muscimol (Pantherine). This chemical is similar to benzodiazapines! 
     aluminiumOxide(68, "Aluminium Oxide", new Element(Al, 2), new Element(O, 3)),
-    fullrene(69, "Carbon Nanotubes", 0.47F, 0.47F, 0.47F, 0.47F, 0.47F, 0.47F, new Element(C, 64), new Element(C, 64), new Element(C, 64), new Element(C, 64)),
+    fullrene(69, "Carbon Nanotubes", new Element(C, 64), new Element(C, 64), new Element(C, 64), new Element(C, 64)),
     keratin(70, "Keratin", new Element(C, 2), new Molecule(water), new Element(N)),
     penicillin(71, "Penicillin", new Element(C, 16), new Element(H, 18), new Element(N, 2), new Element(O, 4), new Element(S)),
     testosterone(72, "Testosterone", new Element(C, 19), new Element(H, 28), new Element(O, 2)),
@@ -93,7 +93,7 @@ public enum EnumMolecule {
     asprin(79, "Aspirin", new Element(C, 9), new Element(H, 8), new Element(O, 4)),
     ddt(80, "DDT", new Element(C, 14), new Element(H, 9), new Element(Cl, 5)),
     dota(81, "DOTA", new Element(C, 16), new Element(H, 28), new Element(N, 4), new Element(O, 8)),
-    poison(82, "T-2 Mycotoxin", 0.89F, 0.83F, 0.07F, 0.89F, 0.83F, 0.07F, new Element(C, 24), new Element(H, 34), new Element(O, 9)),
+    poison(82, "T-2 Mycotoxin", new Element(C, 24), new Element(H, 34), new Element(O, 9)),
     salt(83, "Salt", new Element(Na, 1), new Element(Cl, 1)),
     nhthree(84, "Ammonia", new Element(N, 1), new Element(H, 3)),
     nod(85, "Nodularin", new Element(C, 41), new Element(H, 60), new Element(N, 8), new Element(O, 10)),
@@ -109,17 +109,18 @@ public enum EnumMolecule {
     ret(95, "Retinol", new Element(C, 20), new Element(H, 30), new Element(O)),
     stevenk(96, "Xylitol", new Element(C, 5), new Element(H, 12), new Element(O, 5)),
     weedex(97, "Aminocyclopyrachlor", new Element(C,8), new Element(H,8), new Element(Cl), new Element(N,3), new Element(O,2)),
-    xanax(98, "Alprazolam", new Element(C,17), new Element(H,13), new Element(Cl), new Element(N,4)),
-    hcl(99, "Hydrogen Chloride", new Element(H), new Element(Cl)),
-    redrocks(100, "Cocaine", new Element(C,17), new Element(H,21), new Element(N), new Element(O,4)),
-    coke(101, "Cocaine Hydrochloride", new Molecule(redrocks), new Molecule(hcl)),
-    blueorgodye(102, "1,4-dimethyl-7-isopropylazulene (Guaiazulene)", new Element(C,15), new Element(H,18)),
-    redorgodye(103, "Pelargonidin", new Element(C,15), new Element(H,11), new Element(O,11)),
-    purpleorgodye(104, "Delphinidin", new Element(C,15), new Element(H,11), new Element(O,7)),
-    olivine(105, "Olivine", new Element(Fe,2), new Element(Si), new Element(O,4)),
-    metblue(106, "Methylene Blue", new Element(C,16), new Element(H,18), new Element(N,3), new Element(S), new Element(Cl)),
-	meoh(107, "Methyl Alcohol", new Molecule(methyl), new Molecule(hydroxide)),
-	lcd(108, "Cholesteryl benzoate", new Element(C,34), new Element(H,50), new Element(O,2))
+    biocide(98, "Ptaquiloside", new Element(C, 20), new Element(H, 30), new Element(O, 8)),
+    xanax(99, "Alprazolam", new Element(C,17), new Element(H,13), new Element(Cl), new Element(N,4)),
+    hcl(100, "Hydrogen Chloride", new Element(H), new Element(Cl)),
+    redrocks(101, "Cocaine", new Element(C,17), new Element(H,21), new Element(N), new Element(O,4)),
+    coke(102, "Cocaine Hydrochloride", new Molecule(redrocks), new Molecule(hcl)),
+    blueorgodye(103, "1,4-dimethyl-7-isopropylazulene (Guaiazulene)", new Element(C,15), new Element(H,18)),
+    redorgodye(104, "Pelargonidin", new Element(C,15), new Element(H,11), new Element(O,11)),
+    purpleorgodye(105, "Delphinidin", new Element(C,15), new Element(H,11), new Element(O,7)),
+    olivine(106, "Olivine", new Element(Fe,2), new Element(Si), new Element(O,4)),
+    metblue(107, "Methylene Blue", new Element(C,16), new Element(H,18), new Element(N,3), new Element(S), new Element(Cl)),
+	meoh(108, "Methyl Alcohol", new Molecule(methyl), new Molecule(hydroxide)),
+	nicotine(109, "Nicotine", new Element(C,10), new Element(H,14), new Element(N,2))
     ;
 
     public static EnumMolecule[] molecules = values();
@@ -133,35 +134,23 @@ public enum EnumMolecule {
     public float green2;
     public float blue2;
 
-    EnumMolecule(int id, String descriptiveName, float colorRed, float colorGreen, float colorBlue, float colorRed2, float colorGreen2, float colorBlue2, Chemical... chemicals) {
+    EnumMolecule(int id, String descriptiveName, Chemical... chemicals) {
         this.id = id;
         this.components = new ArrayList<Chemical>();
         this.descriptiveName = descriptiveName;
         for (Chemical chemical : chemicals) {
             this.components.add(chemical);
         }
-        Random random = new Random(id);
-        this.red = colorRed;
-        this.green = colorGreen;
-        this.blue = colorBlue;
-        this.red2 = colorRed2;
-        this.green2 = colorGreen2;
-        this.blue2 = colorBlue2;
-    }
-    
-    @Deprecated
-    EnumMolecule(int id, String descriptiveName, Chemical... chemicals) {
-        this(id, descriptiveName, getRandomColor(), getRandomColor(), getRandomColor(), getRandomColor(), getRandomColor(), getRandomColor(), chemicals);
-        // Your molecule will have random colors until you give it a proper color code.
-    }
-    
-    private static float getRandomColor()
-    {
-    	Random random = new Random();
-    	return random.nextFloat();
+        Random random = new Random(id); // TODO: Default to random color if molecule is not in color lookup table 
+        this.red = random.nextFloat();
+        this.green = random.nextFloat();
+        this.blue = random.nextFloat();
+        this.red2 = random.nextFloat();
+        this.green2 = random.nextFloat();
+        this.blue2 = random.nextFloat();
     }
 
-	public static EnumMolecule getById(int id) {
+    public static EnumMolecule getById(int id) {
         for (EnumMolecule molecule : molecules) {
             if (molecule.id == id)
                 return molecule;

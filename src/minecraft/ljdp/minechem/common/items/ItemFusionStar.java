@@ -39,4 +39,3 @@ public class ItemFusionStar extends Item {
     }
 
 }
-

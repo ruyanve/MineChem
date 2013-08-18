@@ -9,7 +9,6 @@ import ljdp.minechem.common.items.ItemElement;
 import ljdp.minechem.common.items.ItemFusionStar;
 import ljdp.minechem.common.items.ItemLens;
 import ljdp.minechem.common.items.ItemMolecule;
-import ljdp.minechem.common.items.ItemPills;
 import ljdp.minechem.common.items.ItemTestTube;
 import ljdp.minechem.common.items.PhotonicInduction;
 import ljdp.minechem.common.utils.ConstantValue;
@@ -38,8 +37,7 @@ public class MinechemItems {
     public static ItemStack projectorLens;
     public static ItemStack microscopeLens;
     public static PhotonicInduction IAintAvinit;
-    public static ItemPills EmptyPillz;
-    public static ItemStack minechempills; 
+
     private static int elementID;
     private static int moleculeID;
     private static int atomicManipulatorID;
@@ -53,7 +51,7 @@ public class MinechemItems {
     private static int hazmatTorsoID;
     private static int hazmatHeadID;
     private static int photonID;
-    private static int pillzID;
+    
 
     public static void loadConfig(Configuration config) {
         int baseID = 4736;
@@ -70,7 +68,6 @@ public class MinechemItems {
         hazmatTorsoID = getItemConfig(config, "HazmatTorso", baseID++);
         hazmatHeadID = getItemConfig(config, "HazmatHead", baseID++);
         photonID = getItemConfig(config, "Hammer", baseID++);
-		pillzID = getItemConfig(config, "EmptyPills", baseID++);
     }
 
     private static int getItemConfig(Configuration config, String key, int defaultID) {
@@ -91,7 +88,6 @@ public class MinechemItems {
         hazmatTorso = new ItemArmorRadiationShield(hazmatTorsoID, 1, 0.5F, ConstantValue.HAZMAT_TORSO_TEX);
         hazmatHead = new ItemArmorRadiationShield(hazmatHeadID, 0, 0.2F, ConstantValue.HAZMAT_HEAD_TEX);
         IAintAvinit = new PhotonicInduction(photonID, EnumToolMaterial.IRON, 5F);
-		EmptyPillz = new ItemPills( pillzID,0);
         LanguageRegistry.addName(atomicManipulator, MinechemHelper.getLocalString("item.name.atomicmanipulator"));
         LanguageRegistry.addName(fusionStar, MinechemHelper.getLocalString("item.name.fusionStar"));
         LanguageRegistry.addName(testTube, MinechemHelper.getLocalString("item.name.testtube"));
@@ -101,12 +97,10 @@ public class MinechemItems {
         LanguageRegistry.addName(hazmatTorso, MinechemHelper.getLocalString("item.name.hazmatTorso"));
         LanguageRegistry.addName(hazmatHead, MinechemHelper.getLocalString("item.name.hazmatHead"));
         LanguageRegistry.addName(IAintAvinit, "PhotonicInduction's Hammer");
-		LanguageRegistry.addName(EmptyPillz, "Pills");
         concaveLens = new ItemStack(lens, 1, 0);
         convexLens = new ItemStack(lens, 1, 1);
         microscopeLens = new ItemStack(lens, 1, 2);
         projectorLens = new ItemStack(lens, 1, 3);
-		minechempills = new ItemStack(EmptyPillz, 1, 0);
     }
 
     public static void registerToOreDictionary() {

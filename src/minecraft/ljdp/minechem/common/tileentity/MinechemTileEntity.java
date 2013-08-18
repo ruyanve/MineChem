@@ -7,9 +7,10 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.INetworkManager;
 import net.minecraft.network.packet.Packet;
 import net.minecraft.network.packet.Packet132TileEntityData;
-import universalelectricity.prefab.tile.TileEntityElectricityRunnable;
+import universalelectricity.compatibility.TileEntityUniversalElectrical;
+import universalelectricity.prefab.tile.TileEntityElectrical;
 
-public abstract class MinechemTileEntity extends TileEntityElectricityRunnable implements IInventory {
+public abstract class MinechemTileEntity extends TileEntityUniversalElectrical implements IInventory {
 	
 	public ItemStack[] inventory;
 	

@@ -8,17 +8,15 @@ import ljdp.minechem.common.inventory.BoundedInventory;
 import ljdp.minechem.common.inventory.Transactor;
 import ljdp.minechem.common.utils.MinechemHelper;
 import ljdp.minechem.computercraft.IMinechemMachinePeripheral;
-import buildcraft.api.core.SafeTimeTracker;
-import buildcraft.api.inventory.ISpecialInventory;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraftforge.common.ISidedInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraftforge.common.ForgeDirection;
+import buildcraft.api.core.SafeTimeTracker;
 
-public class TileEntityFusion extends TileEntityMultiBlock implements ISidedInventory, IMinechemMachinePeripheral {
+public class TileEntityFusion extends TileEntityMultiBlock implements IMinechemMachinePeripheral {
 
     public static int[] kFusionStar = { 0 };
     public static int[] kInput = { 1, 2 };
@@ -215,7 +213,7 @@ public class TileEntityFusion extends TileEntityMultiBlock implements ISidedInve
         MinechemHelper.readTagListToItemStackArray(nbtTagCompound.getTagList("inventory"), inventory);
     }
 
-    public int getEnergyStored() {
+    public float getEnergyStored() {
         return this.energyStored;
     }
 
@@ -294,7 +292,7 @@ public class TileEntityFusion extends TileEntityMultiBlock implements ISidedInve
     }
 
     @Override
-    public boolean isStackValidForSlot(int i, ItemStack itemstack) {
+    public boolean isItemValidForSlot(int i, ItemStack itemstack) {
         if (i == kFusionStar[0])
             if (itemstack.itemID == Item.netherStar.itemID || itemstack.itemID == MinechemItems.fusionStar.itemID)
                 return true;
@@ -338,17 +336,24 @@ public class TileEntityFusion extends TileEntityMultiBlock implements ISidedInve
 		return false;
 	}
 
+
+
 	@Override
-	public
-	int getStartInventorySide(ForgeDirection side) {
+	public float getRequest(ForgeDirection direction) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public
-	int getSizeInventorySide(ForgeDirection side) {
-		 return 0;
+	public float getProvide(ForgeDirection direction) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public float getMaxEnergyStored() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 
