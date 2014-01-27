@@ -26,7 +26,7 @@ public class AutoCrashReporter extends Handler {
 		String ret = "";
 
 		char[] buffer = new char[1024];
-		int read = 0;
+		int read;
 		while ((read = reader.read(buffer)) != -1) {
 			ret += String.valueOf(buffer, 0, read);
 		}

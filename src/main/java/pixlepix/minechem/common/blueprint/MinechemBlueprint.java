@@ -49,9 +49,7 @@ public abstract class MinechemBlueprint {
 		Integer[][][] structure = getStructure();
 		Integer[][] slice = new Integer[xSize][zSize];
 		for (int x = 0; x < xSize; x++) {
-			for (int z = 0; z < zSize; z++) {
-				slice[x][z] = structure[y][x][z];
-			}
+			System.arraycopy(structure[y][x], 0, slice[x], 0, zSize);
 		}
 		return slice;
 	}
@@ -61,9 +59,7 @@ public abstract class MinechemBlueprint {
 		Integer[][][] structure = getStructure();
 		Integer[][] slice = new Integer[ySize][zSize];
 		for (int y = 0; y < ySize; y++) {
-			for (int z = 0; z < zSize; z++) {
-				slice[y][z] = structure[y][x][z];
-			}
+			System.arraycopy(structure[y][x], 0, slice[y], 0, zSize);
 		}
 		return slice;
 	}

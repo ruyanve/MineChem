@@ -5,6 +5,7 @@ import org.jetbrains.annotations.Nullable;
 import pixlepix.minechem.api.core.Chemical;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class DecomposerRecipeSelect extends DecomposerRecipeChance {
 
@@ -12,8 +13,7 @@ public class DecomposerRecipeSelect extends DecomposerRecipeChance {
 
 	public DecomposerRecipeSelect(ItemStack input, float chance, DecomposerRecipe... possibleRecipes) {
 		super(input, chance);
-		for (DecomposerRecipe recipe : possibleRecipes)
-			this.possibleRecipes.add(recipe);
+		Collections.addAll(this.possibleRecipes, possibleRecipes);
 	}
 
 	@Nullable

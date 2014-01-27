@@ -24,8 +24,6 @@ public class GuiTableOfElements extends GuiContainerTabbed {
 	@Override
 	protected void drawGuiContainerBackgroundLayer(float var1, int var2,
 	                                               int var3) {
-		int x = this.xSize;
-		int y = this.ySize;
 		GL11.glPushMatrix();
 		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
 

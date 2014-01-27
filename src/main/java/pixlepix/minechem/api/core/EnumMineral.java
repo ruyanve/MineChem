@@ -4,6 +4,7 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public enum EnumMineral {
 	quartz("Quartz", new Molecule(EnumMolecule.siliconDioxide)),
@@ -42,8 +43,6 @@ public enum EnumMineral {
 		this.descriptiveName = descriptiveName;
 		this.localizationKey = "minechem.mineral." + name();
 		this.components = new ArrayList<Chemical>();
-		for (Chemical chemical : chemicals) {
-			this.components.add(chemical);
-		}
+		Collections.addAll(this.components, chemicals);
 	}
 }

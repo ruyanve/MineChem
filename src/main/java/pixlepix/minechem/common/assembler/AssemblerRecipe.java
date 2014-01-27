@@ -59,8 +59,10 @@ public class AssemblerRecipe implements IRecipe {
 
 					}
 				}
-				if (out.stackTagCompound == null) {
-					out.stackTagCompound = ItemAssembler.createData();
+				if (out != null) {
+					if (out.stackTagCompound == null) {
+						out.stackTagCompound = ItemAssembler.createData();
+					}
 				}
 				out.stackTagCompound.setInteger("Size", out.stackTagCompound.getInteger("Size"));
 				return out;

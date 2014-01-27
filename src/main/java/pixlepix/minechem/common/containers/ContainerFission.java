@@ -34,7 +34,6 @@ public class ContainerFission extends Container implements IRadiationShield {
 	private void bindOutputSlot() {
 		int x = 8;
 		int y = 62;
-		int j = 0;
 		addSlotToContainer(new Slot(fission, 2, x + (4 * 18), y));
 	}
 

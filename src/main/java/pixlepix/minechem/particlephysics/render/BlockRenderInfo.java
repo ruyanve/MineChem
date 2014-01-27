@@ -37,7 +37,7 @@ public class BlockRenderInfo {
 	 */
 	public int meta = 0;
 
-	public BlockRenderInfo(Icon texture) {
+	public BlockRenderInfo(@Nullable Icon texture) {
 		this.texture = texture;
 	}
 

@@ -43,7 +43,7 @@ public class CoatingRecipe implements IRecipe {
 					ItemStack s2 = inv.getStackInSlot(j);
 					if (s2 != null && s2.getItem() instanceof ItemMolecule && PharmacologyEffect.givesEffect(EnumMolecule.getById(s2.getItemDamage()))) {
 						NBTTagList l = s2.getEnchantmentTagList();
-						int level = 0;
+						int level;
 						if (l != null) {
 							for (int k = 0; k < l.tagCount(); k++) {
 								NBTTagCompound tag = (NBTTagCompound) l.tagAt(k);

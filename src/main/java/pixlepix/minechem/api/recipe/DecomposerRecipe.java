@@ -5,6 +5,7 @@ import org.jetbrains.annotations.NotNull;
 import pixlepix.minechem.api.core.Chemical;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class DecomposerRecipe {
 
@@ -26,8 +27,7 @@ public class DecomposerRecipe {
 	}
 
 	public DecomposerRecipe(@NotNull Chemical... chemicals) {
-		for (Chemical chemical : chemicals)
-			this.output.add(chemical);
+		Collections.addAll(this.output, chemicals);
 	}
 
 	public ItemStack getInput() {

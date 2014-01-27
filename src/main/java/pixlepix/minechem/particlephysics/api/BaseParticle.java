@@ -252,17 +252,6 @@ public abstract class BaseParticle extends EntityLiving {
 			}
 
 			this.moveFlying(par1, par2, f4);
-			f2 = 0.91F;
-
-			if (this.onGround) {
-				f2 = 0.54600006F;
-				int j = this.worldObj.getBlockId(MathHelper.floor_double(this.posX), MathHelper.floor_double(this.boundingBox.minY) - 1, MathHelper.floor_double(this.posZ));
-
-				if (j > 0) {
-					f2 = Block.blocksList[j].slipperiness * 0.91F;
-				}
-			}
-
 			this.moveEntity(this.motionX, this.motionY, this.motionZ);
 
 		}

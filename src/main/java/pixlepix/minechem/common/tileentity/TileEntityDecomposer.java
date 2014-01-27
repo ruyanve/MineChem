@@ -119,7 +119,7 @@ public class TileEntityDecomposer extends MinechemTileEntity implements ISidedIn
 			if (recipe instanceof DecomposerFluidRecipe) {
 				DecomposerFluidRecipe fluidRecipe = (DecomposerFluidRecipe) recipe;
 
-				if (fluidRecipe.inputFluid.equals(fluid)) {
+				if (fluidRecipe.inputFluid.getFluid().equals(fluid)) {
 					return true;
 				}
 

@@ -238,11 +238,11 @@ public abstract class GuiContainerTabbed extends GuiMinechemContainer implements
 		}
 		if (liquidImg == null)
 			return;
-		int x = 0;
-		int y = 0;
+		int x;
+		int y;
 
-		int drawHeight = 0;
-		int drawWidth = 0;
+		int drawHeight;
+		int drawWidth;
 
 		for (x = 0; x < width; x += 16) {
 			for (y = 0; y < height; y += 16) {

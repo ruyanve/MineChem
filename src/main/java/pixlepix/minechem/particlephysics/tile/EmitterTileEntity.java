@@ -155,7 +155,6 @@ public class EmitterTileEntity extends TileEntity implements IInventory {
 		nbt.setInteger("FuelType", this.fuelType);
 
 		nbt.setInteger("FuelMeta", this.fuelMeta);
-		NBTTagCompound inv = new NBTTagCompound();
 		NBTTagList tagList = new NBTTagList();
 		for (int i = 0; i < inventory.length; i++) {
 			ItemStack item = getStackInSlot(i);
