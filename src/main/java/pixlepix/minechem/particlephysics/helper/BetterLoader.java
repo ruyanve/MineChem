@@ -69,7 +69,6 @@ public class BetterLoader {
 	}
 
 	public void mainload() {
-		System.out.println(blocks);
 		for (int i = 0; i < blocks.size(); i++) {
 
 			Block currentBlock = blocks.get(i);

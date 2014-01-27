@@ -36,7 +36,6 @@ public class CoatingRecipe implements IRecipe {
 	@Nullable
 	@Override
 	public ItemStack getCraftingResult(@NotNull InventoryCrafting inv) {
-		System.out.println(6);
 		for (int i = 0; i < inv.getSizeInventory(); i++) {
 			ItemStack s = inv.getStackInSlot(i);
 			if (s != null && s.getItem() instanceof ItemSword) {

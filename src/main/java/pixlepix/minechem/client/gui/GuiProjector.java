@@ -72,7 +72,6 @@ public class GuiProjector extends GuiContainerTabbed {
 	private void drawBlueprintInfo(@NotNull ItemStack blueprintStack) {
 		MinechemBlueprint blueprint = MinechemItems.blueprint.getBlueprint(blueprintStack);
 		if (blueprint == null) {
-			System.out.println("NULL blueprint");
 			return;
 		}
 		String name = blueprintStack.getDisplayName().replace("Blueprint", "");

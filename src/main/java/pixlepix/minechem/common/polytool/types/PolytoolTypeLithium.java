@@ -29,7 +29,6 @@ public class PolytoolTypeLithium extends PolytoolUpgradeType {
 		DamageSource damage = DamageSource.causeMobDamage(target);
 		//Never goes below 0
 		double damageAmount = Math.ceil(Math.max(0, Math.log10(((ItemPolytool) MinechemItems.polytool).getEnergyStored(itemStack)) - 7));
-		System.out.println(damageAmount);
 		target.attackEntityFrom(damage, (float) damageAmount);
 	}
 
