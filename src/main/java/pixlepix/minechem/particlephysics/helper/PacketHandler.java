@@ -9,90 +9,90 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.network.INetworkManager;
 import net.minecraft.network.packet.Packet250CustomPayload;
+import org.jetbrains.annotations.NotNull;
 import pixlepix.minechem.particlephysics.api.BaseParticle;
 import pixlepix.minechem.particlephysics.gui.ContainerEmitter;
 
 import java.io.*;
 
 public class PacketHandler implements IPacketHandler {
-    public static PacketHandler instance;
+	public static PacketHandler instance;
 
-    public void PacketHandler() {
-        instance = this;
-    }
+	public void PacketHandler() {
+		instance = this;
+	}
 
-    @Override
-    public void onPacketData(INetworkManager manager,
-                             Packet250CustomPayload packet, Player playerEntity) {
+	@Override
+	public void onPacketData(INetworkManager manager,
+	                         @NotNull Packet250CustomPayload packet, Player playerEntity) {
 
-        if (packet.channel.equals("Particle")) {
+		if (packet.channel.equals("Particle")) {
 
-            DataInputStream inputStream = new DataInputStream(new ByteArrayInputStream(packet.data));
-            int type = -1;
-            try {
-                type = inputStream.readByte();
-            } catch (IOException e) {
+			DataInputStream inputStream = new DataInputStream(new ByteArrayInputStream(packet.data));
+			int type = -1;
+			try {
+				type = inputStream.readByte();
+			} catch (IOException e) {
 
-                e.printStackTrace();
-            }
-            switch (type) {
-                case 0:
-                    this.handleParticleUpdatePacket(inputStream);
-                    break;
-                case 1:
-                    if (playerEntity instanceof EntityPlayer) {
-                        Container container = ((EntityPlayer) playerEntity).openContainer;
-                        if (container instanceof ContainerEmitter) {
-                            try {
-                                ((ContainerEmitter) container).getMachine().receiveButton(inputStream.readByte(), inputStream.readByte());
-                            } catch (IOException e) {
+				e.printStackTrace();
+			}
+			switch (type) {
+				case 0:
+					this.handleParticleUpdatePacket(inputStream);
+					break;
+				case 1:
+					if (playerEntity instanceof EntityPlayer) {
+						Container container = ((EntityPlayer) playerEntity).openContainer;
+						if (container instanceof ContainerEmitter) {
+							try {
+								((ContainerEmitter) container).getMachine().receiveButton(inputStream.readByte(), inputStream.readByte());
+							} catch (IOException e) {
 
-                                e.printStackTrace();
-                            }
-                        }
-                    }
-            }
+								e.printStackTrace();
+							}
+						}
+					}
+			}
 
-        }
-    }
+		}
+	}
 
-    private void handleParticleUpdatePacket(DataInputStream inputStream) {
+	private void handleParticleUpdatePacket(DataInputStream inputStream) {
 
+		try {
 
-        try {
+			int entityId = inputStream.readInt();
+			Entity toMove = Minecraft.getMinecraft().theWorld.getEntityByID(entityId);
+			if (toMove != null) {
+				toMove.setPosition(inputStream.readDouble(), inputStream.readDouble(), inputStream.readDouble());
+				toMove.setVelocity(inputStream.readDouble(), inputStream.readDouble(), inputStream.readDouble());
 
-            int entityId = inputStream.readInt();
-            Entity toMove = Minecraft.getMinecraft().theWorld.getEntityByID(entityId);
-            if (toMove != null) {
-                toMove.setPosition(inputStream.readDouble(), inputStream.readDouble(), inputStream.readDouble());
-                toMove.setVelocity(inputStream.readDouble(), inputStream.readDouble(), inputStream.readDouble());
+				if (toMove instanceof BaseParticle) {
+					((BaseParticle) toMove).effect = inputStream.readInt();
 
-                if (toMove instanceof BaseParticle) {
-                    ((BaseParticle) toMove).effect = inputStream.readInt();
+				}
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+			return;
+		}
 
-                }
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-            return;
-        }
+	}
 
-    }
+	public static void sendInterfacePacket(byte type, byte val) {
+		ByteArrayOutputStream byteStream = new ByteArrayOutputStream();
+		DataOutputStream dataStream = new DataOutputStream(byteStream);
 
-    public static void sendInterfacePacket(byte type, byte val) {
-        ByteArrayOutputStream byteStream = new ByteArrayOutputStream();
-        DataOutputStream dataStream = new DataOutputStream(byteStream);
+		try {
+			dataStream.writeByte((byte) 1);
 
-        try {
-            dataStream.writeByte((byte) 1);
+			dataStream.writeByte((byte) type);
+			dataStream.writeByte(val);
 
-            dataStream.writeByte((byte) type);
-            dataStream.writeByte(val);
-
-            PacketDispatcher.sendPacketToServer(PacketDispatcher.getPacket("Particle", byteStream.toByteArray()));
-        } catch (IOException ex) {
-            System.err.append("Failed to send button click packet");
-        }
-    }
+			PacketDispatcher.sendPacketToServer(PacketDispatcher.getPacket("Particle", byteStream.toByteArray()));
+		} catch (IOException ex) {
+			System.err.append("Failed to send button click packet");
+		}
+	}
 
 }

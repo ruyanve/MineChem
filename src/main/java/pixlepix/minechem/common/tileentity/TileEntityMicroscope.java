@@ -4,6 +4,8 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import pixlepix.minechem.api.recipe.DecomposerRecipe;
 import pixlepix.minechem.api.recipe.SynthesisRecipe;
 import pixlepix.minechem.common.MinechemItems;
@@ -14,21 +16,25 @@ import pixlepix.minechem.common.recipe.SynthesisRecipeHandler;
 import pixlepix.minechem.computercraft.IMinechemMachinePeripheral;
 
 public class TileEntityMicroscope extends MinechemTileEntity implements IInventory, IMinechemMachinePeripheral {
+	@NotNull
 	public static int[] kInput = { 0 };
+	@NotNull
 	public static int[] kJournal = { 1 };
 
 	public boolean isShaped = true;
 
 	private final BoundedInventory inputInvetory = new BoundedInventory(this, kInput);
 	private final BoundedInventory journalInventory = new BoundedInventory(this, kJournal);
+	@NotNull
 	private Transactor inputTransactor = new Transactor(inputInvetory, 1);
+	@NotNull
 	private Transactor journalTransactor = new Transactor(journalInventory, 1);
 
 	public TileEntityMicroscope() {
 		inventory = new ItemStack[getSizeInventory()];
 	}
 
-	public void onInspectItemStack(ItemStack itemstack) {
+	public void onInspectItemStack(@NotNull ItemStack itemstack) {
 		SynthesisRecipe synthesisRecipe = SynthesisRecipeHandler.instance.getRecipeFromOutput(itemstack);
 		DecomposerRecipe decomposerRecipe = DecomposerRecipeHandler.instance.getRecipe(itemstack);
 		if (inventory[1] != null && (synthesisRecipe != null || decomposerRecipe != null)) {
@@ -47,6 +53,7 @@ public class TileEntityMicroscope extends MinechemTileEntity implements IInvento
 		return itemstack;
 	}
 
+	@Nullable
 	@Override
 	public ItemStack decrStackSize(int slot, int amount) {
 		if (slot >= 0 && slot < inventory.length) {
@@ -58,13 +65,14 @@ public class TileEntityMicroscope extends MinechemTileEntity implements IInvento
 		}
 	}
 
+	@Nullable
 	@Override
 	public ItemStack getStackInSlotOnClosing(int slot) {
 		return null;
 	}
 
 	@Override
-	public void setInventorySlotContents(int slot, ItemStack itemStack) {
+	public void setInventorySlotContents(int slot, @Nullable ItemStack itemStack) {
 		inventory[slot] = itemStack;
 		if (slot == 0 && itemStack != null && !worldObj.isRemote)
 			onInspectItemStack(itemStack);
@@ -72,6 +80,7 @@ public class TileEntityMicroscope extends MinechemTileEntity implements IInvento
 			onInspectItemStack(inventory[0]);
 	}
 
+	@NotNull
 	@Override
 	public String getInvName() {
 		return "container.microscope";
@@ -83,7 +92,7 @@ public class TileEntityMicroscope extends MinechemTileEntity implements IInvento
 	}
 
 	@Override
-	public boolean isUseableByPlayer(EntityPlayer entityPlayer) {
+	public boolean isUseableByPlayer(@NotNull EntityPlayer entityPlayer) {
 		double dist = entityPlayer.getDistanceSq((double) xCoord + 0.5D, (double) yCoord + 0.5D, (double) zCoord + 0.5D);
 		return worldObj.getBlockTileEntity(xCoord, yCoord, zCoord) != this ? false : dist <= 64.0D;
 	}
@@ -101,7 +110,7 @@ public class TileEntityMicroscope extends MinechemTileEntity implements IInvento
 	}
 
 	@Override
-	public void writeToNBT(NBTTagCompound nbtTagCompound) {
+	public void writeToNBT(@NotNull NBTTagCompound nbtTagCompound) {
 		super.writeToNBT(nbtTagCompound);
 		ItemStack inpectingStack = inventory[0];
 		if (inpectingStack != null) {
@@ -116,7 +125,7 @@ public class TileEntityMicroscope extends MinechemTileEntity implements IInvento
 	}
 
 	@Override
-	public void readFromNBT(NBTTagCompound nbtTagCompound) {
+	public void readFromNBT(@NotNull NBTTagCompound nbtTagCompound) {
 		super.readFromNBT(nbtTagCompound);
 		NBTTagCompound inspectingStackTag = nbtTagCompound.getCompoundTag("inspectingStack");
 		NBTTagCompound journalTag = nbtTagCompound.getCompoundTag("journal");
@@ -126,6 +135,7 @@ public class TileEntityMicroscope extends MinechemTileEntity implements IInvento
 		inventory[1] = journalStack;
 	}
 
+	@Nullable
 	@Override
 	public ItemStack takeOutput() {
 		return null;
@@ -136,16 +146,18 @@ public class TileEntityMicroscope extends MinechemTileEntity implements IInvento
 		return 0;
 	}
 
+	@Nullable
 	@Override
 	public ItemStack takeInput() {
 		return inputTransactor.removeItem(true);
 	}
 
 	@Override
-	public int putInput(ItemStack input) {
+	public int putInput(@NotNull ItemStack input) {
 		return inputTransactor.add(input, true);
 	}
 
+	@Nullable
 	@Override
 	public ItemStack takeFusionStar() {
 		return null;
@@ -156,16 +168,18 @@ public class TileEntityMicroscope extends MinechemTileEntity implements IInvento
 		return 0;
 	}
 
+	@Nullable
 	@Override
 	public ItemStack takeJournal() {
 		return journalTransactor.removeItem(true);
 	}
 
 	@Override
-	public int putJournal(ItemStack journal) {
+	public int putJournal(@NotNull ItemStack journal) {
 		return journalTransactor.add(journal, true);
 	}
 
+	@Nullable
 	@Override
 	public String getMachineState() {
 		return null;
@@ -177,7 +191,7 @@ public class TileEntityMicroscope extends MinechemTileEntity implements IInvento
 	}
 
 	@Override
-	public boolean isItemValidForSlot(int i, ItemStack itemstack) {
+	public boolean isItemValidForSlot(int i, @NotNull ItemStack itemstack) {
 		if (i == kInput[0])
 			return true;
 		if (i == kJournal[0] && itemstack.itemID == MinechemItems.journal.itemID)

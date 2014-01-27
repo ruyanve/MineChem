@@ -12,6 +12,7 @@ import net.minecraft.util.Icon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeDirection;
+import org.jetbrains.annotations.NotNull;
 import pixlepix.minechem.particlephysics.helper.ParticleRegistry;
 import pixlepix.minechem.particlephysics.render.BlockRenderInfo;
 
@@ -48,6 +49,7 @@ public abstract class BaseParticle extends EntityLiving {
 
 	public abstract String getName();
 
+	@NotNull
 	public BlockRenderInfo getRenderIcon() {
 		Class key = this.getClass();
 		return new BlockRenderInfo(ParticleRegistry.icons.get(key));

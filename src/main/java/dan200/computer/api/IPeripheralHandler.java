@@ -6,9 +6,12 @@
 
 package dan200.computer.api;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * TODO: Document me
  */
 public interface IPeripheralHandler {
-    public IHostedPeripheral getPeripheral(net.minecraft.tileentity.TileEntity tile);
+	@NotNull
+	public IHostedPeripheral getPeripheral(net.minecraft.tileentity.TileEntity tile);
 }

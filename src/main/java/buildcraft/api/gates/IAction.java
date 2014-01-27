@@ -4,24 +4,26 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.util.Icon;
+import org.jetbrains.annotations.NotNull;
 
 public interface IAction {
 
-    /**
-     * Return your ID from the old API here, this is only used to convert old
-     * saves to the new format.
-     */
-    int getLegacyId();
+	/**
+	 * Return your ID from the old API here, this is only used to convert old
+	 * saves to the new format.
+	 */
+	int getLegacyId();
 
-    String getUniqueTag();
+	@NotNull
+	String getUniqueTag();
 
-    @SideOnly(Side.CLIENT)
-    Icon getIcon();
+	@SideOnly(Side.CLIENT)
+	Icon getIcon();
 
-    @SideOnly(Side.CLIENT)
-    void registerIcons(IconRegister iconRegister);
+	@SideOnly(Side.CLIENT)
+	void registerIcons(IconRegister iconRegister);
 
-    boolean hasParameter();
+	boolean hasParameter();
 
-    String getDescription();
+	String getDescription();
 }

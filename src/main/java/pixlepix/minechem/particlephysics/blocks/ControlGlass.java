@@ -8,6 +8,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import pixlepix.minechem.particlephysics.api.BaseParticle;
 import pixlepix.minechem.particlephysics.api.IParticleBouncer;
 import pixlepix.minechem.particlephysics.helper.BasicComplexBlock;
@@ -30,6 +32,7 @@ public class ControlGlass extends BasicComplexBlock implements IParticleBouncer 
 
 	}
 
+	@NotNull
 	@Override
 	public String getFront() {
 		// TODO Auto-generated method stub
@@ -41,6 +44,7 @@ public class ControlGlass extends BasicComplexBlock implements IParticleBouncer 
 		return true;
 	}
 
+	@NotNull
 	@Override
 	public String getTop() {
 		// TODO Auto-generated method stub
@@ -53,7 +57,7 @@ public class ControlGlass extends BasicComplexBlock implements IParticleBouncer 
 	}
 
 	@Override
-	public void addCollisionBoxesToList(World par1World, int par2, int par3, int par4, AxisAlignedBB par5AxisAlignedBB, List par6List, Entity par7Entity) {
+	public void addCollisionBoxesToList(@NotNull World par1World, int par2, int par3, int par4, @NotNull AxisAlignedBB par5AxisAlignedBB, @NotNull List par6List, Entity par7Entity) {
 		if (par7Entity instanceof BaseParticle && par1World.isBlockIndirectlyGettingPowered(par2, par3, par4)) {
 			return;
 		}
@@ -64,6 +68,7 @@ public class ControlGlass extends BasicComplexBlock implements IParticleBouncer 
 		}
 	}
 
+	@Nullable
 	@Override
 	public Class getTileEntityClass() {
 		return null;
@@ -75,6 +80,7 @@ public class ControlGlass extends BasicComplexBlock implements IParticleBouncer 
 
 	}
 
+	@NotNull
 	@Override
 	public String getName() {
 		return "Control Glass";
@@ -85,6 +91,7 @@ public class ControlGlass extends BasicComplexBlock implements IParticleBouncer 
 		return false;
 	}
 
+	@Nullable
 	@Override
 	public Class getItemBlock() {
 		return null;
@@ -97,7 +104,7 @@ public class ControlGlass extends BasicComplexBlock implements IParticleBouncer 
 	}
 
 	@Override
-	public boolean canBounce(World world, int x, int y, int z,
+	public boolean canBounce(@NotNull World world, int x, int y, int z,
 	                         BaseParticle particle) {
 		return !(world.isBlockIndirectlyGettingPowered(x, y, z));
 	}

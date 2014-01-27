@@ -15,6 +15,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.NotNull;
 import pixlepix.minechem.api.core.EnumElement;
 import pixlepix.minechem.common.GuiHandler;
 import pixlepix.minechem.common.ModMinechem;
@@ -36,7 +37,7 @@ public class ItemPolytool extends ItemPickaxe implements IEnergyContainerItem {
 		setUnlocalizedName("Polytool");
 	}
 
-	public static boolean validAlloyInfusion(ItemStack polytool, ItemStack element) {
+	public static boolean validAlloyInfusion(@NotNull ItemStack polytool, ItemStack element) {
 		if (element.getItem() instanceof ItemElement) {
 			PolytoolUpgradeType upgrade = PolytoolHelper.getTypeFromElement((ItemElement.getElement(element)), 1);
 			if (upgrade instanceof PolytoolTypeAlloy) {

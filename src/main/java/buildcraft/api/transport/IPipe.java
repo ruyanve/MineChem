@@ -10,36 +10,38 @@
 package buildcraft.api.transport;
 
 import net.minecraft.tileentity.TileEntity;
+import org.jetbrains.annotations.NotNull;
 
 public interface IPipe {
 
-    enum DrawingState {
-        DrawingPipe, DrawingRedWire, DrawingBlueWire, DrawingGreenWire, DrawingYellowWire, DrawingGate
-    }
+	enum DrawingState {
+		DrawingPipe, DrawingRedWire, DrawingBlueWire, DrawingGreenWire, DrawingYellowWire, DrawingGate
+	}
 
-    enum WireColor {
-        Red, Blue, Green, Yellow;
+	enum WireColor {
+		Red, Blue, Green, Yellow;
 
-        public WireColor reverse() {
-            switch (this) {
-                case Red:
-                    return Yellow;
-                case Blue:
-                    return Green;
-                case Green:
-                    return Blue;
-                default:
-                    return Red;
-            }
-        }
-    }
+		@NotNull
+		public WireColor reverse() {
+			switch (this) {
+				case Red:
+					return Yellow;
+				case Blue:
+					return Green;
+				case Green:
+					return Blue;
+				default:
+					return Red;
+			}
+		}
+	}
 
-    public boolean isWired(WireColor color);
+	public boolean isWired(WireColor color);
 
-    public boolean hasGate();
+	public boolean hasGate();
 
-    public TileEntity getContainer();
+	public TileEntity getContainer();
 
-    public boolean isWireConnectedTo(TileEntity tile, WireColor color);
+	public boolean isWireConnectedTo(TileEntity tile, WireColor color);
 
 }

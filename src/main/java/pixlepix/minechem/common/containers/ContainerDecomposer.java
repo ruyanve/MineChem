@@ -5,6 +5,8 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import pixlepix.minechem.api.core.IRadiationShield;
 import pixlepix.minechem.common.tileentity.TileEntityDecomposer;
 
@@ -15,7 +17,7 @@ public class ContainerDecomposer extends Container implements IRadiationShield {
 	protected final int kPlayerInventorySlotEnd;
 	protected final int kDecomposerInventoryEnd;
 
-	public ContainerDecomposer(InventoryPlayer inventoryPlayer, TileEntityDecomposer decomposer) {
+	public ContainerDecomposer(InventoryPlayer inventoryPlayer, @NotNull TileEntityDecomposer decomposer) {
 		this.decomposer = decomposer;
 		kPlayerInventorySlotStart = decomposer.getSizeInventory();
 		kPlayerInventorySlotEnd = kPlayerInventorySlotStart + (9 * 4);
@@ -55,6 +57,7 @@ public class ContainerDecomposer extends Container implements IRadiationShield {
 		return decomposer.isUseableByPlayer(entityPlayer);
 	}
 
+	@Nullable
 	@Override
 	public ItemStack transferStackInSlot(EntityPlayer entityPlayer, int slot) {
 		Slot slotObject = (Slot) inventorySlots.get(slot);

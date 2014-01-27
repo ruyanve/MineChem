@@ -11,6 +11,7 @@ import net.minecraftforge.event.ForgeSubscribe;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.oredict.OreDictionary;
+import org.jetbrains.annotations.NotNull;
 import pixlepix.minechem.api.core.*;
 import pixlepix.minechem.api.recipe.DecomposerRecipe;
 import pixlepix.minechem.api.recipe.DecomposerRecipeChance;
@@ -30,9 +31,12 @@ import java.util.Iterator;
 public class MinechemRecipes {
 
 	private static final MinechemRecipes instance = new MinechemRecipes();
+	@NotNull
 	public ArrayList unbondingRecipes = new ArrayList();
+	@NotNull
 	public ArrayList synthesisRecipes = new ArrayList();
 
+	@NotNull
 	public static MinechemRecipes getInstance() {
 		return instance;
 	}
@@ -1440,7 +1444,8 @@ public class MinechemRecipes {
 		return true;
 	}
 
-	private ItemStack createPoisonedItemStack(Item var1, int var2, EnumMolecule var3) {
+	@NotNull
+	private ItemStack createPoisonedItemStack(Item var1, int var2, @NotNull EnumMolecule var3) {
 		ItemStack var4 = new ItemStack(MinechemItems.molecule, 1, var3.id());
 		ItemStack var5 = new ItemStack(var1, 1, var2);
 		ItemStack var6 = new ItemStack(var1, 1, var2);
@@ -1452,7 +1457,7 @@ public class MinechemRecipes {
 		return var6;
 	}
 
-	private void registerPoisonRecipes(EnumMolecule molecule) {
+	private void registerPoisonRecipes(@NotNull EnumMolecule molecule) {
 
 		for (Item i : Item.itemsList) { // Thanks Adrian!
 
@@ -1508,7 +1513,7 @@ public class MinechemRecipes {
 	private ArrayList<OreDictionaryHandler> oreDictionaryHandlers;
 
 	@ForgeSubscribe
-	public void oreEvent(OreDictionary.OreRegisterEvent var1) {
+	public void oreEvent(@NotNull OreDictionary.OreRegisterEvent var1) {
 		if (var1.Name.contains("gemApatite")) {
 			DecomposerRecipe.add(new DecomposerRecipe(var1.Ore, new Chemical[]{
 					this.element(EnumElement.Ca, 5),
@@ -1674,18 +1679,22 @@ public class MinechemRecipes {
 
 	// END
 	// BEGIN MISC FUNCTIONS
+	@NotNull
 	private Element element(EnumElement var1, int var2) {
 		return new Element(var1, var2);
 	}
 
+	@NotNull
 	private Element element(EnumElement var1) {
 		return new Element(var1, 1);
 	}
 
+	@NotNull
 	private Molecule molecule(EnumMolecule var1, int var2) {
 		return new Molecule(var1, var2);
 	}
 
+	@NotNull
 	private Molecule molecule(EnumMolecule var1) {
 		return new Molecule(var1, 1);
 	}

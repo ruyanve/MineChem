@@ -1,6 +1,7 @@
 package pixlepix.minechem.common;
 
 import cpw.mods.fml.common.FMLLog;
+import org.jetbrains.annotations.NotNull;
 
 import javax.mail.Message;
 import javax.mail.Session;
@@ -18,6 +19,7 @@ public class AutoCrashReporter extends Handler {
 		FMLLog.getLogger().addHandler(this);
 	}
 
+	@NotNull
 	public static String readFileToString(File f) throws FileNotFoundException, IOException {
 
 		BufferedReader reader = new BufferedReader(new FileReader(f));

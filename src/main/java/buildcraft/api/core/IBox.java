@@ -10,21 +10,23 @@
 package buildcraft.api.core;
 
 import net.minecraft.world.World;
+import org.jetbrains.annotations.NotNull;
 
 public interface IBox {
 
-    public void expand(int amount);
+	public void expand(int amount);
 
-    public void contract(int amount);
+	public void contract(int amount);
 
-    public boolean contains(int x, int y, int z);
+	public boolean contains(int x, int y, int z);
 
-    public Position pMin();
+	@NotNull
+	public Position pMin();
 
-    public Position pMax();
+	public Position pMax();
 
-    public void createLasers(World world, LaserKind kind);
+	public void createLasers(World world, LaserKind kind);
 
-    public void deleteLasers();
+	public void deleteLasers();
 
 }

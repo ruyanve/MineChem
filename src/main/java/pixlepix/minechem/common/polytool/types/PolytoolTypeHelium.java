@@ -5,6 +5,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.NotNull;
 import pixlepix.minechem.api.core.EnumElement;
 import pixlepix.minechem.common.polytool.PolytoolUpgradeType;
 
@@ -23,7 +24,7 @@ public class PolytoolTypeHelium extends PolytoolUpgradeType {
 	}
 
 	@Override
-	public void hitEntity(ItemStack itemStack, EntityLivingBase target,
+	public void hitEntity(@NotNull ItemStack itemStack, EntityLivingBase target,
 	                      EntityLivingBase player) {
 
 		itemStack.stackTagCompound.setInteger("HeliumHitEntity", target.entityId);

@@ -16,6 +16,8 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.ForgeDirection;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import pixlepix.minechem.api.recipe.SynthesisRecipe;
 import pixlepix.minechem.api.util.Util;
 import pixlepix.minechem.client.ModelSynthesizer;
@@ -43,6 +45,7 @@ public class TileEntitySynthesis extends MinechemTileEntity implements ISidedInv
 	//Slots that contain *real* items
 	//For the purpose of dropping upon break. These are bottles, storage, and
 	// journal.
+	@NotNull
 	public static final int[] kRealSlots;
 
 	// Ensure that the list of real slots stays in sync with the above defs.
@@ -62,6 +65,7 @@ public class TileEntitySynthesis extends MinechemTileEntity implements ISidedInv
 		}
 	}
 
+	@Nullable
 	private SynthesisRecipe currentRecipe;
 	public ModelSynthesizer model;
 	public static final int kSizeOutput = 1;
@@ -98,7 +102,7 @@ public class TileEntitySynthesis extends MinechemTileEntity implements ISidedInv
 	}
 
 	@Override
-	public int addItem(ItemStack stack, boolean doAdd, ForgeDirection direction) {
+	public int addItem(@NotNull ItemStack stack, boolean doAdd, ForgeDirection direction) {
 		return storageTransactor.add(stack, doAdd);
 	}
 
@@ -116,7 +120,7 @@ public class TileEntitySynthesis extends MinechemTileEntity implements ISidedInv
 	public void closeChest() {
 	}
 
-	private boolean valueIn(int value, int[] arr) {
+	private boolean valueIn(int value, @Nullable int[] arr) {
 		if (arr == null) {
 			return false;
 		}
@@ -175,6 +179,7 @@ public class TileEntitySynthesis extends MinechemTileEntity implements ISidedInv
 		return !isGhostSlot(slotId);
 	}
 
+	@Nullable
 	@Override
 	public ItemStack decrStackSize(int slot, int amount) {
 		if (slot == kJournal[0])
@@ -213,12 +218,14 @@ public class TileEntitySynthesis extends MinechemTileEntity implements ISidedInv
 		}
 	}
 
+	@Nullable
 	@Override
 	public ItemStack[] extractItem(boolean doRemove, ForgeDirection direction, int maxItemCount) {
 
 		return extractOutput(doRemove, maxItemCount);
 	}
 
+	@Nullable
 	public ItemStack[] extractOutput(boolean doRemove, int maxItemCount) {
 		if (currentRecipe == null || !takeStacksFromStorage(false) || !canAffordRecipe(currentRecipe))
 			return null;
@@ -231,7 +238,7 @@ public class TileEntitySynthesis extends MinechemTileEntity implements ISidedInv
 		return output;
 	}
 
-
+	@Nullable
 	public SynthesisRecipe getCurrentRecipe() {
 		return currentRecipe;
 	}
@@ -240,11 +247,13 @@ public class TileEntitySynthesis extends MinechemTileEntity implements ISidedInv
 		return worldObj.getBlockMetadata(xCoord, yCoord, zCoord);
 	}
 
+	@NotNull
 	@Override
 	public String getInvName() {
 		return "container.synthesis";
 	}
 
+	@Nullable
 	@Override
 	public LinkedList<ITrigger> getNeighborTriggers(Block block, TileEntity tile) {
 		if (tile instanceof TileEntitySynthesis) {
@@ -256,11 +265,13 @@ public class TileEntitySynthesis extends MinechemTileEntity implements ISidedInv
 		return null;
 	}
 
+	@Nullable
 	@Override
 	public LinkedList<ITrigger> getPipeTriggers(IPipe pipe) {
 		return null;
 	}
 
+	@NotNull
 	public ItemStack[] getRecipeMatrixItems() {
 		return recipeMatrix.copyInventoryToArray();
 	}
@@ -279,14 +290,13 @@ public class TileEntitySynthesis extends MinechemTileEntity implements ISidedInv
 		return hasFullEnergy;
 	}
 
-
 	@Override
 	public boolean isJammed() {
 		return false;
 	}
 
 	@Override
-	public boolean isUseableByPlayer(EntityPlayer entityPlayer) {
+	public boolean isUseableByPlayer(@NotNull EntityPlayer entityPlayer) {
 		double dist = entityPlayer.getDistanceSq((double) xCoord + 0.5D, (double) yCoord + 0.5D, (double) zCoord + 0.5D);
 		return worldObj.getBlockTileEntity(xCoord, yCoord, zCoord) != this ? false : dist <= 64.0D;
 	}
@@ -303,7 +313,7 @@ public class TileEntitySynthesis extends MinechemTileEntity implements ISidedInv
 	}
 
 	@Override
-	public void readFromNBT(NBTTagCompound nbtTagCompound) {
+	public void readFromNBT(@NotNull NBTTagCompound nbtTagCompound) {
 		super.readFromNBT(nbtTagCompound);
 		NBTTagList inventoryTagList = nbtTagCompound.getTagList("inventory");
 		inventory = MinechemHelper.readTagListToItemStackArray(inventoryTagList, new ItemStack[getSizeInventory()]);
@@ -317,7 +327,7 @@ public class TileEntitySynthesis extends MinechemTileEntity implements ISidedInv
 	}
 
 	@Override
-	public void setInventorySlotContents(int slot, ItemStack itemstack) {
+	public void setInventorySlotContents(int slot, @Nullable ItemStack itemstack) {
 
 		if (slot == kOutput[0] && getStackInSlot(slot) != null) {
 			if (itemstack == null) {
@@ -385,14 +395,13 @@ public class TileEntitySynthesis extends MinechemTileEntity implements ISidedInv
 	}
 
 	@Override
-	public void writeToNBT(NBTTagCompound nbtTagCompound) {
+	public void writeToNBT(@NotNull NBTTagCompound nbtTagCompound) {
 		super.writeToNBT(nbtTagCompound);
 		NBTTagList inventoryTagList = MinechemHelper.writeItemStackArrayToTagList(inventory);
 		nbtTagCompound.setTag("inventory", inventoryTagList);
 	}
 
-
-	private boolean canAffordRecipe(SynthesisRecipe recipe) {
+	private boolean canAffordRecipe(@NotNull SynthesisRecipe recipe) {
 		int energyCost = recipe.energyCost();
 		return this.getEnergyStored() >= energyCost;
 	}
@@ -411,7 +420,7 @@ public class TileEntitySynthesis extends MinechemTileEntity implements ISidedInv
 		}
 	}
 
-	private void onPutJournal(ItemStack itemstack) {
+	private void onPutJournal(@NotNull ItemStack itemstack) {
 		ItemStack activeItem = MinechemItems.journal.getActiveStack(itemstack);
 		if (activeItem != null) {
 			SynthesisRecipe recipe = SynthesisRecipeHandler.instance.getRecipeFromOutput(activeItem);
@@ -421,14 +430,14 @@ public class TileEntitySynthesis extends MinechemTileEntity implements ISidedInv
 
 	public long lastRecipeTick = 0;
 
-	private void takeEnergy(SynthesisRecipe recipe) {
+	private void takeEnergy(@NotNull SynthesisRecipe recipe) {
 		int energyCost = recipe.energyCost();
 		this.lastEnergyUsed = energyCost;
 		this.lastRecipeTick = worldObj.getTotalWorldTime();
 		this.energyStored -= energyCost;
 	}
 
-	private boolean takeStackFromStorage(ItemStack ingredient, ItemStack[] storage) {
+	private boolean takeStackFromStorage(@NotNull ItemStack ingredient, @NotNull ItemStack[] storage) {
 		int ingredientAmountLeft = ingredient.stackSize;
 		for (int slot = 0; slot < storage.length; slot++) {
 			ItemStack storageItem = storage[slot];
@@ -453,10 +462,12 @@ public class TileEntitySynthesis extends MinechemTileEntity implements ISidedInv
 		return false;
 	}
 
+	@Nullable
 	public List<ItemStack> getMaximumOutput() {
 		return getOutput(0, true);
 	}
 
+	@Nullable
 	public ItemStack getOutputTemplate() {
 		ItemStack template = null;
 		ItemStack outputStack = inventory[kOutput[0]];
@@ -468,6 +479,7 @@ public class TileEntitySynthesis extends MinechemTileEntity implements ISidedInv
 		return template;
 	}
 
+	@Nullable
 	public List<ItemStack> getOutput(int amount, boolean all) {
 		if (currentRecipe == null)
 			return null;
@@ -496,7 +508,7 @@ public class TileEntitySynthesis extends MinechemTileEntity implements ISidedInv
 		return outputs;
 	}
 
-	public void setRecipe(SynthesisRecipe recipe) {
+	public void setRecipe(@Nullable SynthesisRecipe recipe) {
 		clearRecipeMatrix();
 		if (recipe != null) {
 			ItemStack[] ingredients = MinechemHelper.convertChemicalArrayIntoItemStackArray(recipe.getShapedRecipe());
@@ -507,27 +519,29 @@ public class TileEntitySynthesis extends MinechemTileEntity implements ISidedInv
 		}
 	}
 
-
+	@Nullable
 	@Override
 	public ItemStack takeOutput() {
 		return outputTransactor.removeItem(true);
 	}
 
 	@Override
-	public int putOutput(ItemStack output) {
+	public int putOutput(@NotNull ItemStack output) {
 		return outputTransactor.add(output, true);
 	}
 
+	@Nullable
 	@Override
 	public ItemStack takeInput() {
 		return storageTransactor.removeItem(true);
 	}
 
 	@Override
-	public int putInput(ItemStack input) {
+	public int putInput(@NotNull ItemStack input) {
 		return storageTransactor.add(input, true);
 	}
 
+	@Nullable
 	@Override
 	public ItemStack takeFusionStar() {
 		return null;
@@ -538,16 +552,18 @@ public class TileEntitySynthesis extends MinechemTileEntity implements ISidedInv
 		return 0;
 	}
 
+	@Nullable
 	@Override
 	public ItemStack takeJournal() {
 		return journalTransactor.removeItem(true);
 	}
 
 	@Override
-	public int putJournal(ItemStack journal) {
+	public int putJournal(@NotNull ItemStack journal) {
 		return journalTransactor.add(journal, true);
 	}
 
+	@NotNull
 	@Override
 	public String getMachineState() {
 		if (currentRecipe == null) {
@@ -566,6 +582,7 @@ public class TileEntitySynthesis extends MinechemTileEntity implements ISidedInv
 		return false;
 	}
 
+	@NotNull
 	public int[] getSizeInventorySide(int side) {
 		switch (side) {
 			case 0:
@@ -584,6 +601,7 @@ public class TileEntitySynthesis extends MinechemTileEntity implements ISidedInv
 		return true;
 	}
 
+	@NotNull
 	@Override
 	public int[] getAccessibleSlotsFromSide(int var1) {
 		//This is so hacky
@@ -613,7 +631,7 @@ public class TileEntitySynthesis extends MinechemTileEntity implements ISidedInv
 		return true;
 	}
 
-	public void addStackToInventory(ItemStack newStack) {
+	public void addStackToInventory(@NotNull ItemStack newStack) {
 		for (int i = 0; i < this.storageInventory.getSizeInventory(); i++) {
 			ItemStack stack = this.storageInventory.getStackInSlot(i);
 			if (stack == null) {

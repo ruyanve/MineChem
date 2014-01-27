@@ -13,23 +13,24 @@ import buildcraft.api.blueprints.BptBlock;
 import buildcraft.api.blueprints.BptSlotInfo;
 import buildcraft.api.blueprints.IBptContext;
 import net.minecraft.item.ItemStack;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.LinkedList;
 
 @Deprecated
 public class BptBlockCustomStack extends BptBlock {
 
-    final ItemStack customStack;
+	final ItemStack customStack;
 
-    public BptBlockCustomStack(int blockId, ItemStack customStack) {
-        super(blockId);
+	public BptBlockCustomStack(int blockId, ItemStack customStack) {
+		super(blockId);
 
-        this.customStack = customStack;
-    }
+		this.customStack = customStack;
+	}
 
-    @Override
-    public void addRequirements(BptSlotInfo slot, IBptContext context, LinkedList<ItemStack> requirements) {
-        requirements.add(customStack.copy());
-    }
+	@Override
+	public void addRequirements(BptSlotInfo slot, IBptContext context, @NotNull LinkedList<ItemStack> requirements) {
+		requirements.add(customStack.copy());
+	}
 
 }

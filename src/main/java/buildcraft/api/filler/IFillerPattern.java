@@ -6,18 +6,20 @@ import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Icon;
+import org.jetbrains.annotations.NotNull;
 
 public interface IFillerPattern {
 
-    public int getId();
+	public int getId();
 
-    public void setId(int id);
+	public void setId(int id);
 
-    public boolean iteratePattern(TileEntity tile, IBox box, ItemStack stackToPlace);
+	public boolean iteratePattern(TileEntity tile, IBox box, ItemStack stackToPlace);
 
-    @SideOnly(Side.CLIENT)
-    public Icon getTexture();
+	@NotNull
+	@SideOnly(Side.CLIENT)
+	public Icon getTexture();
 
-    public String getName();
+	public String getName();
 
 }

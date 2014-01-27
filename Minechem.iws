@@ -1,11 +1,372 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="ANALYZE_TEST_SOURCES" value="false" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="70b8cda3-24f5-4795-8bab-8fc77abea077" name="Default" comment="Changed 'mj' to 'rf' in energy tabs">
+      <change type="MOVED" beforePath="$PROJECT_DIR$/MineChem.ipr" afterPath="$PROJECT_DIR$/MineChem.ipr" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/buildcraft/api/gates/ActionManager.java" afterPath="$PROJECT_DIR$/src/main/java/buildcraft/api/gates/ActionManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/recipe/handlers/AppliedEnergisticsOreDictionaryHandler.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/recipe/handlers/AppliedEnergisticsOreDictionaryHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/assembler/AssemblerRecipe.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/assembler/AssemblerRecipe.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/buildcraft/api/recipes/AssemblyRecipe.java" afterPath="$PROJECT_DIR$/src/main/java/buildcraft/api/recipes/AssemblyRecipe.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/AutoCrashReporter.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/AutoCrashReporter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/api/BaseParticle.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/api/BaseParticle.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/helper/BasicComplexBlock.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/helper/BasicComplexBlock.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/helper/BetterLoader.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/helper/BetterLoader.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/entity/BlankParticle.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/entity/BlankParticle.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/entity/BlazepowderParticle.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/entity/BlazepowderParticle.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/blocks/BlockBlueprintProjector.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/blocks/BlockBlueprintProjector.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/blocks/BlockChemicalStorage.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/blocks/BlockChemicalStorage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/blocks/BlockDecomposer.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/blocks/BlockDecomposer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/blocks/BlockFusion.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/blocks/BlockFusion.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/blocks/BlockGhostBlock.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/blocks/BlockGhostBlock.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/blocks/BlockMicroscope.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/blocks/BlockMicroscope.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/blocks/BlockMinechemContainer.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/blocks/BlockMinechemContainer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/render/BlockRenderInfo.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/render/BlockRenderInfo.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/buildcraft/api/blueprints/BlockSignature.java" afterPath="$PROJECT_DIR$/src/main/java/buildcraft/api/blueprints/BlockSignature.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/blocks/BlockSynthesis.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/blocks/BlockSynthesis.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/blueprint/BlueprintDirewolf.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/blueprint/BlueprintDirewolf.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/blueprint/BlueprintFission.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/blueprint/BlueprintFission.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/blueprint/BlueprintFusion.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/blueprint/BlueprintFusion.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/buildcraft/api/blueprints/BlueprintManager.java" afterPath="$PROJECT_DIR$/src/main/java/buildcraft/api/blueprints/BlueprintManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ljdp/easypacket/serializer/BooleanSerializer.java" afterPath="$PROJECT_DIR$/src/main/java/ljdp/easypacket/serializer/BooleanSerializer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/inventory/BoundedInventory.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/inventory/BoundedInventory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/tileentity/BoundedInventory.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/tileentity/BoundedInventory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/buildcraft/api/blueprints/BptBlock.java" afterPath="$PROJECT_DIR$/src/main/java/buildcraft/api/blueprints/BptBlock.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/buildcraft/api/bptblocks/BptBlockBed.java" afterPath="$PROJECT_DIR$/src/main/java/buildcraft/api/bptblocks/BptBlockBed.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/buildcraft/api/bptblocks/BptBlockCustomStack.java" afterPath="$PROJECT_DIR$/src/main/java/buildcraft/api/bptblocks/BptBlockCustomStack.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/buildcraft/api/bptblocks/BptBlockDelegate.java" afterPath="$PROJECT_DIR$/src/main/java/buildcraft/api/bptblocks/BptBlockDelegate.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/buildcraft/api/bptblocks/BptBlockDirt.java" afterPath="$PROJECT_DIR$/src/main/java/buildcraft/api/bptblocks/BptBlockDirt.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/buildcraft/api/bptblocks/BptBlockDoor.java" afterPath="$PROJECT_DIR$/src/main/java/buildcraft/api/bptblocks/BptBlockDoor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/buildcraft/api/bptblocks/BptBlockFluid.java" afterPath="$PROJECT_DIR$/src/main/java/buildcraft/api/bptblocks/BptBlockFluid.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/buildcraft/api/bptblocks/BptBlockIgnore.java" afterPath="$PROJECT_DIR$/src/main/java/buildcraft/api/bptblocks/BptBlockIgnore.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/buildcraft/api/bptblocks/BptBlockIgnoreMeta.java" afterPath="$PROJECT_DIR$/src/main/java/buildcraft/api/bptblocks/BptBlockIgnoreMeta.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/buildcraft/api/bptblocks/BptBlockInventory.java" afterPath="$PROJECT_DIR$/src/main/java/buildcraft/api/bptblocks/BptBlockInventory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/buildcraft/api/bptblocks/BptBlockLever.java" afterPath="$PROJECT_DIR$/src/main/java/buildcraft/api/bptblocks/BptBlockLever.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/buildcraft/api/bptblocks/BptBlockPiston.java" afterPath="$PROJECT_DIR$/src/main/java/buildcraft/api/bptblocks/BptBlockPiston.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/buildcraft/api/bptblocks/BptBlockPumpkin.java" afterPath="$PROJECT_DIR$/src/main/java/buildcraft/api/bptblocks/BptBlockPumpkin.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/buildcraft/api/bptblocks/BptBlockRedstoneRepeater.java" afterPath="$PROJECT_DIR$/src/main/java/buildcraft/api/bptblocks/BptBlockRedstoneRepeater.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/buildcraft/api/bptblocks/BptBlockRotateInventory.java" afterPath="$PROJECT_DIR$/src/main/java/buildcraft/api/bptblocks/BptBlockRotateInventory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/buildcraft/api/bptblocks/BptBlockRotateMeta.java" afterPath="$PROJECT_DIR$/src/main/java/buildcraft/api/bptblocks/BptBlockRotateMeta.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/buildcraft/api/bptblocks/BptBlockSign.java" afterPath="$PROJECT_DIR$/src/main/java/buildcraft/api/bptblocks/BptBlockSign.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/buildcraft/api/bptblocks/BptBlockStairs.java" afterPath="$PROJECT_DIR$/src/main/java/buildcraft/api/bptblocks/BptBlockStairs.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/buildcraft/api/blueprints/BptBlockUtils.java" afterPath="$PROJECT_DIR$/src/main/java/buildcraft/api/blueprints/BptBlockUtils.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/buildcraft/api/bptblocks/BptBlockWallSide.java" afterPath="$PROJECT_DIR$/src/main/java/buildcraft/api/bptblocks/BptBlockWallSide.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/buildcraft/api/blueprints/BptSlotInfo.java" afterPath="$PROJECT_DIR$/src/main/java/buildcraft/api/blueprints/BptSlotInfo.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ljdp/easypacket/serializer/ByteArraySerializer.java" afterPath="$PROJECT_DIR$/src/main/java/ljdp/easypacket/serializer/ByteArraySerializer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/computercraft/CCItems.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/computercraft/CCItems.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/computercraft/CCMain.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/computercraft/CCMain.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/entity/CharcoalParticle.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/entity/CharcoalParticle.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/computercraft/ChemistryTurtleUpgradePeripherial.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/computercraft/ChemistryTurtleUpgradePeripherial.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/computercraft/ChemistryUpgrade.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/computercraft/ChemistryUpgrade.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/entity/ClayParticle.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/entity/ClayParticle.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/computercraft/method/ClearSynthesisRecipe.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/computercraft/method/ClearSynthesisRecipe.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/entity/CoalParticle.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/entity/CoalParticle.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/coating/CoatingRecipe.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/coating/CoatingRecipe.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/coating/CoatingSubscribe.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/coating/CoatingSubscribe.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/CommonProxy.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/CommonProxy.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/dan200/computer/api/ComputerCraftAPI.java" afterPath="$PROJECT_DIR$/src/main/java/dan200/computer/api/ComputerCraftAPI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/entity/ConcentratedParticle.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/entity/ConcentratedParticle.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/recipe/ConfigurableRecipies.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/recipe/ConfigurableRecipies.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/containers/ContainerChemicalStorage.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/containers/ContainerChemicalStorage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/containers/ContainerChemistJournal.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/containers/ContainerChemistJournal.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/containers/ContainerDecomposer.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/containers/ContainerDecomposer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/gui/ContainerEmitter.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/gui/ContainerEmitter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/containers/ContainerFission.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/containers/ContainerFission.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/containers/ContainerFusion.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/containers/ContainerFusion.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/containers/ContainerMicroscope.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/containers/ContainerMicroscope.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/ContainerPolytool.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/ContainerPolytool.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/containers/ContainerProjector.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/containers/ContainerProjector.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/containers/ContainerSynthesis.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/containers/ContainerSynthesis.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/containers/ContainerWithFakeSlots.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/containers/ContainerWithFakeSlots.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/blocks/ControlGlass.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/blocks/ControlGlass.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/CreativeTabMinechem.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/CreativeTabMinechem.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/modstats/reporter/v1/DataSender.java" afterPath="$PROJECT_DIR$/src/main/java/org/modstats/reporter/v1/DataSender.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/recipe/DecomposerFluidRecipe.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/recipe/DecomposerFluidRecipe.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/nei/DecomposerNEIRecipeHandler.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/nei/DecomposerNEIRecipeHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/api/recipe/DecomposerRecipe.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/api/recipe/DecomposerRecipe.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/api/recipe/DecomposerRecipeChance.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/api/recipe/DecomposerRecipeChance.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/recipe/DecomposerRecipeHandler.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/recipe/DecomposerRecipeHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/api/recipe/DecomposerRecipeSelect.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/api/recipe/DecomposerRecipeSelect.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/recipe/handlers/DefaultOreDictionaryHandler.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/recipe/handlers/DefaultOreDictionaryHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/utils/DirectionMultiplier.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/utils/DirectionMultiplier.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ljdp/easypacket/serializer/DoubleSerializer.java" afterPath="$PROJECT_DIR$/src/main/java/ljdp/easypacket/serializer/DoubleSerializer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ljdp/easypacket/EasyPacketDispatcher.java" afterPath="$PROJECT_DIR$/src/main/java/ljdp/easypacket/EasyPacketDispatcher.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ljdp/easypacket/EasyPacketHandler.java" afterPath="$PROJECT_DIR$/src/main/java/ljdp/easypacket/EasyPacketHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/api/core/Element.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/api/core/Element.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/blocks/Emitter.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/blocks/Emitter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/tile/EmitterTileEntity.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/tile/EmitterTileEntity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/coating/EnchantmentCoated.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/coating/EnchantmentCoated.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cofh/api/energy/EnergyStorage.java" afterPath="$PROJECT_DIR$/src/main/java/cofh/api/energy/EnergyStorage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ic2/api/energy/event/EnergyTileEvent.java" afterPath="$PROJECT_DIR$/src/main/java/ic2/api/energy/event/EnergyTileEvent.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ic2/api/energy/event/EnergyTileLoadEvent.java" afterPath="$PROJECT_DIR$/src/main/java/ic2/api/energy/event/EnergyTileLoadEvent.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ic2/api/energy/event/EnergyTileUnloadEvent.java" afterPath="$PROJECT_DIR$/src/main/java/ic2/api/energy/event/EnergyTileUnloadEvent.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/EnumColor.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/EnumColor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/helper/EnumColor.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/helper/EnumColor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/api/core/EnumElement.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/api/core/EnumElement.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/api/core/EnumMineral.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/api/core/EnumMineral.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/api/core/EnumMolecule.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/api/core/EnumMolecule.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ljdp/easypacket/serializer/FloatSerializer.java" afterPath="$PROJECT_DIR$/src/main/java/ljdp/easypacket/serializer/FloatSerializer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/fluid/FluidChemical.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/fluid/FluidChemical.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/fluid/FluidElement.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/fluid/FluidElement.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/fluid/FluidHelper.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/fluid/FluidHelper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/GMailAuthenticator.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/GMailAuthenticator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/computercraft/method/GetAtomicMass.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/computercraft/method/GetAtomicMass.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/computercraft/method/GetChemicalName.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/computercraft/method/GetChemicalName.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/computercraft/method/GetChemicals.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/computercraft/method/GetChemicals.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/computercraft/method/GetFormula.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/computercraft/method/GetFormula.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/computercraft/method/GetMachineState.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/computercraft/method/GetMachineState.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/computercraft/method/GetRadioactivity.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/computercraft/method/GetRadioactivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/computercraft/method/GetTicksUntilDecay.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/computercraft/method/GetTicksUntilDecay.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/entity/GlassParticle.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/entity/GlassParticle.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/gui/GuiChemicalStorage.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/gui/GuiChemicalStorage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/gui/GuiChemistJournal.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/gui/GuiChemistJournal.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/gui/GuiContainerTabbed.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/gui/GuiContainerTabbed.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/gui/GuiDecomposer.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/gui/GuiDecomposer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/GuiElementHelper.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/GuiElementHelper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/gui/GuiEmitter.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/gui/GuiEmitter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/gui/GuiFakeSlot.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/gui/GuiFakeSlot.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/gui/GuiFusion.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/gui/GuiFusion.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/GuiHandler.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/GuiHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/gui/GuiHandler.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/gui/GuiHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/gui/GuiMicroscope.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/gui/GuiMicroscope.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/gui/GuiMinechemContainer.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/gui/GuiMinechemContainer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/GuiPolytool.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/GuiPolytool.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/gui/GuiProjector.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/gui/GuiProjector.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/gui/GuiRectangle.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/gui/GuiRectangle.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/gui/GuiTableOfElements.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/gui/GuiTableOfElements.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/gui/GuiToggleSwitch.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/gui/GuiToggleSwitch.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/entity/GunpowderParticle.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/entity/GunpowderParticle.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/buildcraft/api/gates/IAction.java" afterPath="$PROJECT_DIR$/src/main/java/buildcraft/api/gates/IAction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/buildcraft/api/gates/IActionProvider.java" afterPath="$PROJECT_DIR$/src/main/java/buildcraft/api/gates/IActionProvider.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/helper/IBlock.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/helper/IBlock.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/buildcraft/api/core/IBox.java" afterPath="$PROJECT_DIR$/src/main/java/buildcraft/api/core/IBox.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/buildcraft/api/blueprints/IBptContext.java" afterPath="$PROJECT_DIR$/src/main/java/buildcraft/api/blueprints/IBptContext.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/computercraft/ICCMethod.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/computercraft/ICCMethod.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/dan200/computer/api/IComputerAccess.java" afterPath="$PROJECT_DIR$/src/main/java/dan200/computer/api/IComputerAccess.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ic2/api/item/IDebuggable.java" afterPath="$PROJECT_DIR$/src/main/java/ic2/api/item/IDebuggable.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cofh/api/block/IDismantleable.java" afterPath="$PROJECT_DIR$/src/main/java/cofh/api/block/IDismantleable.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ic2/api/item/IElectricItemManager.java" afterPath="$PROJECT_DIR$/src/main/java/ic2/api/item/IElectricItemManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cofh/api/transport/IEnderAttuned.java" afterPath="$PROJECT_DIR$/src/main/java/cofh/api/transport/IEnderAttuned.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cofh/api/world/IFeatureGenerator.java" afterPath="$PROJECT_DIR$/src/main/java/cofh/api/world/IFeatureGenerator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/buildcraft/api/filler/IFillerPattern.java" afterPath="$PROJECT_DIR$/src/main/java/buildcraft/api/filler/IFillerPattern.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/buildcraft/api/filler/IFillerRegistry.java" afterPath="$PROJECT_DIR$/src/main/java/buildcraft/api/filler/IFillerRegistry.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/buildcraft/api/core/IIconProvider.java" afterPath="$PROJECT_DIR$/src/main/java/buildcraft/api/core/IIconProvider.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cofh/api/item/IInventoryContainerItem.java" afterPath="$PROJECT_DIR$/src/main/java/cofh/api/item/IInventoryContainerItem.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cofh/api/transport/IItemConduit.java" afterPath="$PROJECT_DIR$/src/main/java/cofh/api/transport/IItemConduit.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ic2/api/item/IItemHudInfo.java" afterPath="$PROJECT_DIR$/src/main/java/ic2/api/item/IItemHudInfo.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/dan200/computer/api/IMedia.java" afterPath="$PROJECT_DIR$/src/main/java/dan200/computer/api/IMedia.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ic2/api/energy/tile/IMetaDelegate.java" afterPath="$PROJECT_DIR$/src/main/java/ic2/api/energy/tile/IMetaDelegate.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/fluid/IMinechemFluid.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/fluid/IMinechemFluid.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/computercraft/IMinechemMachinePeripheral.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/computercraft/IMinechemMachinePeripheral.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/codechicken/nei/api/INEIGuiHandler.java" afterPath="$PROJECT_DIR$/src/main/java/codechicken/nei/api/INEIGuiHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/buildcraft/api/gates/IOverrideDefaultTriggers.java" afterPath="$PROJECT_DIR$/src/main/java/buildcraft/api/gates/IOverrideDefaultTriggers.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/dan200/computer/api/IPeripheralHandler.java" afterPath="$PROJECT_DIR$/src/main/java/dan200/computer/api/IPeripheralHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/buildcraft/api/transport/IPipe.java" afterPath="$PROJECT_DIR$/src/main/java/buildcraft/api/transport/IPipe.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/buildcraft/api/transport/IPipeConnection.java" afterPath="$PROJECT_DIR$/src/main/java/buildcraft/api/transport/IPipeConnection.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/buildcraft/api/transport/IPipeTile.java" afterPath="$PROJECT_DIR$/src/main/java/buildcraft/api/transport/IPipeTile.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/buildcraft/api/power/IPowerReceptor.java" afterPath="$PROJECT_DIR$/src/main/java/buildcraft/api/power/IPowerReceptor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cofh/api/item/ISecureItem.java" afterPath="$PROJECT_DIR$/src/main/java/cofh/api/item/ISecureItem.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cofh/api/tileentity/ISecureTile.java" afterPath="$PROJECT_DIR$/src/main/java/cofh/api/tileentity/ISecureTile.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/buildcraft/api/inventory/ISelectiveInventory.java" afterPath="$PROJECT_DIR$/src/main/java/buildcraft/api/inventory/ISelectiveInventory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/assembler/IShapeType.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/assembler/IShapeType.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cofh/api/tileentity/ISidedBlockTexture.java" afterPath="$PROJECT_DIR$/src/main/java/cofh/api/tileentity/ISidedBlockTexture.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ic2/api/item/ISpecialElectricItem.java" afterPath="$PROJECT_DIR$/src/main/java/ic2/api/item/ISpecialElectricItem.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/buildcraft/api/inventory/ISpecialInventory.java" afterPath="$PROJECT_DIR$/src/main/java/buildcraft/api/inventory/ISpecialInventory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cofh/api/tileentity/ITileInfo.java" afterPath="$PROJECT_DIR$/src/main/java/cofh/api/tileentity/ITileInfo.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cofh/api/item/ITinkerableItem.java" afterPath="$PROJECT_DIR$/src/main/java/cofh/api/item/ITinkerableItem.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/buildcraft/api/tools/IToolPipette.java" afterPath="$PROJECT_DIR$/src/main/java/buildcraft/api/tools/IToolPipette.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/buildcraft/api/gates/ITrigger.java" afterPath="$PROJECT_DIR$/src/main/java/buildcraft/api/gates/ITrigger.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/buildcraft/api/gates/ITriggerProvider.java" afterPath="$PROJECT_DIR$/src/main/java/buildcraft/api/gates/ITriggerProvider.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/dan200/turtle/api/ITurtleAccess.java" afterPath="$PROJECT_DIR$/src/main/java/dan200/turtle/api/ITurtleAccess.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/blocks/InfiniteEmitter.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/blocks/InfiniteEmitter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ljdp/easypacket/serializer/IntegerSerializer.java" afterPath="$PROJECT_DIR$/src/main/java/ljdp/easypacket/serializer/IntegerSerializer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/computercraft/method/InteractMachine.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/computercraft/method/InteractMachine.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/buildcraft/api/fuels/IronEngineCoolant.java" afterPath="$PROJECT_DIR$/src/main/java/buildcraft/api/fuels/IronEngineCoolant.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/buildcraft/api/fuels/IronEngineFuel.java" afterPath="$PROJECT_DIR$/src/main/java/buildcraft/api/fuels/IronEngineFuel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/items/ItemArmorRadiationShield.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/items/ItemArmorRadiationShield.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/assembler/ItemAssembler.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/assembler/ItemAssembler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/items/ItemAtomicManipulator.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/items/ItemAtomicManipulator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/items/ItemBlockFusion.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/items/ItemBlockFusion.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/items/ItemBlueprint.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/items/ItemBlueprint.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/render/item/ItemBlueprintPrinterRenderer.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/render/item/ItemBlueprintPrinterRenderer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/render/item/ItemBlueprintProjectorRenderer.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/render/item/ItemBlueprintProjectorRenderer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/items/ItemChemistJournal.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/items/ItemChemistJournal.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/computercraft/ItemChemistryUpgrade.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/computercraft/ItemChemistryUpgrade.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/render/item/ItemDecomposerRenderer.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/render/item/ItemDecomposerRenderer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/items/ItemElement.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/items/ItemElement.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/render/item/ItemElementRenderer.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/render/item/ItemElementRenderer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cofh/api/energy/ItemEnergyContainer.java" afterPath="$PROJECT_DIR$/src/main/java/cofh/api/energy/ItemEnergyContainer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/items/ItemFusionStar.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/items/ItemFusionStar.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/items/ItemGhostBlock.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/items/ItemGhostBlock.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/items/ItemLens.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/items/ItemLens.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/render/item/ItemMicroscopeRenderer.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/render/item/ItemMicroscopeRenderer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/render/item/ItemMinechemRenderer.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/render/item/ItemMinechemRenderer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/items/ItemMolecule.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/items/ItemMolecule.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/render/item/ItemMoleculeRenderer.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/render/item/ItemMoleculeRenderer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/items/ItemPills.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/items/ItemPills.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/ItemPolytool.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/ItemPolytool.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/buildcraft/api/blueprints/ItemSignature.java" afterPath="$PROJECT_DIR$/src/main/java/buildcraft/api/blueprints/ItemSignature.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ljdp/easypacket/serializer/ItemStackSerializer.java" afterPath="$PROJECT_DIR$/src/main/java/ljdp/easypacket/serializer/ItemStackSerializer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/render/item/ItemSynthesisRenderer.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/render/item/ItemSynthesisRenderer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/items/ItemTestTube.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/items/ItemTestTube.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ic2/api/item/ItemWrapper.java" afterPath="$PROJECT_DIR$/src/main/java/ic2/api/item/ItemWrapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ic2/api/item/Items.java" afterPath="$PROJECT_DIR$/src/main/java/ic2/api/item/Items.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/entity/LeafParticle.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/entity/LeafParticle.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/utils/LocalPosition.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/utils/LocalPosition.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ljdp/easypacket/serializer/LongSerializer.java" afterPath="$PROJECT_DIR$/src/main/java/ljdp/easypacket/serializer/LongSerializer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/sound/LoopingSound.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/sound/LoopingSound.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MineChem.iml" afterPath="$PROJECT_DIR$/MineChem.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MineChem.ipr" afterPath="$PROJECT_DIR$/MineChem.ipr" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MineChem.iws" afterPath="$PROJECT_DIR$/MineChem.iws" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/gates/MineChemIconProvider.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/gates/MineChemIconProvider.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/MinechemBlocks.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/MinechemBlocks.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/blueprint/MinechemBlueprint.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/blueprint/MinechemBlueprint.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/MinechemGeneration.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/MinechemGeneration.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/utils/MinechemHelper.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/utils/MinechemHelper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/MinechemItems.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/MinechemItems.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/recipe/MinechemRecipes.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/recipe/MinechemRecipes.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/sound/MinechemSoundEvent.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/sound/MinechemSoundEvent.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/tileentity/MinechemTileEntity.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/tileentity/MinechemTileEntity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/gates/MinechemTrigger.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/gates/MinechemTrigger.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/gates/MinechemTriggers.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/gates/MinechemTriggers.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/api/core/Mineral.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/api/core/Mineral.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/ModMinechem.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/ModMinechem.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/modstats/ModVersionData.java" afterPath="$PROJECT_DIR$/src/main/java/org/modstats/ModVersionData.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/ModelDecomposer.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/ModelDecomposer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/ModelMicroscope.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/ModelMicroscope.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/ModelPrinter.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/ModelPrinter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/ModelProjector.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/ModelProjector.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/ModelSynthesizer.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/ModelSynthesizer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/modstats/ModstatInfo.java" afterPath="$PROJECT_DIR$/src/main/java/org/modstats/ModstatInfo.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/modstats/Modstats.java" afterPath="$PROJECT_DIR$/src/main/java/org/modstats/Modstats.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/api/core/Molecule.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/api/core/Molecule.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/nei/NEIMinechemConfig.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/nei/NEIMinechemConfig.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/blocks/OreUranium.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/blocks/OreUranium.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/network/PacketActiveJournalItem.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/network/PacketActiveJournalItem.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/network/PacketDecomposerUpdate.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/network/PacketDecomposerUpdate.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/network/PacketGhostBlock.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/network/PacketGhostBlock.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/network/PacketHandler.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/network/PacketHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/helper/PacketHandler.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/helper/PacketHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/network/PacketTileEntityUpdate.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/network/PacketTileEntityUpdate.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/entity/PaperParticle.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/entity/PaperParticle.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/ParticlePhysics.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/ParticlePhysics.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/helper/ParticlePhysicsTab.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/helper/ParticlePhysicsTab.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/helper/ParticleRegistry.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/helper/ParticleRegistry.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/PharmacologyEffect.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/PharmacologyEffect.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/items/PhotonicInduction.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/items/PhotonicInduction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/buildcraft/api/transport/PipeManager.java" afterPath="$PROJECT_DIR$/src/main/java/buildcraft/api/transport/PipeManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/computercraft/method/PlaceSynthesisRecipe.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/computercraft/method/PlaceSynthesisRecipe.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/blocks/PolarizedGlass.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/blocks/PolarizedGlass.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/PolytoolEventHandler.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/PolytoolEventHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/PolytoolHelper.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/PolytoolHelper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/PolytoolInventory.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/PolytoolInventory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/PolytoolInventoryRender.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/PolytoolInventoryRender.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/PolytoolTypeAlloy.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/PolytoolTypeAlloy.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypeArgon.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypeArgon.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypeBeryllium.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypeBeryllium.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypeBoron.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypeBoron.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypeBromine.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypeBromine.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypeCaesium.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypeCaesium.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypeCalcium.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypeCalcium.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypeCarbon.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypeCarbon.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypeChlorine.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypeChlorine.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypeChromium.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypeChromium.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypeFluorine.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypeFluorine.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypeFrancium.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypeFrancium.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypeGold.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypeGold.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypeHelium.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypeHelium.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypeHydrogen.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypeHydrogen.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypeIron.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypeIron.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypeKrypton.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypeKrypton.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypeLead.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypeLead.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypeLithium.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypeLithium.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypeMagnesium.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypeMagnesium.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypeMercury.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypeMercury.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypeNeon.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypeNeon.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypeNickel.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypeNickel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypeNitrogen.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypeNitrogen.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypeOxygen.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypeOxygen.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypePhosphorus.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypePhosphorus.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypePlatnium.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypePlatnium.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypeRubidium.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypeRubidium.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypeSilicon.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypeSilicon.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypeSilver.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypeSilver.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypeSodium.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypeSodium.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypeSulfur.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypeSulfur.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypeTitanium.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypeTitanium.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypeUranium.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypeUranium.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypeZirconium.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/types/PolytoolTypeZirconium.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/PolytoolUpgradeType.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/PolytoolUpgradeType.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/buildcraft/api/core/Position.java" afterPath="$PROJECT_DIR$/src/main/java/buildcraft/api/core/Position.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/item/PotentialReader.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/item/PotentialReader.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/buildcraft/api/power/PowerHandler.java" afterPath="$PROJECT_DIR$/src/main/java/buildcraft/api/power/PowerHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/computercraft/method/PutFusionStar.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/computercraft/method/PutFusionStar.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/computercraft/method/PutInput.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/computercraft/method/PutInput.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/computercraft/method/PutJournal.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/computercraft/method/PutJournal.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/RadiationHandler.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/RadiationHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/recipe/RecipeJournalCloning.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/recipe/RecipeJournalCloning.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/buildcraft/api/recipes/RefineryRecipes.java" afterPath="$PROJECT_DIR$/src/main/java/buildcraft/api/recipes/RefineryRecipes.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cofh/api/core/RegistryAccess.java" afterPath="$PROJECT_DIR$/src/main/java/cofh/api/core/RegistryAccess.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/gui/RenderGUIItemMicroscope.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/gui/RenderGUIItemMicroscope.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/render/RenderParticle.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/render/RenderParticle.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/modstats/reporter/v1/Reporter.java" afterPath="$PROJECT_DIR$/src/main/java/org/modstats/reporter/v1/Reporter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/buildcraft/api/core/SafeTimeTracker.java" afterPath="$PROJECT_DIR$/src/main/java/buildcraft/api/core/SafeTimeTracker.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/entity/SandParticle.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/entity/SandParticle.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/ScheduledTickHandler.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/ScheduledTickHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/gui/ScissorHelper.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/gui/ScissorHelper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/entity/SeedParticle.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/entity/SeedParticle.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ljdp/easypacket/serializer/SerializerHandler.java" afterPath="$PROJECT_DIR$/src/main/java/ljdp/easypacket/serializer/SerializerHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/blocks/SeriesReceptor.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/blocks/SeriesReceptor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/tile/SeriesReceptorTileEntity.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/tile/SeriesReceptorTileEntity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ljdp/easypacket/serializer/ShortSerializer.java" afterPath="$PROJECT_DIR$/src/main/java/ljdp/easypacket/serializer/ShortSerializer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/containers/SlotBlueprint.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/containers/SlotBlueprint.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/containers/SlotChemical.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/containers/SlotChemical.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/containers/SlotElement.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/containers/SlotElement.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/gui/SlotEmitterFuel.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/gui/SlotEmitterFuel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/containers/SlotFakeChemical.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/containers/SlotFakeChemical.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/containers/SlotFusionStar.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/containers/SlotFusionStar.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/containers/SlotJournal.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/containers/SlotJournal.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/SlotPolytool.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/polytool/SlotPolytool.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/entity/SplitParticle.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/entity/SplitParticle.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/buildcraft/api/core/StackWrapper.java" afterPath="$PROJECT_DIR$/src/main/java/buildcraft/api/core/StackWrapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/computercraft/method/StoreSynthesisRecipe.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/computercraft/method/StoreSynthesisRecipe.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ljdp/easypacket/serializer/StringSerializer.java" afterPath="$PROJECT_DIR$/src/main/java/ljdp/easypacket/serializer/StringSerializer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/nei/SynthesisNEIRecipeHandler.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/nei/SynthesisNEIRecipeHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/api/recipe/SynthesisRecipe.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/api/recipe/SynthesisRecipe.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/recipe/SynthesisRecipeHandler.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/recipe/SynthesisRecipeHandler.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/gui/tabs/TabEnergy.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/gui/tabs/TabEnergy.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/gui/tabs/TabEnergySynthesis.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/gui/tabs/TabEnergySynthesis.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/gui/tabs/TabHelp.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/gui/tabs/TabHelp.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/gui/tabs/TabJournel.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/gui/tabs/TabJournel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/gui/tabs/TabTable.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/gui/tabs/TabTable.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/codechicken/nei/api/TaggedInventoryArea.java" afterPath="$PROJECT_DIR$/src/main/java/codechicken/nei/api/TaggedInventoryArea.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/computercraft/method/TakeFusionStar.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/computercraft/method/TakeFusionStar.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/computercraft/method/TakeJournal.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/computercraft/method/TakeJournal.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/computercraft/method/TakeOuput.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/computercraft/method/TakeOuput.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/TickHandler.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/TickHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cofh/api/energy/TileEnergyHandler.java" afterPath="$PROJECT_DIR$/src/main/java/cofh/api/energy/TileEnergyHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/tileentity/TileEntityBlueprintProjector.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/tileentity/TileEntityBlueprintProjector.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/tileentity/TileEntityChemicalStorage.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/tileentity/TileEntityChemicalStorage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/render/tileentity/TileEntityChemicalStorageRenderer.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/render/tileentity/TileEntityChemicalStorageRenderer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/tileentity/TileEntityDecomposer.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/tileentity/TileEntityDecomposer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/tileentity/TileEntityFission.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/tileentity/TileEntityFission.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/tileentity/TileEntityFusion.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/tileentity/TileEntityFusion.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/tileentity/TileEntityGhostBlock.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/tileentity/TileEntityGhostBlock.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/tileentity/TileEntityMicroscope.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/tileentity/TileEntityMicroscope.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/tileentity/TileEntityMultiBlock.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/tileentity/TileEntityMultiBlock.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/tileentity/TileEntityProxy.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/tileentity/TileEntityProxy.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/tileentity/TileEntitySynthesis.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/tileentity/TileEntitySynthesis.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/inventory/Transactor.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/inventory/Transactor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/universalelectricity/prefab/TranslationHelper.java" afterPath="$PROJECT_DIR$/src/main/java/universalelectricity/prefab/TranslationHelper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/buildcraft/api/gates/TriggerParameter.java" afterPath="$PROJECT_DIR$/src/main/java/buildcraft/api/gates/TriggerParameter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/dan200/turtle/api/TurtleAPI.java" afterPath="$PROJECT_DIR$/src/main/java/dan200/turtle/api/TurtleAPI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/UnbondingRecipeRandom.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/UnbondingRecipeRandom.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/recipe/handlers/UndergroundBiomesOreDictionaryHandler.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/recipe/handlers/UndergroundBiomesOreDictionaryHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/api/util/Util.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/api/util/Util.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/helper/Vector3.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/particlephysics/helper/Vector3.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cofh/api/world/WeightedRandomBlock.java" afterPath="$PROJECT_DIR$/src/main/java/cofh/api/world/WeightedRandomBlock.java" />
     </list>
     <ignored path="Minechem.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -76,7 +437,7 @@
       <file leaf-file-name="TabEnergy.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/gui/tabs/TabEnergy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="30" selection-start="750" selection-end="750" vertical-scroll-proportion="0.0" vertical-offset="80" max-vertical-offset="930">
+            <state line="22" column="30" selection-start="835" selection-end="835" vertical-scroll-proportion="0.0" vertical-offset="80" max-vertical-offset="960">
               <folding />
             </state>
           </provider>
@@ -85,7 +446,7 @@
       <file leaf-file-name="TabEnergySynthesis.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/gui/tabs/TabEnergySynthesis.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="29" selection-start="443" selection-end="443" vertical-scroll-proportion="0.31034482" vertical-offset="0" max-vertical-offset="780">
+            <state line="29" column="34" selection-start="889" selection-end="889" vertical-scroll-proportion="0.86206895" vertical-offset="0" max-vertical-offset="795">
               <folding />
             </state>
           </provider>
@@ -634,7 +995,7 @@
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.6.4-9.11.1.964/forge-1.6.4-9.11.1.964-src.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/build/forge-1.6.4-9.11.1.964-src.jar!/" />
     <property name="LayoutCode.rearrangeEntries" value="false" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -933,7 +1294,11 @@
       <created>1390772450604</created>
       <updated>1390772450604</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Changed 'mj' to 'rf' in energy tabs">
+      <created>1390854961926</created>
+      <updated>1390854961927</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -945,6 +1310,7 @@
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299566" sideWeight="0.49959838" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38928068" sideWeight="0.49959838" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3300423" sideWeight="0.5004016" order="7" side_tool="true" content_ui="tabs" />
@@ -963,7 +1329,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299566" sideWeight="0.49959838" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1035,21 +1400,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/pixlepix/minechem/computercraft/IMinechemMachinePeripheral.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="0" selection-start="927" selection-end="927" vertical-scroll-proportion="0.7235023" vertical-offset="226" max-vertical-offset="1125" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/containers/ContainerDecomposer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="26" selection-start="1108" selection-end="1108" vertical-scroll-proportion="0.0" vertical-offset="148" max-vertical-offset="1335" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/tileentity/TileEntityFission.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="159" column="5" selection-start="5023" selection-end="5023" vertical-scroll-proportion="0.0" vertical-offset="2042" max-vertical-offset="3870" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/gui/tabs/TabStateControlDecomposer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="48" column="41" selection-start="1821" selection-end="1821" vertical-scroll-proportion="0.0" vertical-offset="493" max-vertical-offset="1095" />
@@ -1125,24 +1475,9 @@
         <state line="30" column="23" selection-start="1950" selection-end="1950" vertical-scroll-proportion="0.0" vertical-offset="219" max-vertical-offset="1425" />
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.6.4-9.11.1.964/forge-1.6.4-9.11.1.964-src.jar!/net/minecraft/item/crafting/RecipesArmor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="13" selection-start="155" selection-end="155" vertical-scroll-proportion="0.092307694" vertical-offset="0" max-vertical-offset="650" />
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.6.4-9.11.1.964/forge-1.6.4-9.11.1.964-src.jar!/cpw/mods/fml/common/registry/GameRegistry.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="187" column="5" selection-start="7412" selection-end="7412" vertical-scroll-proportion="0.0" vertical-offset="1749" max-vertical-offset="6105" />
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/jars/NotEnoughItems-dev 1.6.1.8.jar!/codechicken/nei/forge/GuiContainerManager.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="88" column="0" selection-start="4535" selection-end="4535" vertical-scroll-proportion="0.82573724" vertical-offset="997" max-vertical-offset="1395" />
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.6.4-9.11.1.964/forge-1.6.4-9.11.1.964-src.jar!/net/minecraftforge/fluids/FluidRegistry.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="22" selection-start="554" selection-end="554" vertical-scroll-proportion="-0.0075376886" vertical-offset="153" max-vertical-offset="2490" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/recipe/DecomposerFluidRecipe.java">
@@ -1150,19 +1485,9 @@
         <state line="25" column="76" selection-start="780" selection-end="780" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="600" />
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.6.4-9.11.1.964/forge-1.6.4-9.11.1.964-src.jar!/net/minecraft/item/ItemStack.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="456" column="307" selection-start="13812" selection-end="13812" vertical-scroll-proportion="0.2962963" vertical-offset="6301" max-vertical-offset="13035" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pixlepix/minechem/api/recipe/DecomposerRecipe.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="39" column="5" selection-start="991" selection-end="991" vertical-scroll-proportion="1.1688311" vertical-offset="0" max-vertical-offset="570" />
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.6.4-9.11.1.964/forge-1.6.4-9.11.1.964-src.jar!/net/minecraftforge/oredict/ShapelessOreRecipe.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="13" selection-start="516" selection-end="516" vertical-scroll-proportion="0.0" vertical-offset="501" max-vertical-offset="2130" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/recipe/DecomposerRecipeHandler.java">
@@ -1178,16 +1503,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/pixlepix/minechem/api/util/Util.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="0" selection-start="172" selection-end="172" vertical-scroll-proportion="0.25925925" vertical-offset="0" max-vertical-offset="525" />
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.6.4-9.11.1.964/forge-1.6.4-9.11.1.964-src.jar!/net/minecraftforge/oredict/ShapedOreRecipe.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="258" column="7" selection-start="7559" selection-end="7559" vertical-scroll-proportion="9.102902" vertical-offset="210" max-vertical-offset="3795" />
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.6.4-9.11.1.964/forge-1.6.4-9.11.1.964-src.jar!/net/minecraft/item/crafting/CraftingManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="319" column="24" selection-start="19792" selection-end="19797" vertical-scroll-proportion="3.9158163" vertical-offset="3085" max-vertical-offset="4725" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pixlepix/minechem/computercraft/ChemistryTurtleUpgradePeripherial.java">
@@ -1247,22 +1562,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/recipe/handlers/UndergroundBiomesOreDictionaryHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="22" selection-start="3150" selection-end="3150" vertical-scroll-proportion="-1.290749" vertical-offset="1974" max-vertical-offset="2655" />
+        <state line="78" column="22" selection-start="3150" selection-end="3150" vertical-scroll-proportion="-1.290749" vertical-offset="1974" max-vertical-offset="2655">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/utils/MinechemHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="24" selection-start="1320" selection-end="1320" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3405" />
+        <state line="36" column="24" selection-start="1320" selection-end="1320" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3405">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pixlepix/minechem/api/core/EnumMolecule.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="183" column="30" selection-start="14437" selection-end="14437" vertical-scroll-proportion="0.5116279" vertical-offset="2325" max-vertical-offset="3675" />
+        <state line="183" column="30" selection-start="14437" selection-end="14437" vertical-scroll-proportion="0.5116279" vertical-offset="2325" max-vertical-offset="3675">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pixlepix/minechem/api/core/EnumElement.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="12" selection-start="230" selection-end="230" vertical-scroll-proportion="-0.06736527" vertical-offset="105" max-vertical-offset="2640" />
+        <state line="7" column="12" selection-start="230" selection-end="230" vertical-scroll-proportion="-0.06736527" vertical-offset="105" max-vertical-offset="2640">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pixlepix/minechem/api/core/EnumOre.java">
@@ -1272,24 +1595,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/recipe/handlers/DefaultOreDictionaryHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="9" selection-start="1211" selection-end="1211" vertical-scroll-proportion="-0.2863436" vertical-offset="495" max-vertical-offset="2490" />
+        <state line="33" column="9" selection-start="1211" selection-end="1211" vertical-scroll-proportion="-0.2863436" vertical-offset="495" max-vertical-offset="2490">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/tileentity/TileEntityFusion.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="137" column="42" selection-start="4617" selection-end="4617" vertical-scroll-proportion="-0.31437126" vertical-offset="2055" max-vertical-offset="4605" />
+        <state line="137" column="42" selection-start="4617" selection-end="4617" vertical-scroll-proportion="-0.31437126" vertical-offset="2055" max-vertical-offset="4605">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/gui/tabs/TabEnergy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="30" selection-start="750" selection-end="750" vertical-scroll-proportion="0.0" vertical-offset="80" max-vertical-offset="930">
+        <state line="22" column="30" selection-start="835" selection-end="835" vertical-scroll-proportion="0.0" vertical-offset="80" max-vertical-offset="960">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/build/deobfuscated-bin.jar!/net/minecraft/network/packet/Packet5PlayerInventory.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="13" selection-start="171" selection-end="171" vertical-scroll-proportion="0.18292683" vertical-offset="0" max-vertical-offset="510">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/build/deobfuscated-bin.jar!/net/minecraft/entity/player/InventoryPlayer.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="27" selection-start="376" selection-end="376" vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="1590">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pixlepix/minechem/client/gui/tabs/TabEnergySynthesis.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="29" selection-start="443" selection-end="443" vertical-scroll-proportion="0.31034482" vertical-offset="0" max-vertical-offset="780">
+        <state line="29" column="34" selection-start="889" selection-end="889" vertical-scroll-proportion="0.86206895" vertical-offset="0" max-vertical-offset="795">
           <folding />
         </state>
       </provider>

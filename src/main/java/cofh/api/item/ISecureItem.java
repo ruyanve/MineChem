@@ -1,6 +1,7 @@
 package cofh.api.item;
 
 import net.minecraft.entity.player.EntityPlayer;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Implement this interface on Item classes which are secure - linked to a specific player or list of players. Obviously, this relies on people using this
@@ -10,14 +11,15 @@ import net.minecraft.entity.player.EntityPlayer;
  */
 public interface ISecureItem {
 
-    /**
-     * Check whether or not a given player can use this item.
-     */
-    boolean canPlayerAccess(EntityPlayer player);
+	/**
+	 * Check whether or not a given player can use this item.
+	 */
+	boolean canPlayerAccess(EntityPlayer player);
 
-    /**
-     * Get the Owner of this item. This function is intentionally nebulous and is not guaranteed to be a player name.
-     */
-    String getOwnerString();
+	/**
+	 * Get the Owner of this item. This function is intentionally nebulous and is not guaranteed to be a player name.
+	 */
+	@NotNull
+	String getOwnerString();
 
 }

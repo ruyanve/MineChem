@@ -7,6 +7,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeHooks;
 import net.minecraftforge.oredict.OreDictionary;
+import org.jetbrains.annotations.NotNull;
 import pixlepix.minechem.api.core.EnumElement;
 
 public class PolytoolTypeAlloy extends PolytoolUpgradeType {
@@ -41,7 +42,7 @@ public class PolytoolTypeAlloy extends PolytoolUpgradeType {
 	}
 
 	@Override
-	public float getStrVsBlock(ItemStack itemStack, Block block) {
+	public float getStrVsBlock(ItemStack itemStack, @NotNull Block block) {
 		//There must be a better way to do this
 		if (ForgeHooks.isToolEffective(new ItemStack(Item.pickaxeDiamond), block, 0)) {
 

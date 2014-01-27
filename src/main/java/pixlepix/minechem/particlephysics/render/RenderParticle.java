@@ -8,6 +8,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.NotNull;
 import org.lwjgl.opengl.GL11;
 import pixlepix.minechem.particlephysics.api.BaseParticle;
 import pixlepix.minechem.particlephysics.entity.LeafParticle;
@@ -20,6 +21,7 @@ public class RenderParticle extends Render {
 	/**
 	 * Render instance
 	 */
+	@NotNull
 	public static RenderParticle INSTANCE = new RenderParticle();
 
 	@Override

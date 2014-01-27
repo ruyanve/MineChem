@@ -9,6 +9,8 @@
 
 package buildcraft.api.gates;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.LinkedList;
 
 /**
@@ -16,6 +18,7 @@ import java.util.LinkedList;
  */
 public interface IOverrideDefaultTriggers {
 
-    LinkedList<ITrigger> getTriggers();
+	@NotNull
+	LinkedList<ITrigger> getTriggers();
 
 }

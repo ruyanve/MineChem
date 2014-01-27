@@ -11,61 +11,63 @@ import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Icon;
 import net.minecraftforge.common.ForgeDirection;
+import org.jetbrains.annotations.NotNull;
 
 public abstract class MinechemTrigger implements ITrigger {
-    @SideOnly(Side.CLIENT)
-    public Icon icon;
-    public IIconProvider provider = new MineChemIconProvider();
-    protected String desc;
-    protected int id;
+	@SideOnly(Side.CLIENT)
+	public Icon icon;
+	@NotNull
+	public IIconProvider provider = new MineChemIconProvider();
+	protected String desc;
+	protected int id;
 
-    public MinechemTrigger(int id, String dsc) {
-        this.id = id;
+	public MinechemTrigger(int id, String dsc) {
+		this.id = id;
 
-        this.desc = dsc;
-        ActionManager.triggers.put(desc, this);
-    }
+		this.desc = dsc;
+		ActionManager.triggers.put(desc, this);
+	}
 
-    @Override
-    public int getLegacyId() {
-        return this.id;
-    }
+	@Override
+	public int getLegacyId() {
+		return this.id;
+	}
 
-    @Override
-    @SideOnly(Side.CLIENT)
-    public Icon getIcon() {
+	@Override
+	@SideOnly(Side.CLIENT)
+	public Icon getIcon() {
 
-        return provider.getIcon(0);
+		return provider.getIcon(0);
 
-    }
+	}
 
-    @Override
-    public boolean hasParameter() {
-        return false;
-    }
+	@Override
+	public boolean hasParameter() {
+		return false;
+	}
 
-    @Override
-    public String getDescription() {
-        return desc;
-    }
+	@Override
+	public String getDescription() {
+		return desc;
+	}
 
-    @Override
-    public abstract boolean isTriggerActive(ForgeDirection side, TileEntity tile, ITriggerParameter parameter);
+	@Override
+	public abstract boolean isTriggerActive(ForgeDirection side, TileEntity tile, ITriggerParameter parameter);
 
-    @Override
-    public final ITriggerParameter createParameter() {
-        return new TriggerParameter();
-    }
+	@NotNull
+	@Override
+	public final ITriggerParameter createParameter() {
+		return new TriggerParameter();
+	}
 
+	@Override
+	public String getUniqueTag() {
+		return this.desc;
+	}
 
-    @Override
-    public String getUniqueTag() {
-        return this.desc;
-    }
+	@Override
+	@SideOnly(Side.CLIENT)
+	public void registerIcons(IconRegister iconRegister) {
 
-    @Override
-    @SideOnly(Side.CLIENT)
-    public void registerIcons(IconRegister iconRegister) {
-
-    }
+	}
 }

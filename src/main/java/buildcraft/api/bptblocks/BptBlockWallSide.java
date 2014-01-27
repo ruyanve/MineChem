@@ -13,41 +13,42 @@ import buildcraft.api.blueprints.BptBlock;
 import buildcraft.api.blueprints.BptSlotInfo;
 import buildcraft.api.blueprints.IBptContext;
 import net.minecraft.item.ItemStack;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.LinkedList;
 
 @Deprecated
 public class BptBlockWallSide extends BptBlock {
 
-    public BptBlockWallSide(int blockId) {
-        super(blockId);
-    }
+	public BptBlockWallSide(int blockId) {
+		super(blockId);
+	}
 
-    @Override
-    public void addRequirements(BptSlotInfo slot, IBptContext context, LinkedList<ItemStack> requirements) {
-        requirements.add(new ItemStack(slot.blockId, 1, 0));
-    }
+	@Override
+	public void addRequirements(@NotNull BptSlotInfo slot, IBptContext context, LinkedList<ItemStack> requirements) {
+		requirements.add(new ItemStack(slot.blockId, 1, 0));
+	}
 
-    @Override
-    public void rotateLeft(BptSlotInfo slot, IBptContext context) {
-        final int XPos = 2;
-        final int XNeg = 1;
-        final int ZPos = 4;
-        final int ZNeg = 3;
+	@Override
+	public void rotateLeft(BptSlotInfo slot, IBptContext context) {
+		final int XPos = 2;
+		final int XNeg = 1;
+		final int ZPos = 4;
+		final int ZNeg = 3;
 
-        switch (slot.meta) {
-            case XPos:
-                slot.meta = ZPos;
-                break;
-            case ZNeg:
-                slot.meta = XPos;
-                break;
-            case XNeg:
-                slot.meta = ZNeg;
-                break;
-            case ZPos:
-                slot.meta = XNeg;
-                break;
-        }
-    }
+		switch (slot.meta) {
+			case XPos:
+				slot.meta = ZPos;
+				break;
+			case ZNeg:
+				slot.meta = XPos;
+				break;
+			case XNeg:
+				slot.meta = ZNeg;
+				break;
+			case ZPos:
+				slot.meta = XNeg;
+				break;
+		}
+	}
 }

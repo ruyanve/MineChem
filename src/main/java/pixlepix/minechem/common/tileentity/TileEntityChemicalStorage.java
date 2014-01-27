@@ -3,10 +3,11 @@ package pixlepix.minechem.common.tileentity;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntityChest;
+import org.jetbrains.annotations.NotNull;
 
 public class TileEntityChemicalStorage extends TileEntityChest {
 
-	public void addStackToInventory(ItemStack newStack) {
+	public void addStackToInventory(@NotNull ItemStack newStack) {
 		for (int i = 0; i < this.getSizeInventory(); i++) {
 			ItemStack stack = this.getStackInSlot(i);
 			if (stack == null) {

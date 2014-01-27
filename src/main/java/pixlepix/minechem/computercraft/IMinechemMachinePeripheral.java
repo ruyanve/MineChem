@@ -1,6 +1,7 @@
 package pixlepix.minechem.computercraft;
 
 import net.minecraft.item.ItemStack;
+import org.jetbrains.annotations.Nullable;
 
 public interface IMinechemMachinePeripheral {
 
@@ -9,6 +10,7 @@ public interface IMinechemMachinePeripheral {
 	 *
 	 * @return ItemStack to send to Turtle
 	 */
+	@Nullable
 	public ItemStack takeOutput();
 
 	/**
@@ -24,6 +26,7 @@ public interface IMinechemMachinePeripheral {
 	 *
 	 * @return ItemStack to send to Turtle
 	 */
+	@Nullable
 	public ItemStack takeInput();
 
 	/**
@@ -39,6 +42,7 @@ public interface IMinechemMachinePeripheral {
 	 *
 	 * @return ItemStack to send to Turtle
 	 */
+	@Nullable
 	public ItemStack takeFusionStar();
 
 	/**
@@ -54,6 +58,7 @@ public interface IMinechemMachinePeripheral {
 	 *
 	 * @return ItemStack to send to Turtle
 	 */
+	@Nullable
 	public ItemStack takeJournal();
 
 	/**
@@ -64,6 +69,7 @@ public interface IMinechemMachinePeripheral {
 	 */
 	public int putJournal(ItemStack journal);
 
+	@Nullable
 	public String getMachineState();
 
 }

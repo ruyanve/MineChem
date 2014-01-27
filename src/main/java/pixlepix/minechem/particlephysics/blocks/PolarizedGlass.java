@@ -8,6 +8,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import pixlepix.minechem.particlephysics.api.BaseParticle;
 import pixlepix.minechem.particlephysics.helper.BasicComplexBlock;
 
@@ -21,7 +23,7 @@ public class PolarizedGlass extends BasicComplexBlock {
 	}
 
 	@Override
-	public void addCollisionBoxesToList(World par1World, int par2, int par3, int par4, AxisAlignedBB par5AxisAlignedBB, List par6List, Entity par7Entity) {
+	public void addCollisionBoxesToList(World par1World, int par2, int par3, int par4, @NotNull AxisAlignedBB par5AxisAlignedBB, @NotNull List par6List, Entity par7Entity) {
 		if (par7Entity instanceof BaseParticle) {
 			return;
 		}
@@ -41,6 +43,7 @@ public class PolarizedGlass extends BasicComplexBlock {
 
 	}
 
+	@NotNull
 	@Override
 	public String getFront() {
 		// TODO Auto-generated method stub
@@ -52,12 +55,14 @@ public class PolarizedGlass extends BasicComplexBlock {
 		return true;
 	}
 
+	@NotNull
 	@Override
 	public String getTop() {
 		// TODO Auto-generated method stub
 		return "PolarizedGlass";
 	}
 
+	@Nullable
 	@Override
 	public Class getTileEntityClass() {
 		return null;
@@ -69,6 +74,7 @@ public class PolarizedGlass extends BasicComplexBlock {
 
 	}
 
+	@NotNull
 	@Override
 	public String getName() {
 		return "Polarized Glass";
@@ -79,6 +85,7 @@ public class PolarizedGlass extends BasicComplexBlock {
 		return false;
 	}
 
+	@Nullable
 	@Override
 	public Class getItemBlock() {
 		return null;

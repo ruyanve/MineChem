@@ -6,6 +6,8 @@ import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import pixlepix.minechem.api.util.Constants;
 import pixlepix.minechem.common.MinechemItems;
 import pixlepix.minechem.common.blueprint.BlueprintFission;
@@ -17,12 +19,18 @@ import pixlepix.minechem.computercraft.IMinechemMachinePeripheral;
 
 public class TileEntityFission extends TileEntityMultiBlock implements IMinechemMachinePeripheral, ISidedInventory {
 
+	@NotNull
 	public static int[] kInput = { 0 };
+	@NotNull
 	public static int[] kFuel = { 1 };
+	@NotNull
 	public static int[] kOutput = { 2 };
 
+	@NotNull
 	private final BoundedInventory inputInventory;
+	@NotNull
 	private final BoundedInventory outputInventory;
+	@NotNull
 	private final BoundedInventory fuelInventory;
 	private Transactor inputTransactor;
 	private Transactor outputTransactor;
@@ -33,6 +41,7 @@ public class TileEntityFission extends TileEntityMultiBlock implements IMinechem
 	public static int kSizeInput = 1;
 	public static int kSizeFuel = 1;
 	public static int kSizeOutput = 1;
+	@NotNull
 	SafeTimeTracker energyUpdateTracker = new SafeTimeTracker();
 	boolean shouldSendUpdatePacket;
 
@@ -72,7 +81,7 @@ public class TileEntityFission extends TileEntityMultiBlock implements IMinechem
 			sendUpdatePacket();
 	}
 
-	private void addToOutput(ItemStack fusionResult) {
+	private void addToOutput(@Nullable ItemStack fusionResult) {
 		if (fusionResult == null) {
 			return;
 		}
@@ -98,6 +107,7 @@ public class TileEntityFission extends TileEntityMultiBlock implements IMinechem
 		return true;
 	}
 
+	@Nullable
 	private ItemStack getFissionOutput() {
 		if (hasInputs()) {
 			int mass = inventory[kInput[0]].getItemDamage() + 1;
@@ -128,6 +138,7 @@ public class TileEntityFission extends TileEntityMultiBlock implements IMinechem
 
 	}
 
+	@NotNull
 	@Override
 	public String getInvName() {
 		return "container.minechemFission";
@@ -142,14 +153,14 @@ public class TileEntityFission extends TileEntityMultiBlock implements IMinechem
 	}
 
 	@Override
-	public void writeToNBT(NBTTagCompound nbtTagCompound) {
+	public void writeToNBT(@NotNull NBTTagCompound nbtTagCompound) {
 		super.writeToNBT(nbtTagCompound);
 		NBTTagList inventoryTagList = MinechemHelper.writeItemStackArrayToTagList(inventory);
 		nbtTagCompound.setTag("inventory", inventoryTagList);
 	}
 
 	@Override
-	public void readFromNBT(NBTTagCompound nbtTagCompound) {
+	public void readFromNBT(@NotNull NBTTagCompound nbtTagCompound) {
 		super.readFromNBT(nbtTagCompound);
 		inventory = new ItemStack[getSizeInventory()];
 		MinechemHelper.readTagListToItemStackArray(nbtTagCompound.getTagList("inventory"), inventory);
@@ -159,26 +170,29 @@ public class TileEntityFission extends TileEntityMultiBlock implements IMinechem
 		this.energyStored = amount;
 	}
 
+	@Nullable
 	@Override
 	public ItemStack takeOutput() {
 		return outputTransactor.removeItem(true);
 	}
 
 	@Override
-	public int putOutput(ItemStack output) {
+	public int putOutput(@NotNull ItemStack output) {
 		return outputTransactor.add(output, true);
 	}
 
+	@Nullable
 	@Override
 	public ItemStack takeInput() {
 		return inputTransactor.removeItem(true);
 	}
 
 	@Override
-	public int putInput(ItemStack input) {
+	public int putInput(@NotNull ItemStack input) {
 		return inputTransactor.add(input, true);
 	}
 
+	@Nullable
 	@Override
 	public ItemStack takeJournal() {
 		return null;
@@ -189,6 +203,7 @@ public class TileEntityFission extends TileEntityMultiBlock implements IMinechem
 		return 0;
 	}
 
+	@NotNull
 	@Override
 	public String getMachineState() {
 		//TODO Check for fuel
@@ -202,7 +217,7 @@ public class TileEntityFission extends TileEntityMultiBlock implements IMinechem
 	}
 
 	@Override
-	public boolean isItemValidForSlot(int i, ItemStack itemstack) {
+	public boolean isItemValidForSlot(int i, @NotNull ItemStack itemstack) {
 
 		if (i != kOutput[0] && itemstack.getItem() instanceof ItemElement) {
 			return true;
@@ -210,6 +225,7 @@ public class TileEntityFission extends TileEntityMultiBlock implements IMinechem
 		return false;
 	}
 
+	@NotNull
 	public int[] getSizeInventorySide(int side) {
 		switch (side) {
 			case 0:
@@ -231,6 +247,7 @@ public class TileEntityFission extends TileEntityMultiBlock implements IMinechem
 	//These are abstract methods
 	//Of TileEntityMultiBlock
 
+	@Nullable
 	@Override
 	public ItemStack takeFusionStar() {
 		// TODO Auto-generated method stub
@@ -243,6 +260,7 @@ public class TileEntityFission extends TileEntityMultiBlock implements IMinechem
 		return 0;
 	}
 
+	@NotNull
 	@Override
 	public int[] getAccessibleSlotsFromSide(int i) {
 		switch (i) {

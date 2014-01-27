@@ -1,6 +1,7 @@
 package ic2.api.energy.tile;
 
 import net.minecraft.tileentity.TileEntity;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
@@ -23,10 +24,11 @@ import java.util.List;
  * See ic2/api/energy/usage.txt for an overall description of the energy net api.
  */
 public interface IMetaDelegate extends IEnergyTile {
-    /**
-     * Get the sub-TileEntities belonging to this Meta TileEntity.
-     *
-     * @return sub-TileEntity array
-     */
-    List<TileEntity> getSubTiles();
+	/**
+	 * Get the sub-TileEntities belonging to this Meta TileEntity.
+	 *
+	 * @return sub-TileEntity array
+	 */
+	@NotNull
+	List<TileEntity> getSubTiles();
 }

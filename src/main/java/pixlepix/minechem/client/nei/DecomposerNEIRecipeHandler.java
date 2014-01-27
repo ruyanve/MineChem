@@ -5,6 +5,7 @@ import codechicken.nei.PositionedStack;
 import codechicken.nei.recipe.TemplateRecipeHandler;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+import org.jetbrains.annotations.Nullable;
 import pixlepix.minechem.api.core.Chemical;
 import pixlepix.minechem.api.recipe.DecomposerRecipe;
 import pixlepix.minechem.api.recipe.DecomposerRecipeChance;
@@ -110,7 +111,7 @@ public class DecomposerNEIRecipeHandler extends TemplateRecipeHandler {
 	 *
 	 * @param dr Decomposer recipe to add.
 	 */
-	public void registerDecomposerRecipe(DecomposerRecipe dr) {
+	public void registerDecomposerRecipe(@Nullable DecomposerRecipe dr) {
 		if (dr == null) {
 			return;
 		}

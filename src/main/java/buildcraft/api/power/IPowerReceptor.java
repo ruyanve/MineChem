@@ -9,6 +9,7 @@ package buildcraft.api.power;
 
 import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeDirection;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * This interface should be implemented by any Tile Entity that wishes to be
@@ -18,29 +19,30 @@ import net.minecraftforge.common.ForgeDirection;
  */
 public interface IPowerReceptor {
 
-    /**
-     * Get the PowerReceiver for this side of the block. You can return the same
-     * PowerReceiver for all sides or one for each side.
-     * <p/>
-     * You should NOT return null to this method unless you mean to NEVER
-     * receive power from that side. Returning null, after previous returning a
-     * PowerReceiver, will most likely cause pipe connections to derp out and
-     * engines to eventually explode.
-     *
-     * @param side
-     * @return
-     */
-    public PowerHandler.PowerReceiver getPowerReceiver(ForgeDirection side);
+	/**
+	 * Get the PowerReceiver for this side of the block. You can return the same
+	 * PowerReceiver for all sides or one for each side.
+	 * <p/>
+	 * You should NOT return null to this method unless you mean to NEVER
+	 * receive power from that side. Returning null, after previous returning a
+	 * PowerReceiver, will most likely cause pipe connections to derp out and
+	 * engines to eventually explode.
+	 *
+	 * @param side
+	 * @return
+	 */
+	@NotNull
+	public PowerHandler.PowerReceiver getPowerReceiver(ForgeDirection side);
 
-    /**
-     * Call back from the PowerHandler that is called when the stored power
-     * exceeds the activation power.
-     * <p/>
-     * It can be triggered by update() calls or power modification calls.
-     *
-     * @param workProvider
-     */
-    public void doWork(PowerHandler workProvider);
+	/**
+	 * Call back from the PowerHandler that is called when the stored power
+	 * exceeds the activation power.
+	 * <p/>
+	 * It can be triggered by update() calls or power modification calls.
+	 *
+	 * @param workProvider
+	 */
+	public void doWork(PowerHandler workProvider);
 
-    public World getWorld();
+	public World getWorld();
 }

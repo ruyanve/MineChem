@@ -13,42 +13,43 @@ import buildcraft.api.blueprints.BptBlock;
 import buildcraft.api.blueprints.BptSlotInfo;
 import buildcraft.api.blueprints.IBptContext;
 import net.minecraft.item.ItemStack;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.LinkedList;
 
 @Deprecated
 public class BptBlockStairs extends BptBlock {
 
-    public BptBlockStairs(int blockId) {
-        super(blockId);
-    }
+	public BptBlockStairs(int blockId) {
+		super(blockId);
+	}
 
-    @Override
-    public void addRequirements(BptSlotInfo slot, IBptContext context, LinkedList<ItemStack> requirements) {
-        requirements.add(new ItemStack(slot.blockId, 1, 0));
-    }
+	@Override
+	public void addRequirements(@NotNull BptSlotInfo slot, IBptContext context, LinkedList<ItemStack> requirements) {
+		requirements.add(new ItemStack(slot.blockId, 1, 0));
+	}
 
-    @Override
-    public boolean isValid(BptSlotInfo slot, IBptContext context) {
-        return slot.blockId == context.world().getBlockId(slot.x, slot.y, slot.z);
-    }
+	@Override
+	public boolean isValid(BptSlotInfo slot, IBptContext context) {
+		return slot.blockId == context.world().getBlockId(slot.x, slot.y, slot.z);
+	}
 
-    @Override
-    public void rotateLeft(BptSlotInfo slot, IBptContext context) {
-        switch (slot.meta) {
-            case 0:
-                slot.meta = 2;
-                break;
-            case 1:
-                slot.meta = 3;
-                break;
-            case 2:
-                slot.meta = 1;
-                break;
-            case 3:
-                slot.meta = 0;
-                break;
-        }
-    }
+	@Override
+	public void rotateLeft(BptSlotInfo slot, IBptContext context) {
+		switch (slot.meta) {
+			case 0:
+				slot.meta = 2;
+				break;
+			case 1:
+				slot.meta = 3;
+				break;
+			case 2:
+				slot.meta = 1;
+				break;
+			case 3:
+				slot.meta = 0;
+				break;
+		}
+	}
 
 }

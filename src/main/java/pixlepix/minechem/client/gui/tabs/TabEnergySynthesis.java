@@ -1,6 +1,7 @@
 package pixlepix.minechem.client.gui.tabs;
 
 import net.minecraft.client.gui.Gui;
+import org.jetbrains.annotations.Nullable;
 import pixlepix.minechem.api.recipe.SynthesisRecipe;
 import pixlepix.minechem.common.tileentity.TileEntitySynthesis;
 import pixlepix.minechem.common.utils.MinechemHelper;
@@ -38,8 +39,9 @@ public class TabEnergySynthesis extends TabEnergy {
 	    fontRenderer.drawString(energy.getRequest() + " RF/t", x + 22, y + 56, textColour);
     }
 
-    @Override
-    public String getTooltip() {
+	@Nullable
+	@Override
+	public String getTooltip() {
         if (!isOpen()) {
             return String.format("%.1f", energy.getRequest()) + " MJ/t";
         } else

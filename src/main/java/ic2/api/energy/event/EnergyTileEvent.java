@@ -3,6 +3,7 @@ package ic2.api.energy.event;
 import ic2.api.energy.tile.IEnergyTile;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.event.world.WorldEvent;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Base class for energy net events, don't use it directly.
@@ -10,12 +11,12 @@ import net.minecraftforge.event.world.WorldEvent;
  * See ic2/api/energy/usage.txt for an overall description of the energy net api.
  */
 public class EnergyTileEvent extends WorldEvent {
-    public final IEnergyTile energyTile;
+	public final IEnergyTile energyTile;
 
-    public EnergyTileEvent(IEnergyTile energyTile) {
-        super(((TileEntity) energyTile).worldObj);
+	public EnergyTileEvent(@NotNull IEnergyTile energyTile) {
+		super(((TileEntity) energyTile).worldObj);
 
-        this.energyTile = energyTile;
-    }
+		this.energyTile = energyTile;
+	}
 }
 

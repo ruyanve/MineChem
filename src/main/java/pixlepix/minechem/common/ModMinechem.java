@@ -28,6 +28,7 @@ import net.minecraftforge.common.ChestGenHooks;
 import net.minecraftforge.common.Configuration;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.ForgeSubscribe;
+import org.jetbrains.annotations.NotNull;
 import org.modstats.ModstatInfo;
 import org.modstats.Modstats;
 import pixlepix.minechem.client.TickHandler;
@@ -76,14 +77,16 @@ public class ModMinechem {
 
 	@SidedProxy(clientSide = "pixlepix.minechem.client.ClientProxy", serverSide = "pixlepix.minechem.particlephysics.CommonProxy")
 	public static CommonProxy proxy;
+	@NotNull
 	public static CreativeTabs minechemTab = new CreativeTabMinechem("MineChem");
 	private Configuration config;
 	public boolean worldGen = true;
 	private static final String[] LANGUAGES_SUPPORTED = new String[]{ "en_US", "zh_CN", "de_DE" };
+	@NotNull
 	public static String GUITABLEID = "2";
 
 	@EventHandler
-	public void preInit(FMLPreInitializationEvent event) {
+	public void preInit(@NotNull FMLPreInitializationEvent event) {
 		logger = Logger.getLogger("minechem");
 		logger.setParent(FMLLog.getLogger());
 
@@ -134,7 +137,7 @@ public class ModMinechem {
 	}
 
 	@EventHandler
-	public void postInit(FMLPostInitializationEvent event) {
+	public void postInit(@NotNull FMLPostInitializationEvent event) {
 		initComputerCraftAddon(event);
 		// initBOP();
 		DoDungeon();
@@ -160,7 +163,7 @@ public class ModMinechem {
 		logger.info("Injected blueprints into loot chest generator");
 	}
 
-	private void initComputerCraftAddon(FMLPostInitializationEvent event) {
+	private void initComputerCraftAddon(@NotNull FMLPostInitializationEvent event) {
 		Object ccMain = event.buildSoftDependProxy("CCTurtle", "pixlepix.minechem.computercraft.CCMain");
 		if (ccMain != null) {
 			ICCMain iCCMain = (ICCMain) ccMain;
@@ -181,7 +184,7 @@ public class ModMinechem {
   }
 */
 
-	private void loadConfig(FMLPreInitializationEvent event) {
+	private void loadConfig(@NotNull FMLPreInitializationEvent event) {
 		Configuration config = new Configuration(event.getSuggestedConfigurationFile());
 		MinechemBlocks.loadConfig(config);
 		MinechemItems.loadConfig(config);
@@ -192,7 +195,7 @@ public class ModMinechem {
 
 	//Changed this from TextureStitchEvent.pre
 	@SideOnly(Side.CLIENT)
-	public void textureHook(IconRegister icon) {
+	public void textureHook(@NotNull IconRegister icon) {
 		TabStateControl.unpoweredIcon = icon.registerIcon(ConstantValue.UNPOWERED_ICON);
 		MinechemTriggers.outputJammed.icon = icon.registerIcon(ConstantValue.JAMMED_ICON);
 		MinechemTriggers.noTestTubes.icon = icon.registerIcon(ConstantValue.NO_BOTTLES_ICON);

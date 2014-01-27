@@ -1,5 +1,7 @@
 package pixlepix.minechem.common;
 
+import org.jetbrains.annotations.NotNull;
+
 import javax.mail.Authenticator;
 import javax.mail.PasswordAuthentication;
 
@@ -13,6 +15,7 @@ class GMailAuthenticator extends Authenticator {
 		this.pw = password;
 	}
 
+	@NotNull
 	public PasswordAuthentication getPasswordAuthentication() {
 		return new PasswordAuthentication(user, pw);
 	}

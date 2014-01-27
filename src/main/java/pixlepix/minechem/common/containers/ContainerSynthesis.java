@@ -4,6 +4,8 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import pixlepix.minechem.api.core.IRadiationShield;
 import pixlepix.minechem.common.MinechemItems;
 import pixlepix.minechem.common.tileentity.TileEntitySynthesis;
@@ -14,7 +16,7 @@ public class ContainerSynthesis extends ContainerWithFakeSlots implements IRadia
 
 	private TileEntitySynthesis synthesis;
 
-	public ContainerSynthesis(InventoryPlayer inventoryPlayer, TileEntitySynthesis synthesis) {
+	public ContainerSynthesis(InventoryPlayer inventoryPlayer, @NotNull TileEntitySynthesis synthesis) {
 		this.synthesis = synthesis;
 		addSlotToContainer(new SlotSynthesisOutput(synthesis, synthesis.kStartOutput, 134, 18));
 		bindRecipeMatrixSlots();
@@ -60,6 +62,7 @@ public class ContainerSynthesis extends ContainerWithFakeSlots implements IRadia
 		return synthesis.isUseableByPlayer(var1);
 	}
 
+	@Nullable
 	@Override
 	public ItemStack transferStackInSlot(EntityPlayer entityPlayer, int slot) {
 		Slot slotObject = (Slot) inventorySlots.get(slot);

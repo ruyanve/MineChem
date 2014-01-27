@@ -3,6 +3,8 @@ package pixlepix.minechem.client.gui.tabs;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.util.Icon;
 import net.minecraft.util.ResourceLocation;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import pixlepix.minechem.common.ModMinechem;
 import pixlepix.minechem.common.tileentity.MinechemTileEntity;
 import pixlepix.minechem.common.utils.MinechemHelper;
@@ -19,9 +21,10 @@ public class TabEnergy extends Tab {
     int textColour = 0x000000;
     //Switched from refrence to MinechemPowerProvider for 1.6 move to UE
     MinechemTileEntity energy;
-    RollingAverage energyUsageRolling = new RollingAverage(100);
+	@NotNull
+	RollingAverage energyUsageRolling = new RollingAverage(100);
 
-    public TabEnergy(Gui gui, MinechemTileEntity energy) {
+	public TabEnergy(Gui gui, MinechemTileEntity energy) {
         super(gui);
         this.maxWidth = 120;
         this.maxHeight = 100;
@@ -48,8 +51,9 @@ public class TabEnergy extends Tab {
         fontRenderer.drawString(String.format("%d", energy.getEnergyStored()) + " RF", x + 22, y + 80, textColour);
     }
 
-    @Override
-    public String getTooltip() {
+	@Nullable
+	@Override
+	public String getTooltip() {
         if (!isOpen()) {
             return String.format("%.1f", energy.getRequest()) + " MJ/t";
         } else

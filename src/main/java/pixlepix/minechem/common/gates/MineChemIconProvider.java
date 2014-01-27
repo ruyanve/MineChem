@@ -5,20 +5,22 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.util.Icon;
+import org.jetbrains.annotations.Nullable;
 
 public class MineChemIconProvider implements IIconProvider {
 
-    @Override
-    @SideOnly(Side.CLIENT)
-    public Icon getIcon(int iconIndex) {
+	@Nullable
+	@Override
+	@SideOnly(Side.CLIENT)
+	public Icon getIcon(int iconIndex) {
 
-        return null;
-    }
+		return null;
+	}
 
-    @Override
-    @SideOnly(Side.CLIENT)
-    public void registerIcons(IconRegister iconRegister) {
+	@Override
+	@SideOnly(Side.CLIENT)
+	public void registerIcons(IconRegister iconRegister) {
 
-    }
+	}
 
 }

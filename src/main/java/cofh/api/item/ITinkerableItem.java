@@ -1,6 +1,7 @@
 package cofh.api.item;
 
 import net.minecraft.item.ItemStack;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
@@ -13,18 +14,19 @@ import java.util.List;
  */
 public interface ITinkerableItem {
 
-    /**
-     * Returns a list of valid ItemStacks which may be used to upgrade this Tinkerable.
-     */
-    List<ItemStack> getValidTinkers(ItemStack container);
+	/**
+	 * Returns a list of valid ItemStacks which may be used to upgrade this Tinkerable.
+	 */
+	@NotNull
+	List<ItemStack> getValidTinkers(ItemStack container);
 
-    /**
-     * Applies a tinker to this item.
-     *
-     * @param container The ItemStack (Tinkerable) to which the tinker is being applied.
-     * @param tinker    The ItemStack representing the upgrade.
-     * @return True if the application was successful, false if it was not.
-     */
-    boolean applyTinker(ItemStack container, ItemStack tinker);
+	/**
+	 * Applies a tinker to this item.
+	 *
+	 * @param container The ItemStack (Tinkerable) to which the tinker is being applied.
+	 * @param tinker    The ItemStack representing the upgrade.
+	 * @return True if the application was successful, false if it was not.
+	 */
+	boolean applyTinker(ItemStack container, ItemStack tinker);
 
 }

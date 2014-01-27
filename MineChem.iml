@@ -48,6 +48,15 @@
     <orderEntry type="library" exported="" name="Gradle: lwjgl-platform-2.9.0-natives-linux" level="project" />
     <orderEntry type="library" exported="" name="Gradle: jinput-platform-2.0.5-natives-linux" level="project" />
     <orderEntry type="library" exported="" name="Gradle: scala-reflect-2.10.2" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/annotations.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>
 

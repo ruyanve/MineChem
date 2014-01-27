@@ -13,34 +13,35 @@ import buildcraft.api.blueprints.BptBlock;
 import buildcraft.api.blueprints.BptSlotInfo;
 import buildcraft.api.blueprints.IBptContext;
 import net.minecraft.item.ItemStack;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.LinkedList;
 
 @Deprecated
 public class BptBlockIgnore extends BptBlock {
 
-    public BptBlockIgnore(int blockId) {
-        super(blockId);
-    }
+	public BptBlockIgnore(int blockId) {
+		super(blockId);
+	}
 
-    @Override
-    public void addRequirements(BptSlotInfo slot, IBptContext context, LinkedList<ItemStack> requirements) {
-        requirements.add(new ItemStack(slot.blockId, 0, 0));
-    }
+	@Override
+	public void addRequirements(@NotNull BptSlotInfo slot, IBptContext context, LinkedList<ItemStack> requirements) {
+		requirements.add(new ItemStack(slot.blockId, 0, 0));
+	}
 
-    @Override
-    public boolean isValid(BptSlotInfo slot, IBptContext context) {
-        return true;
-    }
+	@Override
+	public boolean isValid(BptSlotInfo slot, IBptContext context) {
+		return true;
+	}
 
-    @Override
-    public void rotateLeft(BptSlotInfo slot, IBptContext context) {
+	@Override
+	public void rotateLeft(BptSlotInfo slot, IBptContext context) {
 
-    }
+	}
 
-    @Override
-    public boolean ignoreBuilding(BptSlotInfo slot) {
-        return true;
-    }
+	@Override
+	public boolean ignoreBuilding(BptSlotInfo slot) {
+		return true;
+	}
 
 }

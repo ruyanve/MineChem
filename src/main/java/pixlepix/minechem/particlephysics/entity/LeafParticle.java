@@ -1,6 +1,7 @@
 package pixlepix.minechem.particlephysics.entity;
 
 import net.minecraft.world.World;
+import org.jetbrains.annotations.NotNull;
 import pixlepix.minechem.particlephysics.api.BaseParticle;
 
 public class LeafParticle extends BaseParticle {
@@ -14,6 +15,7 @@ public class LeafParticle extends BaseParticle {
 		return 500;
 	}
 
+	@NotNull
 	@Override
 	public String getName() {
 		return "Leaf";

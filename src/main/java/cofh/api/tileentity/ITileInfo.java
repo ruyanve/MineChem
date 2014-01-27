@@ -1,6 +1,7 @@
 package cofh.api.tileentity;
 
 import net.minecraft.entity.player.EntityPlayer;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
@@ -11,8 +12,9 @@ import java.util.List;
  */
 public interface ITileInfo {
 
-    public List<String> getTileInfo();
+	@NotNull
+	public List<String> getTileInfo();
 
-    public void sendTileInfoToPlayer(EntityPlayer player);
+	public void sendTileInfoToPlayer(EntityPlayer player);
 
 }

@@ -11,6 +11,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Icon;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.NotNull;
 import pixlepix.minechem.common.ModMinechem;
 import pixlepix.minechem.common.tileentity.TileEntityFission;
 import pixlepix.minechem.common.tileentity.TileEntityFusion;
@@ -32,7 +33,7 @@ public class BlockFusion extends BlockMinechemContainer {
 	}
 
 	@Override
-	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer entityPlayer, int side, float par7, float par8, float par9) {
+	public boolean onBlockActivated(@NotNull World world, int x, int y, int z, EntityPlayer entityPlayer, int side, float par7, float par8, float par9) {
 		TileEntity tileEntity = world.getBlockTileEntity(x, y, z);
 
 		//if(tileEntity instanceof TileEntityProxy){

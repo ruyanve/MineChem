@@ -9,6 +9,8 @@ import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import pixlepix.minechem.api.core.Chemical;
 import pixlepix.minechem.api.recipe.DecomposerRecipe;
 import pixlepix.minechem.api.util.Util;
@@ -18,17 +20,20 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class DecomposerRecipeHandler {
+	@NotNull
 	public static DecomposerRecipeHandler instance = new DecomposerRecipeHandler();
 
 	private DecomposerRecipeHandler() {
 
 	}
 
-	public DecomposerRecipe getRecipe(ItemStack input) {
+	@Nullable
+	public DecomposerRecipe getRecipe(@NotNull ItemStack input) {
 		return this.getRecipe(input, 0);
 	}
 
-	public DecomposerRecipe getRecipe(ItemStack input, int level) {
+	@Nullable
+	public DecomposerRecipe getRecipe(@NotNull ItemStack input, int level) {
 		for (DecomposerRecipe recipe : DecomposerRecipe.recipes) {
 			if (Util.stacksAreSameKind(input, recipe.getInput()))
 				return recipe;
@@ -115,7 +120,8 @@ public class DecomposerRecipeHandler {
 		return null;
 	}
 
-	public ArrayList<ItemStack> getRecipeOutputForInput(ItemStack input) {
+	@Nullable
+	public ArrayList<ItemStack> getRecipeOutputForInput(@NotNull ItemStack input) {
 		DecomposerRecipe recipe = getRecipe(input);
 		if (recipe != null) {
 			ArrayList<ItemStack> stacks = MinechemHelper.convertChemicalsIntoItemStacks(recipe.getOutput());
@@ -124,7 +130,8 @@ public class DecomposerRecipeHandler {
 		return null;
 	}
 
-	public ArrayList<ItemStack> getRecipeOutputForFluidInput(FluidStack input) {
+	@Nullable
+	public ArrayList<ItemStack> getRecipeOutputForFluidInput(@NotNull FluidStack input) {
 		DecomposerFluidRecipe fluidRecipe = null;
 		for (DecomposerRecipe recipe : DecomposerRecipe.recipes) {
 			if (recipe instanceof DecomposerFluidRecipe && input.isFluidEqual(((DecomposerFluidRecipe) recipe).inputFluid)) {

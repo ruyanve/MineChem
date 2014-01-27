@@ -4,47 +4,49 @@ import net.minecraft.block.Block;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.NotNull;
 import pixlepix.minechem.api.core.EnumElement;
 import pixlepix.minechem.common.polytool.PolytoolUpgradeType;
 
 public class PolytoolTypeBeryllium extends PolytoolUpgradeType {
 
-    //See PolytoolEventHandler
+	//See PolytoolEventHandler
 
-    public PolytoolTypeBeryllium() {
-        super();
-    }
+	public PolytoolTypeBeryllium() {
+		super();
+	}
 
-    @Override
-    public float getStrVsBlock(ItemStack itemStack, Block block) {
+	@Override
+	public float getStrVsBlock(ItemStack itemStack, Block block) {
 
-        return 0;
-    }
+		return 0;
+	}
 
-    @Override
-    public void hitEntity(ItemStack itemStack, EntityLivingBase target,
-                          EntityLivingBase player) {
-    }
+	@Override
+	public void hitEntity(ItemStack itemStack, EntityLivingBase target,
+	                      EntityLivingBase player) {
+	}
 
-    @Override
-    public void onBlockDestroyed(ItemStack itemStack, World world, int id,
-                                 int x, int y, int z, EntityLivingBase entityLiving) {
-    }
+	@Override
+	public void onBlockDestroyed(ItemStack itemStack, World world, int id,
+	                             int x, int y, int z, EntityLivingBase entityLiving) {
+	}
 
-    @Override
-    public EnumElement getElement() {
+	@NotNull
+	@Override
+	public EnumElement getElement() {
 
-        return EnumElement.Be;
-    }
+		return EnumElement.Be;
+	}
 
-    @Override
-    public void onTick() {
-    }
+	@Override
+	public void onTick() {
+	}
 
-    @Override
-    public String getDescription() {
+	@Override
+	public String getDescription() {
 
-        return "Beheading";
-    }
+		return "Beheading";
+	}
 
 }

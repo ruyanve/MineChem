@@ -8,6 +8,8 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import pixlepix.minechem.particlephysics.ParticlePhysics;
 import pixlepix.minechem.particlephysics.helper.BasicComplexBlock;
 import pixlepix.minechem.particlephysics.helper.ParticleRegistry;
@@ -25,6 +27,7 @@ public class Emitter extends BasicComplexBlock {
 		super(i);
 	}
 
+	@NotNull
 	@Override
 	public String getFront() {
 		// TODO Auto-generated method stub
@@ -36,12 +39,14 @@ public class Emitter extends BasicComplexBlock {
 		return true;
 	}
 
+	@NotNull
 	@Override
 	public String getTop() {
 		// TODO Auto-generated method stub
 		return "EmitterTop";
 	}
 
+	@NotNull
 	@Override
 	public Class getTileEntityClass() {
 		return EmitterTileEntity.class;
@@ -53,6 +58,7 @@ public class Emitter extends BasicComplexBlock {
 
 	}
 
+	@NotNull
 	@Override
 	public String getName() {
 		return "Emitter";
@@ -63,6 +69,7 @@ public class Emitter extends BasicComplexBlock {
 		return true;
 	}
 
+	@Nullable
 	@Override
 	public Class getItemBlock() {
 		return null;
@@ -82,7 +89,7 @@ public class Emitter extends BasicComplexBlock {
 	}
 
 	@Override
-	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer entityPlayer, int side, float hitX, float hitY, float hitZ) {
+	public boolean onBlockActivated(@NotNull World world, int x, int y, int z, @NotNull EntityPlayer entityPlayer, int side, float hitX, float hitY, float hitZ) {
 		TileEntity te = world.getBlockTileEntity(x, y, z);
 		if (te != null && te instanceof EmitterTileEntity) {
 			entityPlayer.openGui(ParticlePhysics.instance, 0, world, x, y, z);
@@ -92,7 +99,7 @@ public class Emitter extends BasicComplexBlock {
 	}
 
 	@Override
-	public void addStacksDroppedOnBlockBreak(TileEntity tileEntity, ArrayList<ItemStack> itemStacks) {
+	public void addStacksDroppedOnBlockBreak(TileEntity tileEntity, @NotNull ArrayList<ItemStack> itemStacks) {
 		IInventory decomposer = (IInventory) tileEntity;
 		for (int slot = 0; slot < decomposer.getSizeInventory(); slot++) {
 			ItemStack itemstack = decomposer.getStackInSlot(slot);

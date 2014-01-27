@@ -18,6 +18,8 @@ import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.FluidTankInfo;
 import net.minecraftforge.fluids.IFluidHandler;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import pixlepix.minechem.api.core.Chemical;
 import pixlepix.minechem.api.recipe.DecomposerRecipe;
 import pixlepix.minechem.api.util.Util;
@@ -44,6 +46,7 @@ public class TileEntityDecomposer extends MinechemTileEntity implements ISidedIn
 	public static final int[] kOutput = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 	private static final float MIN_WORK_PER_SECOND = 1.0F;
 	private static final float MAX_WORK_PER_SECOND = 10.0F;
+	@Nullable
 	private ArrayList<ItemStack> outputBuffer;
 	public final int kInputSlot = 0;
 	public final int kOutputSlotStart = 1;
@@ -51,6 +54,7 @@ public class TileEntityDecomposer extends MinechemTileEntity implements ISidedIn
 	public final int kEmptyBottleSlotsSize = 4;
 	public final int kOutputSlotsSize = 9;
 	public State state = State.kProcessIdle;
+	@Nullable
 	private ItemStack activeStack;
 	private float workToDo = 0;
 	public ModelDecomposer model;
@@ -66,20 +70,23 @@ public class TileEntityDecomposer extends MinechemTileEntity implements ISidedIn
 	private static final int MIN_ACTIVATION_ENERGY = 0;
 	private static final int MAX_ENERGY_STORED = 10000;
 
+	@NotNull
 	ArrayList<FluidStack> fluids = new ArrayList<FluidStack>();
 
+	@Nullable
 	@Override
 	public FluidStack drain(ForgeDirection from, FluidStack resource, boolean doDrain) {
 		return null;
 	}
 
+	@Nullable
 	@Override
 	public FluidStack drain(ForgeDirection from, int maxDrain, boolean doDrain) {
 		return null;
 	}
 
 	@Override
-	public int fill(ForgeDirection from, FluidStack resource, boolean doFill) {
+	public int fill(ForgeDirection from, @NotNull FluidStack resource, boolean doFill) {
 		Iterator iter = fluids.iterator();
 
 		int maxFill = resource.amount;
@@ -132,6 +139,7 @@ public class TileEntityDecomposer extends MinechemTileEntity implements ISidedIn
 		return false;
 	}
 
+	@NotNull
 	@Override
 	public FluidTankInfo[] getTankInfo(ForgeDirection from) {
 		FluidTankInfo[] result = new FluidTankInfo[fluids.size() + 1];
@@ -210,6 +218,7 @@ public class TileEntityDecomposer extends MinechemTileEntity implements ISidedIn
 		PacketHandler.getInstance().decomposerUpdateHandler.sendToAllPlayersInDimension(packetDecomposerUpdate, dimensionID);
 	}
 
+	@Nullable
 	private ItemStack getActiveStack() {
 		if (activeStack == null) {
 			if (getStackInSlot(kInput[0]) != null) {
@@ -271,7 +280,7 @@ public class TileEntityDecomposer extends MinechemTileEntity implements ISidedIn
 
 	}
 
-	private void placeStacksInBuffer(ArrayList<ItemStack> outputStacks) {
+	private void placeStacksInBuffer(@Nullable ArrayList<ItemStack> outputStacks) {
 		if (outputStacks != null) {
 			outputBuffer = outputStacks;
 		} else {
@@ -287,6 +296,7 @@ public class TileEntityDecomposer extends MinechemTileEntity implements ISidedIn
 		return false;
 	}
 
+	@NotNull
 	private State moveBufferItemToOutputSlot() {
 		for (ItemStack outputStack : outputBuffer) {
 			if (addStackToOutputSlots(outputStack.copy().splitStack(1))) {
@@ -301,7 +311,7 @@ public class TileEntityDecomposer extends MinechemTileEntity implements ISidedIn
 		return State.kProcessFinished;
 	}
 
-	private boolean addStackToOutputSlots(ItemStack itemstack) {
+	private boolean addStackToOutputSlots(@NotNull ItemStack itemstack) {
 		itemstack.getItem().onCreated(itemstack, this.worldObj, null);
 		for (int outputSlot : kOutput) {
 			ItemStack stackInSlot = getStackInSlot(outputSlot);
@@ -317,7 +327,7 @@ public class TileEntityDecomposer extends MinechemTileEntity implements ISidedIn
 	}
 
 	@Override
-	public int addItem(ItemStack incoming, boolean doAdd, ForgeDirection from) {
+	public int addItem(@Nullable ItemStack incoming, boolean doAdd, ForgeDirection from) {
 
 		if (incoming != null) {
 
@@ -327,6 +337,7 @@ public class TileEntityDecomposer extends MinechemTileEntity implements ISidedIn
 		return 0;
 	}
 
+	@NotNull
 	@Override
 	public ItemStack[] extractItem(boolean doRemove, ForgeDirection from, int maxItemCount) {
 		return outputTransactor.remove(maxItemCount, doRemove);
@@ -337,13 +348,14 @@ public class TileEntityDecomposer extends MinechemTileEntity implements ISidedIn
 		return 14;
 	}
 
+	@NotNull
 	@Override
 	public String getInvName() {
 		return "container.decomposer";
 	}
 
 	@Override
-	public void writeToNBT(NBTTagCompound nbtTagCompound) {
+	public void writeToNBT(@NotNull NBTTagCompound nbtTagCompound) {
 		super.writeToNBT(nbtTagCompound);
 		NBTTagList inventoryTagList = MinechemHelper.writeItemStackArrayToTagList(inventory);
 		NBTTagList buffer = MinechemHelper.writeItemStackListToTagList(outputBuffer);
@@ -358,7 +370,7 @@ public class TileEntityDecomposer extends MinechemTileEntity implements ISidedIn
 	}
 
 	@Override
-	public void readFromNBT(NBTTagCompound nbtTagCompound) {
+	public void readFromNBT(@NotNull NBTTagCompound nbtTagCompound) {
 		super.readFromNBT(nbtTagCompound);
 		NBTTagList inventoryTagList = nbtTagCompound.getTagList("inventory");
 		NBTTagList buffer = nbtTagCompound.getTagList("buffer");
@@ -384,11 +396,13 @@ public class TileEntityDecomposer extends MinechemTileEntity implements ISidedIn
 		return (state != State.kProcessJammed && (this.getEnergyStored() > this.getMinEnergyNeeded()));
 	}
 
+	@Nullable
 	@Override
 	public LinkedList<ITrigger> getPipeTriggers(IPipe pipe) {
 		return null;
 	}
 
+	@Nullable
 	@Override
 	public LinkedList<ITrigger> getNeighborTriggers(Block block, TileEntity tile) {
 		if (tile instanceof TileEntityDecomposer) {
@@ -410,16 +424,18 @@ public class TileEntityDecomposer extends MinechemTileEntity implements ISidedIn
 		return this.state == State.kProcessJammed;
 	}
 
+	@Nullable
 	@Override
 	public ItemStack takeOutput() {
 		return outputTransactor.removeItem(true);
 	}
 
 	@Override
-	public int putInput(ItemStack input) {
+	public int putInput(@NotNull ItemStack input) {
 		return inputTransactor.add(input, true);
 	}
 
+	@Nullable
 	@Override
 	public ItemStack takeFusionStar() {
 		return null;
@@ -430,6 +446,7 @@ public class TileEntityDecomposer extends MinechemTileEntity implements ISidedIn
 		return 0;
 	}
 
+	@Nullable
 	@Override
 	public ItemStack takeJournal() {
 		return null;
@@ -441,15 +458,17 @@ public class TileEntityDecomposer extends MinechemTileEntity implements ISidedIn
 	}
 
 	@Override
-	public int putOutput(ItemStack output) {
+	public int putOutput(@NotNull ItemStack output) {
 		return outputTransactor.add(output, true);
 	}
 
+	@Nullable
 	@Override
 	public ItemStack takeInput() {
 		return outputTransactor.removeItem(true);
 	}
 
+	@NotNull
 	@Override
 	public String getMachineState() {
 		if (this.state == State.kProcessJammed) {
@@ -475,6 +494,7 @@ public class TileEntityDecomposer extends MinechemTileEntity implements ISidedIn
 		return false;
 	}
 
+	@NotNull
 	public int[] getSizeInventorySide(int side) {
 		switch (side) {
 			case 0:
@@ -492,6 +512,7 @@ public class TileEntityDecomposer extends MinechemTileEntity implements ISidedIn
 		return 100;
 	}
 
+	@NotNull
 	@Override
 	public int[] getAccessibleSlotsFromSide(int var1) {
 
@@ -518,7 +539,7 @@ public class TileEntityDecomposer extends MinechemTileEntity implements ISidedIn
 	//Hacky code
 	//To fix a FZ glitch
 	@Override
-	public void setInventorySlotContents(int slot, ItemStack itemstack) {
+	public void setInventorySlotContents(int slot, @Nullable ItemStack itemstack) {
 		if (slot == this.kOutput[0]) {
 			ItemStack oldStack = this.inventory[this.kOutput[0]];
 			if (oldStack != null && itemstack != null && oldStack.getItemDamage() == itemstack.getItemDamage()) {

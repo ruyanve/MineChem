@@ -12,19 +12,22 @@ package buildcraft.api.gates;
 import buildcraft.api.transport.IPipe;
 import net.minecraft.block.Block;
 import net.minecraft.tileentity.TileEntity;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.LinkedList;
 
 public interface ITriggerProvider {
 
-    /**
-     * Returns the list of triggers that are available from the pipe holding the gate.
-     */
-    public abstract LinkedList<ITrigger> getPipeTriggers(IPipe pipe);
+	/**
+	 * Returns the list of triggers that are available from the pipe holding the gate.
+	 */
+	@Nullable
+	public abstract LinkedList<ITrigger> getPipeTriggers(IPipe pipe);
 
-    /**
-     * Returns the list of triggers available to a gate next to the given block.
-     */
-    public abstract LinkedList<ITrigger> getNeighborTriggers(Block block, TileEntity tile);
+	/**
+	 * Returns the list of triggers available to a gate next to the given block.
+	 */
+	@Nullable
+	public abstract LinkedList<ITrigger> getNeighborTriggers(Block block, TileEntity tile);
 
 }

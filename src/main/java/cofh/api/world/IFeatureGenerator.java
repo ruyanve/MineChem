@@ -2,6 +2,7 @@ package cofh.api.world;
 
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Random;
 
@@ -13,21 +14,22 @@ import java.util.Random;
  */
 public interface IFeatureGenerator {
 
-    /**
-     * Returns the name of the feature, used for displaying in the World.cfg file.
-     */
-    public String getFeatureName();
+	/**
+	 * Returns the name of the feature, used for displaying in the World.cfg file.
+	 */
+	@NotNull
+	public String getFeatureName();
 
-    /**
-     * Generates the world feature.
-     *
-     * @param random Random derived from the world seed.
-     * @param chunkX Minimum X chunk-coordinate of the chunk. (x16 for block coordinate)
-     * @param chunkZ Minimum Z chunk-coordinate of the chunk. (x16 for block coordinate)
-     * @param world  The world to generate in.
-     * @param newGen True on initial generation, false on retrogen.
-     * @return True if generation happened, false otherwise.
-     */
-    public boolean generateFeature(Random random, int chunkX, int chunkZ, World world, boolean newGen);
+	/**
+	 * Generates the world feature.
+	 *
+	 * @param random Random derived from the world seed.
+	 * @param chunkX Minimum X chunk-coordinate of the chunk. (x16 for block coordinate)
+	 * @param chunkZ Minimum Z chunk-coordinate of the chunk. (x16 for block coordinate)
+	 * @param world  The world to generate in.
+	 * @param newGen True on initial generation, false on retrogen.
+	 * @return True if generation happened, false otherwise.
+	 */
+	public boolean generateFeature(Random random, int chunkX, int chunkZ, World world, boolean newGen);
 
 }

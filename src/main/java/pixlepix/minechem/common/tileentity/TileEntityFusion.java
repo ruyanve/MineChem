@@ -6,6 +6,8 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import pixlepix.minechem.api.core.EnumElement;
 import pixlepix.minechem.api.util.Constants;
 import pixlepix.minechem.common.MinechemItems;
@@ -18,12 +20,18 @@ import pixlepix.minechem.computercraft.IMinechemMachinePeripheral;
 
 public class TileEntityFusion extends TileEntityMultiBlock implements IMinechemMachinePeripheral {
 
+	@NotNull
 	public static int[] kFusionStar = { 0 };
+	@NotNull
 	public static int[] kInput = { 1, 2 };
+	@NotNull
 	public static int[] kOutput = { 3 };
 
+	@NotNull
 	private final BoundedInventory inputInventory;
+	@NotNull
 	private final BoundedInventory outputInventory;
+	@NotNull
 	private final BoundedInventory starInventory;
 	private Transactor inputTransactor;
 	private Transactor outputTransactor;
@@ -39,6 +47,7 @@ public class TileEntityFusion extends TileEntityMultiBlock implements IMinechemM
 	int maxEnergy = 9;
 	int targetEnergy = 0;
 	boolean isRecharging = false;
+	@NotNull
 	SafeTimeTracker energyUpdateTracker = new SafeTimeTracker();
 	boolean shouldSendUpdatePacket;
 
@@ -85,7 +94,7 @@ public class TileEntityFusion extends TileEntityMultiBlock implements IMinechemM
 			sendUpdatePacket();
 	}
 
-	private void addToOutput(ItemStack fusionResult) {
+	private void addToOutput(@NotNull ItemStack fusionResult) {
 		if (inventory[kOutput[0]] == null) {
 			ItemStack output = fusionResult.copy();
 			inventory[kOutput[0]] = output;
@@ -99,7 +108,7 @@ public class TileEntityFusion extends TileEntityMultiBlock implements IMinechemM
 		decrStackSize(kInput[1], 1);
 	}
 
-	private boolean canFuse(ItemStack fusionResult) {
+	private boolean canFuse(@NotNull ItemStack fusionResult) {
 		ItemStack itemInOutput = inventory[kOutput[0]];
 		if (itemInOutput != null)
 			return itemInOutput.stackSize < getInventoryStackLimit() && itemInOutput.isItemEqual(fusionResult) && energyStored >= getEnergyCost(fusionResult);
@@ -107,6 +116,7 @@ public class TileEntityFusion extends TileEntityMultiBlock implements IMinechemM
 			return energyStored >= getEnergyCost(fusionResult);
 	}
 
+	@Nullable
 	private ItemStack getFusionOutput() {
 		if (hasInputs()) {
 			int mass1 = inventory[kInput[0]].getItemDamage() + 1;
@@ -122,7 +132,7 @@ public class TileEntityFusion extends TileEntityMultiBlock implements IMinechemM
 		}
 	}
 
-	private int getEnergyCost(ItemStack itemstack) {
+	private int getEnergyCost(@NotNull ItemStack itemstack) {
 		int mass = itemstack.getItemDamage();
 		int cost = (int) MinechemHelper.translateValue(mass + 1, 1, EnumElement.heaviestMass, 1, this.maxEnergy);
 		return cost / 100;
@@ -142,7 +152,7 @@ public class TileEntityFusion extends TileEntityMultiBlock implements IMinechemM
 		}
 	}
 
-	private int takeEnergyFromStar(ItemStack fusionStar, boolean doTake) {
+	private int takeEnergyFromStar(@NotNull ItemStack fusionStar, boolean doTake) {
 		int energyCapacityAvailable = maxEnergy - energyStored;
 		int fusionStarDamage = fusionStar.getItemDamage();
 		int energyInStar = fusionStar.getMaxDamage() - fusionStarDamage;
@@ -172,7 +182,7 @@ public class TileEntityFusion extends TileEntityMultiBlock implements IMinechemM
 	}
 
 	@Override
-	public void setInventorySlotContents(int slot, ItemStack itemstack) {
+	public void setInventorySlotContents(int slot, @Nullable ItemStack itemstack) {
 		if (slot == 0 && itemstack != null && itemstack.itemID == Item.netherStar.itemID) {
 			System.out.println("Turning nether star into fusion star");
 			this.inventory[slot] = new ItemStack(MinechemItems.fusionStar);
@@ -181,6 +191,7 @@ public class TileEntityFusion extends TileEntityMultiBlock implements IMinechemM
 		}
 	}
 
+	@NotNull
 	@Override
 	public String getInvName() {
 		return "container.minechemFusion";
@@ -195,7 +206,7 @@ public class TileEntityFusion extends TileEntityMultiBlock implements IMinechemM
 	}
 
 	@Override
-	public void writeToNBT(NBTTagCompound nbtTagCompound) {
+	public void writeToNBT(@NotNull NBTTagCompound nbtTagCompound) {
 		super.writeToNBT(nbtTagCompound);
 		nbtTagCompound.setInteger("fusionenergyStored", energyStored);
 		nbtTagCompound.setInteger("targetEnergy", targetEnergy);
@@ -205,7 +216,7 @@ public class TileEntityFusion extends TileEntityMultiBlock implements IMinechemM
 	}
 
 	@Override
-	public void readFromNBT(NBTTagCompound nbtTagCompound) {
+	public void readFromNBT(@NotNull NBTTagCompound nbtTagCompound) {
 		super.readFromNBT(nbtTagCompound);
 		energyStored = nbtTagCompound.getInteger("fusionenergyStored");
 		targetEnergy = nbtTagCompound.getInteger("targetEnergy");
@@ -222,36 +233,40 @@ public class TileEntityFusion extends TileEntityMultiBlock implements IMinechemM
 		return this.maxEnergy;
 	}
 
+	@Nullable
 	@Override
 	public ItemStack takeOutput() {
 		return outputTransactor.removeItem(true);
 	}
 
 	@Override
-	public int putOutput(ItemStack output) {
+	public int putOutput(@NotNull ItemStack output) {
 		return outputTransactor.add(output, true);
 	}
 
+	@Nullable
 	@Override
 	public ItemStack takeInput() {
 		return inputTransactor.removeItem(true);
 	}
 
 	@Override
-	public int putInput(ItemStack input) {
+	public int putInput(@NotNull ItemStack input) {
 		return inputTransactor.add(input, true);
 	}
 
+	@Nullable
 	@Override
 	public ItemStack takeFusionStar() {
 		return starTransactor.removeItem(true);
 	}
 
 	@Override
-	public int putFusionStar(ItemStack fusionStar) {
+	public int putFusionStar(@NotNull ItemStack fusionStar) {
 		return starTransactor.add(fusionStar, true);
 	}
 
+	@Nullable
 	@Override
 	public ItemStack takeJournal() {
 		return null;
@@ -262,6 +277,7 @@ public class TileEntityFusion extends TileEntityMultiBlock implements IMinechemM
 		return 0;
 	}
 
+	@NotNull
 	@Override
 	public String getMachineState() {
 		if (starInventory.getStackInSlot(0) == null) {
@@ -279,7 +295,7 @@ public class TileEntityFusion extends TileEntityMultiBlock implements IMinechemM
 	}
 
 	@Override
-	public boolean isItemValidForSlot(int i, ItemStack itemstack) {
+	public boolean isItemValidForSlot(int i, @NotNull ItemStack itemstack) {
 		if (i == kFusionStar[0]) {
 			if (itemstack.itemID == Item.netherStar.itemID || itemstack.itemID == MinechemItems.fusionStar.itemID) {
 				return true;
@@ -293,6 +309,7 @@ public class TileEntityFusion extends TileEntityMultiBlock implements IMinechemM
 		return false;
 	}
 
+	@NotNull
 	public int[] getSizeInventorySide(int side) {
 		switch (side) {
 			case 0:

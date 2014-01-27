@@ -5,17 +5,20 @@ import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import pixlepix.minechem.common.MinechemBlocks;
 
 public class TileEntityProxy extends TileEntity implements ISidedInventory {
 
+	@Nullable
 	public TileEntity manager;
 	int managerXOffset;
 	int managerYOffset;
 	int managerZOffset;
 
 	@Override
-	public void writeToNBT(NBTTagCompound nbtTagCompound) {
+	public void writeToNBT(@NotNull NBTTagCompound nbtTagCompound) {
 		super.writeToNBT(nbtTagCompound);
 		if (manager != null) {
 			nbtTagCompound.setInteger("managerXOffset", manager.xCoord);
@@ -25,7 +28,7 @@ public class TileEntityProxy extends TileEntity implements ISidedInventory {
 	}
 
 	@Override
-	public void readFromNBT(NBTTagCompound nbtTagCompound) {
+	public void readFromNBT(@NotNull NBTTagCompound nbtTagCompound) {
 		super.readFromNBT(nbtTagCompound);
 		managerXOffset = nbtTagCompound.getInteger("managerXOffset");
 		managerYOffset = nbtTagCompound.getInteger("managerYOffset");
@@ -34,7 +37,7 @@ public class TileEntityProxy extends TileEntity implements ISidedInventory {
 			manager = worldObj.getBlockTileEntity(xCoord + managerXOffset, yCoord + managerYOffset, zCoord + managerZOffset);
 	}
 
-	public void setManager(TileEntity managerTileEntity) {
+	public void setManager(@Nullable TileEntity managerTileEntity) {
 
 		this.manager = managerTileEntity;
 		if (managerTileEntity != null) {
@@ -44,6 +47,7 @@ public class TileEntityProxy extends TileEntity implements ISidedInventory {
 		}
 	}
 
+	@Nullable
 	public TileEntity getManager() {
 		if (worldObj.getBlockTileEntity(xCoord + managerXOffset, yCoord + managerYOffset, zCoord + managerZOffset) != null && !(worldObj.getBlockTileEntity(xCoord + managerXOffset, yCoord + managerYOffset, zCoord + managerZOffset) instanceof TileEntityProxy)) {
 
@@ -90,6 +94,7 @@ public class TileEntityProxy extends TileEntity implements ISidedInventory {
 		return 0;
 	}
 
+	@Nullable
 	@Override
 	public ItemStack getStackInSlot(int i) {
 		if (this.getManager() != null && this.getManager() instanceof ISidedInventory) {
@@ -98,6 +103,7 @@ public class TileEntityProxy extends TileEntity implements ISidedInventory {
 		return null;
 	}
 
+	@Nullable
 	@Override
 	public ItemStack decrStackSize(int i, int j) {
 		if (this.getManager() != null && this.getManager() instanceof ISidedInventory) {
@@ -106,6 +112,7 @@ public class TileEntityProxy extends TileEntity implements ISidedInventory {
 		return null;
 	}
 
+	@Nullable
 	@Override
 	public ItemStack getStackInSlotOnClosing(int i) {
 		if (this.getManager() != null && this.getManager() instanceof ISidedInventory) {
@@ -121,6 +128,7 @@ public class TileEntityProxy extends TileEntity implements ISidedInventory {
 		}
 	}
 
+	@NotNull
 	@Override
 	public String getInvName() {
 		return "Multiblock Minechem proxy";

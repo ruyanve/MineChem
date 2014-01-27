@@ -11,65 +11,67 @@ package buildcraft.api.gates;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class TriggerParameter implements ITriggerParameter {
 
-    protected ItemStack stack;
+	protected ItemStack stack;
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see net.minecraft.src.buildcraft.api.gates.ITriggerParameter#getItemStack()
-     */
-    @Override
-    public ItemStack getItemStack() {
-        return stack;
-    }
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see net.minecraft.src.buildcraft.api.gates.ITriggerParameter#getItemStack()
+	 */
+	@Override
+	public ItemStack getItemStack() {
+		return stack;
+	}
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see net.minecraft.src.buildcraft.api.gates.ITriggerParameter#set(net.minecraft.src.ItemStack)
-     */
-    @Override
-    public void set(ItemStack stack) {
-        if (stack != null) {
-            this.stack = stack.copy();
-            this.stack.stackSize = 1;
-        }
-    }
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see net.minecraft.src.buildcraft.api.gates.ITriggerParameter#set(net.minecraft.src.ItemStack)
+	 */
+	@Override
+	public void set(@Nullable ItemStack stack) {
+		if (stack != null) {
+			this.stack = stack.copy();
+			this.stack.stackSize = 1;
+		}
+	}
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see net.minecraft.src.buildcraft.api.gates.ITriggerParameter#writeToNBT(net.minecraft.src.NBTTagCompound)
-     */
-    @Override
-    public void writeToNBT(NBTTagCompound compound) {
-        if (stack != null) {
-            compound.setInteger("itemID", stack.itemID);
-            compound.setInteger("itemDMG", stack.getItemDamage());
-        }
-    }
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see net.minecraft.src.buildcraft.api.gates.ITriggerParameter#writeToNBT(net.minecraft.src.NBTTagCompound)
+	 */
+	@Override
+	public void writeToNBT(@NotNull NBTTagCompound compound) {
+		if (stack != null) {
+			compound.setInteger("itemID", stack.itemID);
+			compound.setInteger("itemDMG", stack.getItemDamage());
+		}
+	}
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see net.minecraft.src.buildcraft.api.gates.ITriggerParameter#readFromNBT(net.minecraft.src.NBTTagCompound)
-     */
-    @Override
-    public void readFromNBT(NBTTagCompound compound) {
-        int itemID = compound.getInteger("itemID");
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see net.minecraft.src.buildcraft.api.gates.ITriggerParameter#readFromNBT(net.minecraft.src.NBTTagCompound)
+	 */
+	@Override
+	public void readFromNBT(@NotNull NBTTagCompound compound) {
+		int itemID = compound.getInteger("itemID");
 
-        if (itemID != 0) {
-            stack = new ItemStack(itemID, 1, compound.getInteger("itemDMG"));
-        }
-    }
+		if (itemID != 0) {
+			stack = new ItemStack(itemID, 1, compound.getInteger("itemDMG"));
+		}
+	}
 
-    @Override
-    @Deprecated
-    public ItemStack getItem() {
-        return stack;
-    }
+	@Override
+	@Deprecated
+	public ItemStack getItem() {
+		return stack;
+	}
 
 }

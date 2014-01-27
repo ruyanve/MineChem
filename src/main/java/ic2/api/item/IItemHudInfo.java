@@ -1,6 +1,7 @@
 package ic2.api.item;
 
 import net.minecraft.item.ItemStack;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
@@ -21,6 +22,7 @@ public interface IItemHudInfo {
     
     */
 
-    public List<String> getHudInfo(ItemStack itemStack);
+	@NotNull
+	public List<String> getHudInfo(ItemStack itemStack);
 
 }

@@ -11,14 +11,16 @@ package buildcraft.api.gates;
 
 import net.minecraft.block.Block;
 import net.minecraft.tileentity.TileEntity;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.LinkedList;
 
 public interface IActionProvider {
 
-    /**
-     * Returns the list of actions available to a gate next to the given block.
-     */
-    public abstract LinkedList<IAction> getNeighborActions(Block block, TileEntity tile);
+	/**
+	 * Returns the list of actions available to a gate next to the given block.
+	 */
+	@NotNull
+	public abstract LinkedList<IAction> getNeighborActions(Block block, TileEntity tile);
 
 }

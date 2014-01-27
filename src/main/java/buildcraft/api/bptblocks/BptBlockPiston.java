@@ -11,19 +11,20 @@ package buildcraft.api.bptblocks;
 
 import buildcraft.api.blueprints.BptSlotInfo;
 import buildcraft.api.blueprints.IBptContext;
+import org.jetbrains.annotations.NotNull;
 
 @Deprecated
 public class BptBlockPiston extends BptBlockRotateMeta {
 
-    public BptBlockPiston(int blockId) {
-        super(blockId, new int[]{2, 5, 3, 4}, true);
-    }
+	public BptBlockPiston(int blockId) {
+		super(blockId, new int[]{ 2, 5, 3, 4 }, true);
+	}
 
-    @Override
-    public void buildBlock(BptSlotInfo slot, IBptContext context) {
-        int meta = slot.meta & 7;
+	@Override
+	public void buildBlock(@NotNull BptSlotInfo slot, IBptContext context) {
+		int meta = slot.meta & 7;
 
-        context.world().setBlock(slot.x, slot.y, slot.z, slot.blockId, meta, 1);
-    }
+		context.world().setBlock(slot.x, slot.y, slot.z, slot.blockId, meta, 1);
+	}
 
 }

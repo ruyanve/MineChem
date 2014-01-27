@@ -7,6 +7,7 @@ import net.minecraft.client.model.ModelChest;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
+import org.jetbrains.annotations.NotNull;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL12;
 import pixlepix.minechem.common.tileentity.TileEntityChemicalStorage;
@@ -17,6 +18,7 @@ public class TileEntityChemicalStorageRenderer extends TileEntitySpecialRenderer
 	/**
 	 * The normal small chest model.
 	 */
+	@NotNull
 	private ModelChest chestModel = new ModelChest();
 
 	public TileEntityChemicalStorageRenderer() {

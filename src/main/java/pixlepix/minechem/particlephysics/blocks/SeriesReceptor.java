@@ -4,6 +4,8 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import pixlepix.minechem.particlephysics.helper.BasicComplexBlock;
 import pixlepix.minechem.particlephysics.tile.SeriesReceptorTileEntity;
 
@@ -24,6 +26,7 @@ public class SeriesReceptor extends BasicComplexBlock {
 
 	}
 
+	@NotNull
 	@Override
 	public String getFront() {
 		// TODO Auto-generated method stub
@@ -35,12 +38,14 @@ public class SeriesReceptor extends BasicComplexBlock {
 		return true;
 	}
 
+	@NotNull
 	@Override
 	public String getTop() {
 		// TODO Auto-generated method stub
 		return "SeriesReceptorTop";
 	}
 
+	@NotNull
 	@Override
 	public Class getTileEntityClass() {
 		return SeriesReceptorTileEntity.class;
@@ -52,6 +57,7 @@ public class SeriesReceptor extends BasicComplexBlock {
 
 	}
 
+	@NotNull
 	@Override
 	public String getName() {
 		return "Series Receptor";
@@ -62,6 +68,7 @@ public class SeriesReceptor extends BasicComplexBlock {
 		return true;
 	}
 
+	@Nullable
 	@Override
 	public Class getItemBlock() {
 		return null;

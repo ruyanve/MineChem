@@ -1,21 +1,22 @@
 package pixlepix.minechem.particlephysics.helper;
 
 import net.minecraft.tileentity.TileEntity;
+import org.jetbrains.annotations.Nullable;
 
 public interface IBlock {
 
-    public Class<TileEntity> getTileEntityClass();
+	@Nullable
+	public Class<TileEntity> getTileEntityClass();
 
-    public void addRecipe();
+	public void addRecipe();
 
+	public String getName();
 
-    public String getName();
+	public boolean hasItemBlock();
 
-    public boolean hasItemBlock();
+	@Nullable
+	public Class getItemBlock();
 
-    public Class getItemBlock();
-
-    public boolean inCreativeTab();
-
+	public boolean inCreativeTab();
 
 }

@@ -1,6 +1,7 @@
 package ic2.api.energy.event;
 
 import ic2.api.energy.tile.IEnergyTile;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Event announcing new energy tiles.
@@ -19,8 +20,8 @@ import ic2.api.energy.tile.IEnergyTile;
  * See ic2/api/energy/usage.txt for an overall description of the energy net api.
  */
 public class EnergyTileLoadEvent extends EnergyTileEvent {
-    public EnergyTileLoadEvent(IEnergyTile energyTile) {
-        super(energyTile);
-    }
+	public EnergyTileLoadEvent(@NotNull IEnergyTile energyTile) {
+		super(energyTile);
+	}
 }
 

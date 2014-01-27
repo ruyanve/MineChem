@@ -3,6 +3,7 @@ package pixlepix.minechem.common.recipe;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
+import org.jetbrains.annotations.NotNull;
 import pixlepix.minechem.api.core.Chemical;
 import pixlepix.minechem.api.recipe.DecomposerRecipe;
 
@@ -29,6 +30,7 @@ public class DecomposerFluidRecipe extends DecomposerRecipe {
 		}
 	}
 
+	@NotNull
 	public ItemStack getInput() {
 		return new ItemStack(this.inputFluid.getFluid().getBlockID(), 1, 0);
 	}

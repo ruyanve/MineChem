@@ -391,7 +391,9 @@
         <root url="jar://$PROJECT_DIR$/build/deobfuscated-bin.jar!/" />
       </CLASSES>
       <JAVADOC />
-      <SOURCES />
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/build/forge-1.6.4-9.11.1.964-src.jar!/" />
+      </SOURCES>
     </library>
     <library name="Gradle: gson-2.2.2">
       <CLASSES>

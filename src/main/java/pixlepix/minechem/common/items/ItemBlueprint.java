@@ -7,6 +7,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import org.jetbrains.annotations.NotNull;
 import pixlepix.minechem.common.MinechemItems;
 import pixlepix.minechem.common.ModMinechem;
 import pixlepix.minechem.common.blueprint.MinechemBlueprint;
@@ -17,57 +18,59 @@ import java.util.List;
 
 public class ItemBlueprint extends Item {
 
-    public static final String[] names = {"item.name.blueprintFusion", "item.name.blueprintFission"};
+	public static final String[] names = { "item.name.blueprintFusion", "item.name.blueprintFission" };
 
-    public ItemBlueprint(int id) {
-        super(id);
-        setUnlocalizedName("minechem.itemBlueprint");
-        setCreativeTab(ModMinechem.minechemTab);
-        setHasSubtypes(true);
-    }
+	public ItemBlueprint(int id) {
+		super(id);
+		setUnlocalizedName("minechem.itemBlueprint");
+		setCreativeTab(ModMinechem.minechemTab);
+		setHasSubtypes(true);
+	}
 
-    @Override
-    @SideOnly(Side.CLIENT)
-    public void registerIcons(IconRegister ir) {
-        itemIcon = ir.registerIcon(ConstantValue.BLUEPRINT_TEX);
-    }
+	@Override
+	@SideOnly(Side.CLIENT)
+	public void registerIcons(@NotNull IconRegister ir) {
+		itemIcon = ir.registerIcon(ConstantValue.BLUEPRINT_TEX);
+	}
 
-    public static ItemStack createItemStackFromBlueprint(MinechemBlueprint blueprint) {
-        return new ItemStack(MinechemItems.blueprint, 1, blueprint.id);
-    }
+	@NotNull
+	public static ItemStack createItemStackFromBlueprint(@NotNull MinechemBlueprint blueprint) {
+		return new ItemStack(MinechemItems.blueprint, 1, blueprint.id);
+	}
 
-    public MinechemBlueprint getBlueprint(ItemStack itemstack) {
-        int metadata = itemstack.getItemDamage();
-        return MinechemBlueprint.blueprints.get(metadata);
-    }
+	public MinechemBlueprint getBlueprint(@NotNull ItemStack itemstack) {
+		int metadata = itemstack.getItemDamage();
+		return MinechemBlueprint.blueprints.get(metadata);
+	}
 
-    @Override
-    @SideOnly(Side.CLIENT)
-    public void addInformation(ItemStack itemstack, EntityPlayer entityPlayer, List list, boolean par4) {
-        MinechemBlueprint blueprint = getBlueprint(itemstack);
-        if (blueprint != null) {
-            String dimensions = String.format("%d x %d x %d", blueprint.xSize, blueprint.ySize, blueprint.zSize);
-            list.add(dimensions);
-        }
-    }
+	@Override
+	@SideOnly(Side.CLIENT)
+	public void addInformation(@NotNull ItemStack itemstack, EntityPlayer entityPlayer, @NotNull List list, boolean par4) {
+		MinechemBlueprint blueprint = getBlueprint(itemstack);
+		if (blueprint != null) {
+			String dimensions = String.format("%d x %d x %d", blueprint.xSize, blueprint.ySize, blueprint.zSize);
+			list.add(dimensions);
+		}
+	}
 
-    @Override
-    public String getUnlocalizedName(ItemStack itemstack) {
-        return getUnlocalizedName() + "." + names[itemstack.getItemDamage()];
-    }
+	@NotNull
+	@Override
+	public String getUnlocalizedName(@NotNull ItemStack itemstack) {
+		return getUnlocalizedName() + "." + names[itemstack.getItemDamage()];
+	}
 
-    @Override
-    public String getItemDisplayName(ItemStack itemstack) {
-        int metadata = itemstack.getItemDamage();
-        return MinechemHelper.getLocalString(names[metadata]);
-    }
+	@Override
+	public String getItemDisplayName(@NotNull ItemStack itemstack) {
+		int metadata = itemstack.getItemDamage();
+		return MinechemHelper.getLocalString(names[metadata]);
+	}
 
-    @Override
-    @SideOnly(Side.CLIENT)
-    public void getSubItems(int id, CreativeTabs creativeTabs, List list) {
-        for (int i = 0; i < names.length; i++) {
-            list.add(new ItemStack(id, 1, i));
-        }
-    }
+	@Override
+	@SideOnly(Side.CLIENT)
+	public void getSubItems(int id, CreativeTabs creativeTabs, @NotNull List list) {
+		for (int i = 0; i < names.length; i++) {
+			list.add(new ItemStack(id, 1, i));
+		}
+	}
 
 }

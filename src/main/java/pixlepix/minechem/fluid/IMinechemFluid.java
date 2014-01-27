@@ -1,10 +1,11 @@
 package pixlepix.minechem.fluid;
 
 import net.minecraft.item.ItemStack;
+import org.jetbrains.annotations.NotNull;
 
 public interface IMinechemFluid {
 
-    public ItemStack getOutputStack();
-
+	@NotNull
+	public ItemStack getOutputStack();
 
 }

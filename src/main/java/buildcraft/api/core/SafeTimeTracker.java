@@ -8,39 +8,41 @@
 package buildcraft.api.core;
 
 import net.minecraft.world.World;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class SafeTimeTracker {
 
-    private long lastMark = Long.MIN_VALUE;
-    private long duration = -1;
+	private long lastMark = Long.MIN_VALUE;
+	private long duration = -1;
 
-    /**
-     * Return true if a given delay has passed since last time marked was called
-     * successfully.
-     */
-    public boolean markTimeIfDelay(World world, long delay) {
-        if (world == null)
-            return false;
+	/**
+	 * Return true if a given delay has passed since last time marked was called
+	 * successfully.
+	 */
+	public boolean markTimeIfDelay(@Nullable World world, long delay) {
+		if (world == null)
+			return false;
 
-        long currentTime = world.getTotalWorldTime();
+		long currentTime = world.getTotalWorldTime();
 
-        if (currentTime < lastMark) {
-            lastMark = currentTime;
-            return false;
-        } else if (lastMark + delay <= currentTime) {
-            duration = currentTime - lastMark;
-            lastMark = currentTime;
-            return true;
-        } else
-            return false;
+		if (currentTime < lastMark) {
+			lastMark = currentTime;
+			return false;
+		} else if (lastMark + delay <= currentTime) {
+			duration = currentTime - lastMark;
+			lastMark = currentTime;
+			return true;
+		} else
+			return false;
 
-    }
+	}
 
-    public long durationOfLastDelay() {
-        return duration > 0 ? duration : 0;
-    }
+	public long durationOfLastDelay() {
+		return duration > 0 ? duration : 0;
+	}
 
-    public void markTime(World world) {
-        lastMark = world.getTotalWorldTime();
-    }
+	public void markTime(@NotNull World world) {
+		lastMark = world.getTotalWorldTime();
+	}
 }

@@ -9,40 +9,42 @@
 
 package buildcraft.api.blueprints;
 
+import org.jetbrains.annotations.NotNull;
+
 @Deprecated
 public class ItemSignature {
 
-    public String itemClassName;
-    public String itemName;
+	public String itemClassName;
+	public String itemName;
 
-    public ItemSignature(String str) {
-        String[] values = str.split("/");
+	public ItemSignature(@NotNull String str) {
+		String[] values = str.split("/");
 
-        itemClassName = values[1];
-        itemName = values[2];
+		itemClassName = values[1];
+		itemName = values[2];
 
-        replaceNullWithStar();
+		replaceNullWithStar();
 
-    }
+	}
 
-    public ItemSignature() {
-        replaceNullWithStar();
-    }
+	public ItemSignature() {
+		replaceNullWithStar();
+	}
 
-    @Override
-    public String toString() {
-        replaceNullWithStar();
+	@Override
+	public String toString() {
+		replaceNullWithStar();
 
-        return "#I/" + itemClassName + "/" + itemName;
-    }
+		return "#I/" + itemClassName + "/" + itemName;
+	}
 
-    public void replaceNullWithStar() {
-        if (itemClassName == null) {
-            itemClassName = "*";
-        }
+	public void replaceNullWithStar() {
+		if (itemClassName == null) {
+			itemClassName = "*";
+		}
 
-        if (itemName == null) {
-            itemName = "*";
-        }
-    }
+		if (itemName == null) {
+			itemName = "*";
+		}
+	}
 }

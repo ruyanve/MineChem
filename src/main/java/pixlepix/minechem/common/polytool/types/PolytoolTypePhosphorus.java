@@ -5,6 +5,7 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeDirection;
+import org.jetbrains.annotations.NotNull;
 import pixlepix.minechem.api.core.EnumElement;
 import pixlepix.minechem.common.polytool.PolytoolUpgradeType;
 
@@ -27,7 +28,7 @@ public class PolytoolTypePhosphorus extends PolytoolUpgradeType {
 	}
 
 	@Override
-	public void onBlockDestroyed(ItemStack itemStack, World world, int id,
+	public void onBlockDestroyed(ItemStack itemStack, @NotNull World world, int id,
 	                             int x, int y, int z, EntityLivingBase target) {
 		if (!target.worldObj.isRemote) {
 			if (Block.blocksList[id].isFlammable(world, x, y, z, 0, ForgeDirection.UP)) {
