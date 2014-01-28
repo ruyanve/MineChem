@@ -15,6 +15,10 @@ remotebuild.py
 /out
 
 ## idea
+*.iws
+*.ims
+*.iml
+*.ipr
 MineChem.iws
 MineChem.ims
 MineChem.ipr
