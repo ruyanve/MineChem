@@ -4,11 +4,9 @@
     <option name="ANALYZE_TEST_SOURCES" value="false" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="70b8cda3-24f5-4795-8bab-8fc77abea077" name="Default" comment="Dose of refactoring">
+    <list default="true" id="70b8cda3-24f5-4795-8bab-8fc77abea077" name="Default" comment="Misc work">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MineChem.ipr" afterPath="$PROJECT_DIR$/MineChem.ipr" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MineChem.iws" afterPath="$PROJECT_DIR$/MineChem.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/ModMinechem.java" afterPath="$PROJECT_DIR$/src/main/java/pixlepix/minechem/common/ModMinechem.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
     </list>
     <ignored path="Minechem.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -97,7 +95,7 @@
       <file leaf-file-name="build.gradle" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="73" column="0" selection-start="1790" selection-end="1790" vertical-scroll-proportion="0.5539216" vertical-offset="869" max-vertical-offset="1755">
+            <state line="71" column="0" selection-start="1788" selection-end="1788" vertical-scroll-proportion="0.5539216" vertical-offset="839" max-vertical-offset="1725">
               <folding />
             </state>
           </provider>
@@ -922,7 +920,11 @@
       <created>1390858904634</created>
       <updated>1390858904634</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Misc work">
+      <created>1390872764212</created>
+      <updated>1390872764212</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1015,7 +1017,8 @@
     <MESSAGE value="Ran some refactoring commands." />
     <MESSAGE value="Removed huge amount of print statements" />
     <MESSAGE value="Dose of refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dose of refactoring" />
+    <MESSAGE value="Misc work" />
+    <option name="LAST_COMMIT_MESSAGE" value="Misc work" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1399,7 +1402,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="0" selection-start="1790" selection-end="1790" vertical-scroll-proportion="0.5539216" vertical-offset="869" max-vertical-offset="1755">
+        <state line="71" column="0" selection-start="1788" selection-end="1788" vertical-scroll-proportion="0.5539216" vertical-offset="839" max-vertical-offset="1725">
           <folding />
         </state>
       </provider>
