@@ -21,6 +21,8 @@ buildscript {
 
 apply plugin: 'shadow'
 
+defaultTasks 'fixjavac2', 'clean', 'build', 'shadow'
+
 shadow
         {
             include 'javax/mail/**'
@@ -36,13 +38,21 @@ thirdPartyJarsConfigFile.withReader {
     prop.load(new FileReader(ext.thirdPartyJarsConfigFile))
     ext.thirdPartyJars = new ConfigSlurper().parse prop
 }
+configurations
+        {
+            javac2
+        }
+
+def javac2Config = configurations.javac2
 
 // This mod has NEI support, so NEI+CodeChickenCore are needed to build
 // it (but not required to use it).
 dependencies {
+    javac2 'com.intellij:javac2:6.0.5'
     compile files(thirdPartyJars.path + '/' + thirdPartyJars.NEI,
             thirdPartyJars.path + '/' + thirdPartyJars.CodeChickenCore)
     compile 'javax.mail:mail:1.4'
+
     runtime 'javax.mail:mail:1.4'
 
 }
@@ -55,8 +65,9 @@ group = "pixlepix.minechem" // http://maven.apache.org/guides/mini/guide-naming-
 archivesBaseName = "Minechem"
 
 minecraft {
-    version = "1.6.4-9.11.1.964"
 
+
+    version = "1.6.4-9.11.1.964"
     replaceIn "common/AutoCrashReporter.java"
 
     if (project.hasProperty("pass"))
@@ -77,6 +88,9 @@ configFile.withReader {
     }
     version = project.config.mod_version + "-" + ext.buildNum
 }
+
+
+
 
 processResources
         {
